@@ -50,14 +50,14 @@ export default function AboutUs() {
                         vasta experiência no atendimento e tratamento aos
                         pacientes.
                     </p>
-                    <button className="bg-nef text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef/90 transition-colors">
+                    <button className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors">
                         Saiba mais
                     </button>
                 </div>
                 <div className="w-1/2 flex items-center justify-center p-4">
                     <div
                         className={`
-                        size-98 bg-nef/50 rounded-3xl
+                        size-98 bg-nef-400 rounded-3xl
                         rotate-15 
                     `}
                     />

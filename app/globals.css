@@ -7,6 +7,17 @@
 
 @theme {
     --color-nef: #ae1010;
+    --color-nef-50: #fff1f1;
+    --color-nef-100: #ffdfdf;
+    --color-nef-200: #ffc5c5;
+    --color-nef-300: #ff9d9d;
+    --color-nef-400: #ff6464;
+    --color-nef-500: #ff3434;
+    --color-nef-600: #ed1515;
+    --color-nef-700: #c80d0d;
+    --color-nef-800: #ae1010;
+    --color-nef-900: #881414;
+    --color-nef-950: #4b0404;
 }
 
 @theme inline {
