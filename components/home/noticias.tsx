@@ -18,9 +18,9 @@ export default function Noticias() {
                 <div className={`
                     flex flex-col
                     items-start justify-center
-                    w-84 p-4 bg-zinc-50
+                    w-84 p-4 bg-white
                     border border-transparent rounded-3xl
-                    hover:shadow-lg hover:border-nef-400 transition-all
+                    hover:shadow-lg hover:border-teste-400 transition-all
                 `}>
                     <Image
                         src="https://www.nefruza.com.br/images/hemodialise_intro.jpg"
@@ -28,7 +28,7 @@ export default function Noticias() {
                         width={400}
                         height={300}
                     />
-                    <span className="text-sm font-bold text-nef uppercase mt-4">
+                    <span className="text-sm font-bold text-teste-700 uppercase mt-4">
                         #notícia
                     </span>
                     <h2 className="text-xl font-bold mb-2 line-clamp-2">
@@ -42,7 +42,7 @@ export default function Noticias() {
                     </p>
                     <Link
                         href="/noticias"
-                        className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
+                        className="bg-teste-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-teste-600/90 transition-colors"
                     >
                         Leia mais →
                     </Link>
@@ -50,9 +50,9 @@ export default function Noticias() {
                 <div className={`
                     flex flex-col
                     items-start justify-center
-                    w-84 p-4 bg-zinc-50
+                    w-84 p-4 bg-white
                     border border-transparent rounded-3xl
-                    hover:shadow-lg hover:border-nef-400 transition-all
+                    hover:shadow-lg hover:border-teste-400 transition-all
                 `}>
                     <Image
                         src="https://www.nefruza.com.br/images/hemodialise_intro.jpg"
@@ -60,7 +60,7 @@ export default function Noticias() {
                         width={400}
                         height={300}
                     />
-                    <span className="text-sm font-bold text-nef uppercase mt-4">
+                    <span className="text-sm font-bold text-teste-700 uppercase mt-4">
                         #notícia
                     </span>
                     <h2 className="text-xl font-bold mb-2 line-clamp-2">
@@ -74,7 +74,7 @@ export default function Noticias() {
                     </p>
                     <Link
                         href="/noticias"
-                        className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
+                        className="bg-teste-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-teste-600/90 transition-colors"
                     >
                         Leia mais →
                     </Link>

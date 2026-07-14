@@ -18,6 +18,18 @@
     --color-nef-800: #ae1010;
     --color-nef-900: #881414;
     --color-nef-950: #4b0404;
+
+    --color-teste-50: #fff1f1;
+    --color-teste-100: #fee5e5;
+    --color-teste-200: #fccfd1;
+    --color-teste-300: #faa7aa;
+    --color-teste-400: #f7757d;
+    --color-teste-500: #ee4554;
+    --color-teste-600: #db233c;
+    --color-teste-700: #b81832;
+    --color-teste-800: #9a1730;
+    --color-teste-900: #84172f;
+    --color-teste-950: #650a1c;
 }
 
 @theme inline {
