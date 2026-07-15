@@ -6,7 +6,7 @@ import { PiPhoneCallFill } from "react-icons/pi";
 
 export default function Footer() {
     return (
-        <footer className="flex w-full flex-col items-center justify-center border-t border-zinc-200 bg-teste-700 px-16 pt-16">
+        <footer className="flex w-full flex-col items-center justify-center border-t border-zinc-200 bg-teste-700 px-4 md:px-16 pt-16">
             <div
                 className={`
                     flex flex-wrap w-full max-w-6xl items-start justify-between pb-16
@@ -14,7 +14,7 @@ export default function Footer() {
                 `}
             >
                 <div className="flex flex-col items-start gap-2 xl:w-1/5 w-1/1">
-                    <span className="text-sm font-bold font-title text-zinc-50 uppercase">
+                    <span className="font-bold font-title text-zinc-50 uppercase">
                         Contate a Nefruza
                     </span>
                     <Link
@@ -23,7 +23,7 @@ export default function Footer() {
                     >
                         <PiPhoneCallFill /> (83) 3225-1619
                     </Link>
-                    <span className="text-xs text-zinc-50">
+                    <span className="text-xs text-zinc-300">
                         Segunda a sexta-feira, das 8h às 18h
                     </span>
                     {/* <span className="text-sm text-zinc-50">
@@ -37,131 +37,129 @@ export default function Footer() {
                     </Link>
                     <Link
                         href="/contato"
-                        className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors py-3 px-6 mt-6 rounded-full border border-zinc-50 hover:border-zinc-300"
+                        className="text-sm text-zinc-50 hover:text-zinc-300 transition-colors py-3 px-6 mt-4 rounded-full border border-zinc-50 hover:border-zinc-300"
                     >
                         Mais contatos
                     </Link>
                 </div>
-                <div className="flex flex-col gap-2 md:w-1/3 lg:w-1/5 xl: w-1/1">
+                <div className="flex flex-col gap-2 md:w-1/3 lg:w-auto w-1/1">
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/institucional"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 font-bold font-title uppercase transition-colors"
                     >
                         A Nefruza
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/institucional/historia"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Nossa história
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/institucional/estrutura"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Nossa estrutura
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/institucional/propósito-e-valores"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Propósito e valores
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/institucional#pioneirismo"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Pioneirismo
                     </Link>
                 </div>
-                <div className="flex flex-col gap-2 md:w-1/5 w-1/1">
+                <div className="flex flex-col gap-2 md:w-1/5 lg:w-auto w-1/1">
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 font-bold font-title uppercase transition-colors"
                     >
                         Site
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Início
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/contato"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Contato
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/servicos"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Serviços
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/convenios"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Convênios
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/equipe"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Equipe
                     </Link>
                 </div>
-                <div className="flex flex-col gap-2 md:w-1/5 w-1/1">
+                <div className="flex flex-col gap-2 md:w-1/5 lg:w-auto w-1/1">
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/blog"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 font-bold uppercase font-title transition-colors"
                     >
                         Por dentro
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href="/blog"
+                        
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Blog
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href={{
+                            pathname: "/blog",
+                            query: { category: "noticias" }
+                        }}
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Notícias
                     </Link>
                     <Link
-                        href="#"
-                        target="_blank"
+                        href={{
+                            pathname: "/blog",
+                            query: { category: "comunicados" }
+                        }}
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
@@ -210,7 +208,7 @@ export default function Footer() {
                             <LuLinkedin />
                         </Link>
                         <Link
-                            href="https://www.google.com/maps/place/Nefruza/@-7.115534,-34.850123,17z/data=!3m1!4b1!4m5!3m4!1s0x7acba6d8c9c9c9c9:0x1c9c9c9c9c9c9c9c!8m2!3d-7.115534!4d-34.850123"
+                            href="https://maps.app.goo.gl/BSiF3bnGe8WeimKV8"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="hover:text-nef-300 transition-colors"
@@ -220,7 +218,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-row w-full max-w-6xl items-center justify-between py-4 border-t border-teste-400">
+            <div className="flex flex-col gap-2 md:flex-row w-full max-w-6xl items-start justify-between py-4 border-t border-teste-400">
                 <span className="text-sm text-zinc-50 ">
                     © 2026 Nefruza Serviços Nefrológicos Fiúza Chaves Ltda.
                     Todos os direitos reservados.

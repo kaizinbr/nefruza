@@ -17,7 +17,7 @@ const navigationItems = [
     { href: "/contato", label: "Contato" },
     { href: "/servicos", label: "Serviços" },
     { href: "/convenios", label: "Convênios" },
-    { href: "/noticias", label: "Notícias" },
+    { href: "/blog", label: "Notícias" },
     { href: "/equipe", label: "Equipe" },
     { href: "/institucional", label: "Sobre" },
 ];
@@ -40,6 +40,7 @@ export default function Navbar() {
     });
 
     useEffect(() => {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setMenuOpen(false);
     }, [pathname]);
 

@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
+import "@mantine/core/styles.css";
+
 import { Geist, Geist_Mono, Fustat, Nata_Sans } from "next/font/google";
 import "./globals.css";
+import {
+    ColorSchemeScript,
+    MantineProvider,
+    mantineHtmlProps,
+} from "@mantine/core";
 import Navbar from "@/components/core/navbar";
 import Footer from "@/components/core/footer";
 
@@ -38,10 +45,14 @@ export default function RootLayout({
         <html
             lang="pt-br"
             className={`${fustat.variable} ${nataSans.variable} h-full antialiased`}
+            {...mantineHtmlProps}
         >
+            <head>
+                <ColorSchemeScript />
+            </head>
             <body className="min-h-full flex flex-col">
                 <Navbar />
-                {children}
+                <MantineProvider>{children}</MantineProvider>
                 <Footer />
             </body>
         </html>

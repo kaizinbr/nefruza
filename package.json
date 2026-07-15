@@ -1,28 +1,49 @@
 {
-  "name": "nefruza",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "motion": "^12.42.2",
-    "next": "16.2.10",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "react-icons": "^5.7.0"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.2.10",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "name": "nefruza",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "eslint"
+    },
+    "dependencies": {
+        "@mantine/carousel": "^9.4.1",
+        "@mantine/core": "^9.4.1",
+        "@mantine/dates": "^9.4.1",
+        "@mantine/dropzone": "^9.4.1",
+        "@mantine/form": "^9.4.1",
+        "@mantine/hooks": "^9.4.1",
+        "@mantine/modals": "^9.4.1",
+        "@mantine/nprogress": "^9.4.1",
+        "@mantine/spotlight": "^9.4.1",
+        "@mantine/tiptap": "^9.4.1",
+        "@tiptap/extension-link": "^3.27.4",
+        "@tiptap/pm": "^3.27.4",
+        "@tiptap/react": "^3.27.4",
+        "@tiptap/starter-kit": "^3.27.4",
+        "dayjs": "^1.11.21",
+        "embla-carousel": "^8.6.0",
+        "embla-carousel-react": "^8.6.0",
+        "motion": "^12.42.2",
+        "next": "16.2.10",
+        "react": "19.2.4",
+        "react-dom": "19.2.4",
+        "react-icons": "^5.7.0",
+        "resend": "^6.17.2"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4",
+        "@types/node": "^20",
+        "@types/react": "^19",
+        "@types/react-dom": "^19",
+        "eslint": "^9",
+        "eslint-config-next": "16.2.10",
+        "postcss": "^8.5.19",
+        "postcss-preset-mantine": "^1.18.0",
+        "postcss-simple-vars": "^7.0.1",
+        "tailwindcss": "^4",
+        "typescript": "^5"
+    }
 }
