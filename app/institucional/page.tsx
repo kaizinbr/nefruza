@@ -1,5 +1,4 @@
-import AdminMail from "@/components/email/adm-mail";
-import Image from "next/image";
+
 
 export default function Home() {
     return (
