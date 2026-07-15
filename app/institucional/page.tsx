@@ -1,3 +1,4 @@
+import AdminMail from "@/components/email/adm-mail";
 import Image from "next/image";
 
 export default function Home() {
@@ -6,7 +7,6 @@ export default function Home() {
             <main className={`
                     flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 sm:items-start
                 `}>
-                
             </main>
         </div>
     );

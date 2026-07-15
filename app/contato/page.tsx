@@ -54,7 +54,7 @@ export default function Home() {
                     className={`
                         flex flex-col
                         items-start justify-center
-                        w-full bg-teste-100 rounded-3xl p-8
+                        w-full bg-zinc-200 rounded-3xl p-8
                     `}
                 >
                     <FormContato />

@@ -5,10 +5,12 @@ import {
     Box,
     Button,
     Collapse,
+    Chip,
     Group,
     LoadingOverlay,
     Modal,
     Stack,
+    Select,
     Text,
     Textarea,
     TextInput,
@@ -18,21 +20,18 @@ import { useDisclosure } from "@mantine/hooks";
 
 import { HiOutlineChevronDown } from "react-icons/hi";
 
-interface ContactFormValues {
-    titulo: string;
-    contato: string;
-    mensagem: string;
-}
+import { ContactFormValues, ContactFormErrors } from "@/lib/types";
+import { CONTACT_SECTORS } from "@/lib/generate-ticket";
 
-interface ContactFormErrors {
-    titulo?: string;
-    contato?: string;
-    mensagem?: string;
-}
+import submitContactForm from "@/lib/submit-contact-form";
 
 const initialValues: ContactFormValues = {
     titulo: "",
-    contato: "",
+    email: "",
+    tel: "",
+    type: "mail",
+    sector: "",
+    name: "",
     mensagem: "",
 };
 
@@ -40,14 +39,6 @@ const initialValues: ContactFormValues = {
  * Stub — troque pela chamada real (server action, rota de API, etc.).
  * Deve retornar o número do ticket gerado no backend.
  */
-async function submitContactForm(
-    values: ContactFormValues,
-): Promise<{ ticketNumber: string }> {
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    return {
-        ticketNumber: String(Math.floor(100000 + Math.random() * 900000)),
-    };
-}
 
 function validate(values: ContactFormValues): ContactFormErrors {
     const errors: ContactFormErrors = {};
@@ -55,8 +46,11 @@ function validate(values: ContactFormValues): ContactFormErrors {
     if (!values.titulo.trim()) {
         errors.titulo = "Informe um título para a mensagem";
     }
-    if (!values.contato.trim()) {
-        errors.contato = "Informe um e-mail ou telefone para contato";
+    if (!values.email.trim()) {
+        errors.email = "Informe um e-mail ou telefone para contato";
+    }
+    if (!values.name.trim()) {
+        errors.name = "Informe seu nome";
     }
     if (!values.mensagem.trim() || values.mensagem.trim().length < 10) {
         errors.mensagem = "Descreva sua mensagem com um pouco mais de detalhe";
@@ -68,6 +62,7 @@ function validate(values: ContactFormValues): ContactFormErrors {
 export default function FormContato() {
     const [expanded, { toggle }] = useDisclosure(false);
     const [values, setValues] = useState<ContactFormValues>(initialValues);
+    const [type, setType] = useState<string | null>("mail");
     const [errors, setErrors] = useState<ContactFormErrors>({});
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
@@ -92,11 +87,13 @@ export default function FormContato() {
         setSubmitError(null);
         setSubmitting(true);
         try {
+            // console.log("Enviando formulário de contato:", values);
             const result = await submitContactForm(values);
             setTicketNumber(result.ticketNumber);
             setValues(initialValues);
             openSuccess();
         } catch (error) {
+            console.error("Erro ao enviar formulário de contato:", error);
             setSubmitError(
                 "Não foi possível enviar sua mensagem agora. Tente novamente em instantes.",
             );
@@ -111,7 +108,7 @@ export default function FormContato() {
                 visible={submitting}
                 zIndex={1000}
                 overlayProps={{ radius: "sm", blur: 2, fixed: true }}
-                loaderProps={{ type: "bars" }}
+                // loaderProps={{ type: "bars" }}
             />
 
             {/* Ativador: apenas texto, sem estilização de botão */}
@@ -120,7 +117,7 @@ export default function FormContato() {
                     onClick={toggle}
                     aria-expanded={expanded}
                     className={`
-                            cursor-pointer text-center text-zinc-700 transition-colors hover:text-nef-600
+                            cursor-pointer text-center text-zinc-700 transition-colors hover:text-teste-600
                             flex flex-row items-center justify-between gap-8 text-sm font-bold w-full mx-auto
                         `}
                 >
@@ -138,7 +135,7 @@ export default function FormContato() {
                 <Stack
                     gap="md"
                     mt="md"
-                    className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm"
+                    className="border-t border-zinc-400 pt-4"
                 >
                     <div>
                         <Text fw={700} size="lg" className="text-zinc-900">
@@ -151,28 +148,90 @@ export default function FormContato() {
                     </div>
 
                     <TextInput
+                        label="E-mail"
+                        placeholder="nome.sobrenome@mail.com"
+                        value={values.email}
+                        onChange={(e) =>
+                            setField("email")(e.currentTarget.value)
+                        }
+                        error={errors.email}
+                        withAsterisk
+                        classNames={{ input: "focus:border-nef-600" }}
+                    />
+                    <TextInput
+                        label="Telefone"
+                        placeholder="(XX) 9XXXX-XXXX"
+                        type="tel"
+                        inputMode="tel"
+                        value={values.tel}
+                        onChange={(e) => setField("tel")(e.currentTarget.value)}
+                        error={errors.tel}
+                        // withAsterisk
+                        classNames={{ input: "focus:border-nef-600" }}
+                    />
+                    <TextInput
+                        label="Nome"
+                        placeholder="Como podemos te chamar?"
+                        value={values.name}
+                        onChange={(e) =>
+                            setField("name")(e.currentTarget.value)
+                        }
+                        error={errors.name}
+                        withAsterisk
+                        classNames={{ input: "focus:border-nef-600" }}
+                    />
+                    <Select
+                        data={Object.values(CONTACT_SECTORS).map((sector) => ({
+                            value: sector.slug,
+                            label: sector.label,
+                        }))}
+                        value={values.sector}
+                        onChange={(value) => setField("sector")(value || "")}
+                        label="Setor de Contato"
+                        error={errors.sector}
+                        withAsterisk
+                    />
+                    <TextInput
                         label="Título"
-                        placeholder="Sobre o que você quer falar?"
+                        placeholder="Qual a motivação de seu contato?"
                         value={values.titulo}
                         onChange={(e) =>
                             setField("titulo")(e.currentTarget.value)
                         }
                         error={errors.titulo}
                         withAsterisk
-                        classNames={{ input: "!focus:border-nef-600!" }}
+                        classNames={{
+                            input: "!border !border-zinc-300 !bg-zinc-100",
+                        }}
                     />
 
-                    <TextInput
-                        label="Contato"
-                        placeholder="E-mail ou telefone"
-                        value={values.contato}
-                        onChange={(e) =>
-                            setField("contato")(e.currentTarget.value)
-                        }
-                        error={errors.contato}
-                        withAsterisk
-                        classNames={{ input: "focus:border-nef-600" }}
-                    />
+                    <Chip.Group
+                        multiple={false}
+                        value={values.type}
+                        onChange={(value) => setField("type")(value || "mail")}
+                    >
+                        <Text className="text-[14px]! text-black!">
+                            Forma de contato preferida (opcional)
+                        </Text>
+                        <Group justify="start">
+                            <Chip
+                                value="mail"
+                                classNames={{
+                                    label: "data-checked:bg-teste-600!",
+                                }}
+                            >
+                                E-mail
+                            </Chip>
+                            <Chip
+                                classNames={{
+                                    label: "data-checked:bg-teste-600!",
+                                }}
+                                value="phone"
+                            >
+                                Telefone
+                            </Chip>
+                        </Group>
+                    </Chip.Group>
 
                     <Textarea
                         label="Mensagem"
@@ -184,7 +243,7 @@ export default function FormContato() {
                         error={errors.mensagem}
                         withAsterisk
                         autosize
-                        minRows={4}
+                        minRows={5}
                         classNames={{ input: "focus:border-nef-600" }}
                     />
 
@@ -197,7 +256,7 @@ export default function FormContato() {
                     <Button
                         onClick={handleSubmit}
                         loading={submitting}
-                        className="bg-nef-600 rounded-full py-3 font-bold text-white transition-colors hover:bg-nef-600/90"
+                        className="bg-teste-600! rounded-full py-3 font-bold text-white transition-colors hover:bg-teste-600/90"
                     >
                         Enviar mensagem
                     </Button>
@@ -218,17 +277,16 @@ export default function FormContato() {
                     <Text size="sm" c="dimmed" ta="center">
                         Seu ticket de atendimento é
                     </Text>
-                    <Text size="xl" fw={800} className="text-nef-600">
+                    <Text size="xl" fw={800} className="text-teste-600">
                         #{ticketNumber}
                     </Text>
                     <Text size="sm" c="dimmed" ta="center">
-                        Guarde este número. Entraremos em contato em breve pelo
-                        canal informado.
+                        Você receberá esse ticket no e-mail informado. Entraremos em contato em breve para resolução.
                     </Text>
                     <Button
                         onClick={closeSuccess}
                         mt="sm"
-                        className="bg-nef-600 rounded-full px-8 font-bold text-white hover:bg-nef-600/90"
+                        className="bg-teste-600! rounded-full px-8 font-bold text-white hover:bg-teste-600/90"
                     >
                         Fechar
                     </Button>
