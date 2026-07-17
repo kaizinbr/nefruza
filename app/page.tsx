@@ -1,4 +1,6 @@
 import Banner from "@/components/home/banner";
+import Diferenciais from "@/components/home/diferenciais";
+import Estrutura from "@/components/home/estrutura";
 import Noticias from "@/components/home/noticias";
 import AboutUs from "@/components/home/quem-somos";
 import Image from "next/image";
@@ -13,7 +15,9 @@ export default function Home() {
             >
                 <Banner />
                 <AboutUs />
+                <Diferenciais />
                 <Noticias />
+                <Estrutura />
             </main>
         </div>
     );

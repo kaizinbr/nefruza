@@ -19,7 +19,7 @@ export default function Home() {
                         w-full
                     `}
                 >
-                    <span className="text-sm font-bold text-nef uppercase">
+                    <span className="text-sm font-bold text-nef-500 uppercase">
                         contato
                     </span>
                     <h1 className="text-3xl font- text-center mb-4 font-title">

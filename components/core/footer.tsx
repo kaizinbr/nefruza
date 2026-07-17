@@ -6,7 +6,7 @@ import { PiPhoneCallFill } from "react-icons/pi";
 
 export default function Footer() {
     return (
-        <footer className="flex w-full flex-col items-center justify-center border-t border-zinc-200 bg-teste-700 px-4 md:px-16 pt-16">
+        <footer className="flex w-full flex-col items-center justify-center border-t border-zinc-200 bg-nef-700 px-4 md:px-16 pt-16">
             <div
                 className={`
                     flex flex-wrap w-full max-w-6xl items-start justify-between pb-16
@@ -218,7 +218,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col gap-2 md:flex-row w-full max-w-6xl items-start justify-between py-4 border-t border-teste-400">
+            <div className="flex flex-col gap-2 md:flex-row w-full max-w-6xl items-start justify-between py-4 border-t border-nef-400">
                 <span className="text-sm text-zinc-50 ">
                     © 2026 Nefruza Serviços Nefrológicos Fiúza Chaves Ltda.
                     Todos os direitos reservados.

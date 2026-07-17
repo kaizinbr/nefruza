@@ -117,7 +117,7 @@ export default function FormContato() {
                     onClick={toggle}
                     aria-expanded={expanded}
                     className={`
-                            cursor-pointer text-center text-zinc-700 transition-colors hover:text-teste-600
+                            cursor-pointer text-center text-zinc-700 transition-colors hover:text-nef-600
                             flex flex-row items-center justify-between gap-8 text-sm font-bold w-full mx-auto
                         `}
                 >
@@ -125,7 +125,7 @@ export default function FormContato() {
                         Não encontrou o que procurava? Preencha o formulário
                         para que possamos ajudá-lo.
                     </span>
-                    <div className="text-xl bg-teste-600 text-teste-50 rounded-full p-2 flex items-center justify-center">
+                    <div className="text-xl bg-nef-600 text-nef-50 rounded-full p-2 flex items-center justify-center">
                         <HiOutlineChevronDown />
                     </div>
                 </UnstyledButton>
@@ -217,14 +217,14 @@ export default function FormContato() {
                             <Chip
                                 value="mail"
                                 classNames={{
-                                    label: "data-checked:bg-teste-600!",
+                                    label: "data-checked:bg-nef-600!",
                                 }}
                             >
                                 E-mail
                             </Chip>
                             <Chip
                                 classNames={{
-                                    label: "data-checked:bg-teste-600!",
+                                    label: "data-checked:bg-nef-600!",
                                 }}
                                 value="phone"
                             >
@@ -256,7 +256,7 @@ export default function FormContato() {
                     <Button
                         onClick={handleSubmit}
                         loading={submitting}
-                        className="bg-teste-600! rounded-full py-3 font-bold text-white transition-colors hover:bg-teste-600/90"
+                        className="bg-nef-600! rounded-full py-3 font-bold text-white transition-colors hover:bg-nef-600/90"
                     >
                         Enviar mensagem
                     </Button>
@@ -277,7 +277,7 @@ export default function FormContato() {
                     <Text size="sm" c="dimmed" ta="center">
                         Seu ticket de atendimento é
                     </Text>
-                    <Text size="xl" fw={800} className="text-teste-600">
+                    <Text size="xl" fw={800} className="text-nef-600">
                         #{ticketNumber}
                     </Text>
                     <Text size="sm" c="dimmed" ta="center">
@@ -286,7 +286,7 @@ export default function FormContato() {
                     <Button
                         onClick={closeSuccess}
                         mt="sm"
-                        className="bg-teste-600! rounded-full px-8 font-bold text-white hover:bg-teste-600/90"
+                        className="bg-nef-600! rounded-full px-8 font-bold text-white hover:bg-nef-600/90"
                     >
                         Fechar
                     </Button>
