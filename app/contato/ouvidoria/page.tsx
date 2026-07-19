@@ -8,7 +8,7 @@ import { TbMailFilled } from "react-icons/tb";
 
 export default function Home() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans py-16 px-4 md:py-32 md:px-16">
+        <div className="flex flex-col flex-1 items-center justify-center font-sans py-16 px-4 md:py-32 md:px-16">
             <main
                 className={`
                     flex flex-1 w-full max-w-6xl flex-col lg:flex-row items-center justify-between sm:items-start

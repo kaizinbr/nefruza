@@ -1,9 +1,11 @@
 import Banner from "@/components/home/banner";
 import Convenios from "@/components/home/convenios";
+import Convenios1 from "@/components/home/convenios1";
 import Diferenciais from "@/components/home/diferenciais";
 import Estrutura from "@/components/home/estrutura";
 import Noticias from "@/components/home/noticias";
 import AboutUs from "@/components/home/quem-somos";
+import Servicos from "@/components/home/servicos";
 import Image from "next/image";
 
 export default function Home() {
@@ -17,9 +19,11 @@ export default function Home() {
                 <Banner />
                 <AboutUs />
                 <Diferenciais />
+                <Servicos />
                 <Noticias />
                 <Estrutura />
                 <Convenios />
+                <Convenios1 />
             </main>
         </div>
     );

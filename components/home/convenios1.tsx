@@ -1,70 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
-type Noticia = {
-    slug: string;
-    titulo: string;
-    resumo: string;
-    data: string;
-    imagem: string;
-    tags: string[];
-};
-
-// substitua pelas 8 últimas notícias reais (via fetch/CMS)
-const noticias: Noticia[] = [
-    {
-        slug: "noticia-1",
-        titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
-        data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente5.jpg",
-        tags: ["noticia", "tag2"],
-    },
-    {
-        slug: "noticia-2",
-        titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
-        data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente3.jpg",
-        tags: ["noticia", "tag2"],
-    },
-    {
-        slug: "noticia-3",
-        titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
-        data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/nefruza_edit.jpg",
-        tags: ["noticia", "tag2"],
-    },
-    {
-        slug: "noticia-4",
-        titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
-        data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente5.jpg",
-        tags: ["noticia", "tag2"],
-    },
-    {
-        slug: "noticia-5",
-        titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
-        data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente3.jpg",
-        tags: ["noticia", "tag2"],
-    },
-    {
-        slug: "noticia-6",
-        titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
-        data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/nefruza_edit.jpg",
-        tags: ["noticia", "tag2"],
-    },
+const convenios = [
+    { src: "/img/afrapep.webp", alt: "Convênio Afrapep Saúde" },
+    { src: "/img/assefaz.webp", alt: "Convênio Assefaz Saúde" },
+    { src: "/img/brad.webp", alt: "Convênio Bradesco Saúde" },
+    { src: "/img/camed.webp", alt: "Convênio Camed Saúde" },
+    { src: "/img/capesaude.webp", alt: "Convênio Capesaúde" },
+    { src: "/img/cassi.webp", alt: "Convênio Cassi" },
+    { src: "/img/comseder.webp", alt: "Convênio Comseder" },
+    { src: "/img/faschef.webp", alt: "Convênio Faschef" },
+    { src: "/img/fusex.webp", alt: "Convênio Fusex" },
+    { src: "/img/fusma.webp", alt: "Convênio Fusma" },
+    { src: "/img/gama.webp", alt: "Convênio Gama Saúde" },
+    { src: "/img/mediservice.webp", alt: "Convênio Mediservice" },
+    { src: "/img/Smile.webp", alt: "Convênio Smile" },
+    { src: "/img/sulamerica.webp", alt: "Convênio sulamerica" },
+    { src: "/img/hapvida.webp", alt: "Convênio Hapvida" },
+    { src: "/img/petro.webp", alt: "Convênio Petrobras" },
+    { src: "/img/unimed2.webp", alt: "Convênio Unimed" },
 ];
 
 export default function Convenios1() {
@@ -72,7 +30,11 @@ export default function Convenios1() {
         loop: false,
         align: "start",
         dragFree: true,
-        containScroll: "trimSnaps",
+        slidesToScroll: 1,
+        breakpoints: {
+            "(min-width: 640px)": { slidesToScroll: 2 },
+            "(min-width: 1024px)": { slidesToScroll: 3 },
+        },
     });
 
     const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -108,92 +70,97 @@ export default function Convenios1() {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="w-full bg-white overflow-x-clip py-24">
-            {/* header + botões: preso ao max-w-6xl, igual ao resto do site */}
-            <div className="max-w-6xl mx-auto flex items-end justify-between mb-8 px-4 xl:px-0">
-                <h2 className="text-3xl font-title text-nef-700">
-                    Últimas notícias
-                </h2>
+        <div
+            id="diferenciais"
+            className={`
+                flex 
+                items-start justify-center 
+                w-full bg-white overflow-x-clip
+                px-4 py-24
+            `}
+        >
+            <div className="flex flex-col w-full max-w-6xl">
+                <div
+                    className={`
+                        flex flex-col items-start justify-start 
+                        w-full m-auto relative mb-8
+                        text-center
+                    `}
+                >
+                    <h1 className="text-3xl sm:text-3xl mb-4 font-title w-full mx-auto">
+                        Parceiros no{" "}
+                        <strong className="font-extrabold">cuidado</strong> com
+                        a sua <strong className="font-extrabold">saúde</strong>
+                    </h1>
+                    <h2 className="text-xl w-full">
+                        Aceitamos diversos convênios para que você tenha acesso
+                        a um atendimento de excelência.
+                    </h2>
+                </div>
 
-                <div className="flex gap-2">
+                {/* Slider de convênios */}
+                <div className="relative w-full mx-auto">
+                    {/* Viewport */}
+                    <div className="overflow-hidden" ref={emblaRef}>
+                        {/* Container — uma única linha horizontal */}
+                        <div className="flex touch-pan-y">
+                            {convenios.map((item) => (
+                                <div
+                                    key={item.src}
+                                    className={`
+                                        flex-none
+                                        w-1/2 sm:w-1/3 lg:w-1/4
+                                        flex items-center justify-center
+                                        px-2
+                                    `}
+                                >
+                                    <Image
+                                        src={item.src}
+                                        alt={item.alt}
+                                        width={210}
+                                        height={220}
+                                        className="w-full h-auto p-4 object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Setas */}
                     <button
                         type="button"
                         onClick={scrollPrev}
                         disabled={!canScrollPrev}
-                        className="p-3 rounded-xl bg-nef-700 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
+                        aria-label="Anterior"
+                        className={`
+                            absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1/2
+                            z-10 flex h-10 w-10 items-center justify-center
+                            rounded-full bg-white shadow-md border border-zinc-200
+                            transition-opacity duration-200
+                            hover:bg-zinc-50
+                            disabled:opacity-0 disabled:pointer-events-none
+                        `}
                     >
-                        <FaChevronLeft className="text-xl text-white" />
+                        <FaChevronLeft className="text-nef-600" size={16} />
                     </button>
                     <button
                         type="button"
                         onClick={scrollNext}
                         disabled={!canScrollNext}
-                        className="p-3 rounded-xl bg-nef-700 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
+                        aria-label="Próximo"
+                        className={`
+                            absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2
+                            z-10 flex h-10 w-10 items-center justify-center
+                            rounded-full bg-white shadow-md border border-zinc-200
+                            transition-opacity duration-200
+                            hover:bg-zinc-50
+                            disabled:opacity-0 disabled:pointer-events-none
+                        `}
                     >
-                        <FaChevronRight className="text-xl text-white" />
+                        <FaChevronRight className="text-nef-600" size={16} />
                     </button>
                 </div>
             </div>
-
-            {/* viewport: fora do max-w-6xl, com padding-left calculado
-               pra alinhar o 1º card com o header acima, e vazar à direita */}
-            <div
-                className="overflow-hidden pl-[max(1rem,calc((100vw-72rem)/2+1rem))]"
-                ref={emblaRef}
-            >
-                <div className="flex gap-6">
-                    {noticias.map((noticia) => (
-                        <Link
-                            href={`/noticias/${noticia.slug}`}
-                            key={noticia.slug}
-                            className={`
-                                flex-none w-[85%] sm:w-[60%] md:w-[45%] lg:w-[31%]
-                                rounded-3xl overflow-hidden bg-nef-50
-                                border border-transparent hover:border-nef-400
-                                transition-all group
-                            `}
-                        >
-                            <div className="relative w-full aspect-5/3">
-                                <Image
-                                    src={noticia.imagem}
-                                    alt={noticia.titulo}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-col items-start justify-start">
-                                <span className="text-xs text-nef-600 font-bold uppercase">
-                                    {noticia.data} · {noticia.tags.join(", ")}
-                                </span>
-                                <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
-                                    {noticia.titulo}
-                                </h3>
-                                <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
-                                    {noticia.resumo}
-                                </p>
-                                <span
-                                    className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
-                                >
-                                    Leia mais →
-                                </span>
-                            </div>
-                        </Link>
-                    ))}
-
-                    {/* espaçador pra sobrar respiro depois do último card ao vazar até a borda */}
-                    <div className="flex-none w-4 lg:w-[calc((100vw-72rem)/2)]" />
-                </div>
-            </div>
-
-            {/* CTA "ver todas", preso de volta ao max-w-6xl */}
-            <div className="max-w-6xl mx-auto flex justify-end mt-8">
-                <Link
-                    href="/noticias"
-                    className="flex items-center gap-2 text-nef-700 font-bold hover:gap-3 transition-all"
-                >
-                    Ver todas as notícias <FaArrowRight />
-                </Link>
-            </div>
-        </section>
+        </div>
     );
 }

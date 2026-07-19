@@ -13,35 +13,24 @@ import {
     FaHeartPulse,
 } from "react-icons/fa6";
 
-const diferenciais = [
-    {
-        titulo: "Diferencial",
-        descricao:
-            "Todas as instalações são novas e contamos com maquinas de ultima geração, garantindo uma maior segurança para os nossos pacientes e colaborados.",
-        IconTop: FaHouseChimneyMedical,
-        IconBottom: FaKitMedical,
-    },
-    {
-        titulo: "Instalações",
-        descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. ",
-        IconTop: FaHouseChimneyMedical,
-        IconBottom: FaKitMedical,
-    },
-    {
-        titulo: "Profissionais Qualificados",
-        descricao:
-            "Nossa equipe é composta por profissionais altamente qualificados e experientes, garantindo o melhor atendimento para os nossos pacientes.",
-        IconTop: FaUserDoctor,
-        IconBottom: FaHeartPulse,
-    },
-    {
-        titulo: "Diferencial",
-        descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien.",
-        IconTop: FaHouseChimneyMedical,
-        IconBottom: FaKitMedical,
-    },
+const convenios = [
+    { src: "/img/afrapep.webp", alt: "Convênio Afrapep Saúde" },
+    { src: "/img/assefaz.webp", alt: "Convênio Assefaz Saúde" },
+    { src: "/img/brad.webp", alt: "Convênio Bradesco Saúde" },
+    { src: "/img/camed.webp", alt: "Convênio Camed Saúde" },
+    { src: "/img/capesaude.webp", alt: "Convênio Capesaúde" },
+    { src: "/img/cassi.webp", alt: "Convênio Cassi" },
+    { src: "/img/comseder.webp", alt: "Convênio Comseder" },
+    { src: "/img/faschef.webp", alt: "Convênio Faschef" },
+    { src: "/img/fusex.webp", alt: "Convênio Fusex" },
+    { src: "/img/fusma.webp", alt: "Convênio Fusma" },
+    { src: "/img/gama.webp", alt: "Convênio Gama Saúde" },
+    { src: "/img/mediservice.webp", alt: "Convênio Mediservice" },
+    { src: "/img/Smile.webp", alt: "Convênio Smile" },
+    { src: "/img/sulamerica.webp", alt: "Convênio sulamerica" },
+    { src: "/img/hapvida.webp", alt: "Convênio Hapvida" },
+    { src: "/img/petro.webp", alt: "Convênio Petrobras" },
+    { src: "/img/unimed2.webp", alt: "Convênio Unimed" },
 ];
 
 export default function Convenios() {
@@ -117,69 +106,16 @@ export default function Convenios() {
                         text-center
                     `}
                 >
-                    <Image 
-                        src="/img/afrapep.png"
-                        alt="Convênio Afrapep Saúde"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/assefaz.jpg"
-                        alt="Convênio Assefaz Saúde"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/brad.webp"
-                        alt="Convênio Bradesco Saúde"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/camed.webp"
-                        alt="Convênio Camed Saúde"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/capesaude.webp"
-                        alt="Convênio Capesaúde"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/cassi.webp"
-                        alt="Convênio Cassi"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/hapvida.webp"
-                        alt="Convênio Hapvida"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/petro.webp"
-                        alt="Convênio Petrobras"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
-                    <Image 
-                        src="/img/unimed2.webp"
-                        alt="Convênio Unimed"
-                        width={210}
-                        height={220}
-                        className="w-1/2 sm:w-1/3 p-4"
-                    />
+                    {convenios.map((convenio, index) => (
+                        <Image
+                            src={convenio.src}
+                            alt={convenio.alt}
+                            key={index}
+                            width={210}
+                            height={220}
+                            className="w-1/2 sm:w-1/3 p-4"
+                        />
+                    ))}
                 </div>
             </div>
         </div>

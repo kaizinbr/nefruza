@@ -8,13 +8,13 @@ import { DocumentMedicineIcon } from "@solar-icons/react/broken/document-medicin
 
 const slides = [
     {
-        desktop: "/banner/teste.webp",
+        desktop: "/banner/desktop.webp",
         mobile: "/banner/mobile.webp",
         alt: "Nefruza - Serviços Nefrológicos",
     },
     {
-        desktop: "/banner/teste2.webp",
-        mobile: "/banner/mobile2.webp",
+        desktop: "/banner/desktop.webp",
+        mobile: "/banner/mobile.webp",
         alt: "Nefruza - Cuidado especializado",
     },
 ];
@@ -47,8 +47,7 @@ export default function Banner() {
 
     return (
         <div className="relative flex w-full flex-col items-center min-h-[60vh] sm:min-h-[80vh] mb-84">
-            {/* Slider */}
-            <div className="static lg:absolute inset-0 w-full overflow-hidden bg-nef-800">
+            <div className="relative w-full h-[80vh] sm:h-[80vh] lg:absolute lg:inset-0 lg:h-full overflow-hidden bg-nef-800">
                 {slides.map((slide, index) => (
                     <div
                         key={index}
@@ -72,7 +71,7 @@ export default function Banner() {
                             fill
                             priority={index === 0}
                             sizes="100vw"
-                            className="object-cover sm:hidden"
+                            className="object-cover lg:hidden"
                         />
                         {/* subtle overlay for legibility of any future overlaid text */}
                         <div className="absolute inset-0 bg-black/10" />
@@ -114,7 +113,7 @@ export default function Banner() {
                 </button>
 
                 {/* Dots — logo acima do card de menu absoluto */}
-                <div className="absolute inset-x-0 bottom-36 z-20 flex items-center justify-center gap-2 sm:bottom-32">
+                <div className="absolute inset-x-0 bottom-20 lg:bottom-36 z-20 flex items-center justify-center gap-2">
                     {slides.map((_, index) => (
                         <button
                             key={index}
@@ -136,6 +135,7 @@ export default function Banner() {
                 className={`
                     static lg:absolute lg:left-1/2 top-full
                     lg:-translate-x-1/2 lg:-translate-y-1/3 
+                    -mt-16 lg:mt-0
 
                     grid-cols-2 gap-4 z-30 grid w-[92%] max-w-5xl
                     rounded-3xl bg-white p-6 shadow-xl
@@ -153,7 +153,7 @@ export default function Banner() {
                             bg-white px-4 py-8 text-center shadow-sm
                             transition-all duration-300
                             hover:-translate-y-1 hover:border-nef-500 hover:shadow-lg
-                            sm:h-56 sm:w-40 sm:px-8 sm:py-12
+                            sm:h-56 sm:w-36 sm:px-8 sm:py-12
                         `}
                     >
                         <div

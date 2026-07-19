@@ -15,14 +15,14 @@ import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 const navigationItems = [
     { href: "/", label: "Home" },
     { href: "/contato", label: "Contato" },
-    { href: "/servicos", label: "Serviços" },
+    { href: "/#servicos", label: "Serviços" },
     { href: "/convenios", label: "Convênios" },
     { href: "/blog", label: "Notícias" },
     { href: "/equipe", label: "Equipe" },
     { href: "/institucional", label: "Sobre" },
 ];
 
-const HEADER_HEIGHT = 76;
+const HEADER_HEIGHT = 96;
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -67,6 +67,7 @@ export default function Navbar() {
         <>
             <header
                 className={`fixed inset-x-0 top-0 z-40 hidden w-full items-center justify-center border-b border-zinc-200 bg-white px-16 py-4 
+                     h-24
                     transition-transform duration-500 ease-out lg:flex ${
                     scrolled ? "-translate-y-full" : "translate-y-0"
                 }`}
@@ -74,7 +75,7 @@ export default function Navbar() {
                 <nav className="flex w-full max-w-7xl items-center justify-between">
                     <Link href="/" className="flex items-center gap-4">
                         <Image
-                            src="/img/logo.png"
+                            src="/img/logo.webp"
                             alt="Nefruza Logo"
                             width={170}
                             height={32}
@@ -113,7 +114,7 @@ export default function Navbar() {
             >
                 <Link href="/" className="flex items-center gap-4">
                     <Image
-                        src="/img/logo.png"
+                        src="/img/logo.webp"
                         alt="Nefruza Logo"
                         width={150}
                         height={28}
@@ -154,7 +155,7 @@ export default function Navbar() {
                                 onClick={() => setMenuOpen(false)}
                             >
                                 <Image
-                                    src="/img/logo.png"
+                                    src="/img/logo.webp"
                                     alt="Nefruza Logo"
                                     width={150}
                                     height={28}

@@ -8,7 +8,14 @@ import { TbMailFilled, TbMapPinFilled } from "react-icons/tb";
 
 export default function Home() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center  font-sans py-16 md:py-32 ">
+        <div className="flex flex-col flex-1 items-center justify-center font-sans ">
+            <div className="h-98 w-full bg-nef-700 mb-16 flex flex-col items-start justify-center">
+                <div className=" max-w-6xl w-full mx-auto px-4">
+                    <h1 className="text-3xl font-title font-extrabold text-white text-start py-8  max-w-6xl mx-auto">
+                        Contato
+                    </h1>
+                </div>
+            </div>
             <main
                 className={`
                     flex flex-1 w-full max-w-6xl flex-col lg:flex-row items-center justify-between sm:items-start
@@ -22,9 +29,9 @@ export default function Home() {
                         w-full
                     `}
                 >
-                    <span className="text-sm font-bold text-nef-500 uppercase">
+                    {/* <span className="text-sm font-bold text-nef-500 uppercase">
                         contato
-                    </span>
+                    </span> */}
                     <h1 className="text-3xl font- text-center mb-4 font-title">
                         Fale conosco
                     </h1>

@@ -36,7 +36,7 @@ const noticias: Noticia[] = [
     {
         slug: "noticia-3",
         titulo: "Lorem ipsum dolor sit amet",
-        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
+        resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros",
         data: "17/07/2026",
         imagem: "https://www.nefruza.com.br/images/nefruza_edit.jpg",
         tags: ["noticia", "tag2"],
@@ -135,8 +135,6 @@ export default function UltimasNoticias() {
                 </div>
             </div>
 
-            {/* viewport: fora do max-w-6xl, com padding-left calculado
-               pra alinhar o 1º card com o header acima, e vazar à direita */}
             <div
                 className="overflow-hidden pl-[max(1rem,calc((100vw-72rem)/2+1rem))]"
                 ref={emblaRef}
@@ -144,10 +142,11 @@ export default function UltimasNoticias() {
                 <div className="flex gap-6">
                     {noticias.map((noticia) => (
                         <Link
-                            href={`/noticias/${noticia.slug}`}
+                            href={`/blog/${noticia.slug}`}
                             key={noticia.slug}
                             className={`
                                 flex-none w-[85%] sm:w-[60%] md:w-[45%] lg:w-[31%]
+                                flex flex-col
                                 rounded-3xl overflow-hidden bg-nef-50
                                 border border-transparent hover:border-nef-400
                                 transition-all group
@@ -161,19 +160,20 @@ export default function UltimasNoticias() {
                                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
-                            <div className="p-6 flex flex-col items-start justify-start">
-                                <span className="text-xs text-nef-600 font-bold uppercase">
-                                    {noticia.data} · {noticia.tags.join(", ")}
-                                </span>
-                                <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
-                                    {noticia.titulo}
-                                </h3>
-                                <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
-                                    {noticia.resumo}
-                                </p>
-                                <span
-                                    className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
-                                >
+                            <div className="p-6 flex flex-1 flex-col items-start justify-between">
+                                <div>
+                                    <span className="text-xs text-nef-600 font-bold uppercase">
+                                        {noticia.data} ·{" "}
+                                        {noticia.tags.join(", ")}
+                                    </span>
+                                    <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
+                                        {noticia.titulo}
+                                    </h3>
+                                    <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
+                                        {noticia.resumo}
+                                    </p>
+                                </div>
+                                <span className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors justify-self-end">
                                     Leia mais →
                                 </span>
                             </div>
@@ -186,7 +186,7 @@ export default function UltimasNoticias() {
             </div>
 
             {/* CTA "ver todas", preso de volta ao max-w-6xl */}
-            <div className="max-w-6xl mx-auto flex justify-end mt-8">
+            <div className="max-w-6xl mx-auto flex justify-end mt-8 mr-6 md:mr-auto">
                 <Link
                     href="/noticias"
                     className="flex items-center gap-2 text-nef-700 font-bold hover:gap-3 transition-all"

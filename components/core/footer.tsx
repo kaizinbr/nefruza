@@ -65,7 +65,7 @@ export default function Footer() {
                         Nossa estrutura
                     </Link>
                     <Link
-                        href="/institucional/propósito-e-valores"
+                        href="/institucional/proposito-e-valores"
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
@@ -200,7 +200,7 @@ export default function Footer() {
                 </div>
                 <div className="flex flex-col items-start gap-2 w-1/1 lg:w-1/4 xl:max-w-1/5">
                     <Image
-                        src="/img/logo.png"
+                        src="/img/logo.webp"
                         alt="Nefruza Logo"
                         width={144}
                         height={32}
