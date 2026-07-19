@@ -1,4 +1,5 @@
 import Banner from "@/components/home/banner";
+import Convenios from "@/components/home/convenios";
 import Diferenciais from "@/components/home/diferenciais";
 import Estrutura from "@/components/home/estrutura";
 import Noticias from "@/components/home/noticias";
@@ -7,7 +8,7 @@ import Image from "next/image";
 
 export default function Home() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center bg-white font-sans">
+        <div className="flex flex-col flex-1 items-center justify-center bg-zinc-100 font-sans">
             <main
                 className={`
                     flex flex-1 w-full flex-col items-center justify-between pb-32 px-0 sm:items-start
@@ -18,6 +19,7 @@ export default function Home() {
                 <Diferenciais />
                 <Noticias />
                 <Estrutura />
+                <Convenios />
             </main>
         </div>
     );

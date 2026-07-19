@@ -128,6 +128,14 @@ export default function Footer() {
                     >
                         Equipe
                     </Link>
+                    <Link
+                        href="/contato/ouvidoria"
+                        
+                        rel="noopener noreferrer"
+                        className="text-zinc-50 hover:text-nef-200 transition-colors"
+                    >
+                        Ouvidoria
+                    </Link>
                 </div>
                 <div className="flex flex-col gap-2 md:w-1/5 lg:w-auto w-1/1">
                     <Link
@@ -135,7 +143,7 @@ export default function Footer() {
                         rel="noopener noreferrer"
                         className="text-zinc-50 hover:text-nef-200 font-bold uppercase font-title transition-colors"
                     >
-                        Por dentro
+                        Informativo
                     </Link>
                     <Link
                         href="/blog"
@@ -164,6 +172,30 @@ export default function Footer() {
                         className="text-zinc-50 hover:text-nef-200 transition-colors"
                     >
                         Comunicados
+                    </Link>
+                    <Link
+                        href="/politica-de-privacidade"
+                        
+                        rel="noopener noreferrer"
+                        className="text-zinc-50 hover:text-nef-200 transition-colors"
+                    >
+                        Política de privacidade
+                    </Link>
+                    <Link
+                        href="/termos-de-uso"
+                        
+                        rel="noopener noreferrer"
+                        className="text-zinc-50 hover:text-nef-200 transition-colors"
+                    >
+                        Termos de uso
+                    </Link>
+                    <Link
+                        href="/codigo-de-etica"
+                        
+                        rel="noopener noreferrer"
+                        className="text-zinc-50 hover:text-nef-200 transition-colors"
+                    >
+                        Código de ética
                     </Link>
                 </div>
                 <div className="flex flex-col items-start gap-2 w-1/1 lg:w-1/4 xl:max-w-1/5">

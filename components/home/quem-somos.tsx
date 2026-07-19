@@ -49,14 +49,6 @@ export default function AboutUs() {
                         Saiba mais
                     </button>
                 </div>
-                <div className="w-1/2 flex items-center justify-center p-4">
-                    <div
-                        className={`
-                        size-98 bg-nef-400 rounded-3xl
-                        rotate-15 
-                    `}
-                    />
-                </div>
             </div>
         </div>
     );
