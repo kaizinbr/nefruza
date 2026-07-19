@@ -188,7 +188,7 @@ export default function UltimasNoticias() {
             {/* CTA "ver todas", preso de volta ao max-w-6xl */}
             <div className="max-w-6xl mx-auto flex justify-end mt-8 mr-6 md:mr-auto">
                 <Link
-                    href="/noticias"
+                    href="/blog"
                     className="flex items-center gap-2 text-nef-700 font-bold hover:gap-3 transition-all"
                 >
                     Ver todas as notícias <FaArrowRight />
