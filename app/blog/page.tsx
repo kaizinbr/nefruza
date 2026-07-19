@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type Noticia = {
@@ -135,7 +136,9 @@ export default function Home() {
                 <h1 className="text-4xl font- text-center mb-4 font-title">
                     Notícias e novidades
                 </h1>
-                <CategoryFilters />
+                <Suspense fallback={<div className="mb-8" />}>
+                    <CategoryFilters />
+                </Suspense>
                 <div className="flex flex-row w-full gap-8 justify-between flex-wrap mb-8">
                     {noticias.map((noticia) => (
                         <Link
