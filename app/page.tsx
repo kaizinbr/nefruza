@@ -22,7 +22,6 @@ export default function Home() {
                 <Servicos />
                 <Noticias />
                 <Estrutura />
-                <Convenios />
                 <Convenios1 />
             </main>
         </div>
