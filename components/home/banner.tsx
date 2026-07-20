@@ -20,11 +20,11 @@ const slides = [
 ];
 
 const menuItems = [
-    { icon: CallChatRoundedIcon, label: "Quem Somos" },
+    { icon: CallChatRoundedIcon, label: "Sobre nós" },
     { icon: CallChatRoundedIcon, label: "Contato" },
-    { icon: DocumentMedicineIcon, label: "Nossos serviços" },
+    { icon: DocumentMedicineIcon, label: "Serviços" },
     { icon: UserIdIcon, label: "Notícias" },
-    { icon: UserIdIcon, label: "Convênios aceitos" },
+    { icon: UserIdIcon, label: "Convênios" },
 ];
 
 const AUTOPLAY_INTERVAL = 6000;
@@ -160,12 +160,14 @@ export default function Banner() {
                             className={`
                                 flex h-14 w-14 items-center justify-center rounded-full
                                 bg-nef-50 text-nef-600 transition-colors duration-300
-                                group-hover:bg-nef-600 group-hover:text-white
+                                group-hover:bg-nef-200 group-hover:text-white
                                 sm:h-16 sm:w-16
                             `}
                         >
-                            <Icon size={28} className="sm:hidden" />
+                            {/* <Icon size={28} className="sm:hidden" />
                             <Icon size={32} className="hidden sm:block" />
+                             */}
+                             <Image alt="/img/canada.png" src="/img/canada.png" width={56} height={56} />
                         </div>
                         <h3 className="text-sm font-semibold text-zinc-800 sm:text-base">
                             {label}

@@ -51,8 +51,8 @@ export default function RootLayout({
                 <ColorSchemeScript />
             </head>
             <body className="min-h-full flex flex-col">
-                <Navbar />
-                <MantineProvider>{children}</MantineProvider>
+                <MantineProvider>
+                <Navbar />{children}</MantineProvider>
                 <Footer />
             </body>
         </html>

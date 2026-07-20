@@ -14,7 +14,7 @@ export default function AboutUs() {
             >
                 <div
                     className={`
-                        flex flex-row 
+                        flex flex-col lg:flex-row 
                         items-center justify-center 
                         w-full max-w-6xl mx-auto 
                         relative 
@@ -24,7 +24,8 @@ export default function AboutUs() {
                         className={`
                                 flex flex-col
                                 items-start justify-center
-                                 mr-12 w-1/2
+                                w-full mb-8 lg:mb-0
+                                lg:mr-12 lg:w-1/2
                             `}
                     >
                         <h1 className="text-3xl font- text-center mb-4 font-title">
@@ -51,7 +52,7 @@ export default function AboutUs() {
                 <div
                     className={`
                         flex items-center justify-center
-                        w-1/2 h-full relative
+                        w-8/10 lg:w-1/2 h-full relative
                     `}
                 >
                     <Image
@@ -85,16 +86,16 @@ export default function AboutUs() {
                     <div
                         className={`
                         flex flex-col
-                        md:items-start items-center justify-center
+                        md:items-start items-start justify-start
                         w-full relative
-
+                        min-h-96 md:min-h-auto
                         md:pl-88 md:pr-8 lg:pl-104 lg:pr-16
                     `}
                     >
                         <h1 className="text-2xl lg:text-3xl w-full text-start mb-4 font-title">
                             Pioneirismo que impacta vidas
                         </h1>
-                        <p className="text-start lg:text-lg text-muted-foreground pb-2">
+                        <p className="text-start lg:text-lg text-muted-foreground pb-2 max-w-104 md:max-w-full">
                             Ao longo de 35 anos de história, a Nefruza tem se
                             destacado como referência em serviços de saúde
                             renal, impactando milhares de vidas com seu
@@ -107,7 +108,8 @@ export default function AboutUs() {
                                     width={500}
                                     height={400}
                                     className={`
-                                        md:absolute
+                                        absolute
+                                        -right-6
                                         md:-left-16 md:-top-12 w-96
                                 
                                         flex items-center justify-center

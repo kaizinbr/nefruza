@@ -139,11 +139,11 @@ export default function Diferenciais() {
                                             mx-auto relative
                                         `}
                                     >
-                                        <div className="p-6 bg-nef-700 rounded-2xl shadow-lg absolute -top-10 sm:top-6 -left-4 sm:-left-12 z-10">
-                                            <item.IconTop className="text-xl sm:text-3xl text-nef-50" />
+                                        <div className="p-4 sm:p-5 bg-nef-700 rounded-2xl shadow-lg absolute -top-10 sm:top-6 -left-2 sm:-left-12 z-10">
+                                            <item.IconTop className="text-2xl sm:text-3xl text-nef-50" />
                                         </div>
-                                        <div className="p-6 bg-nef-400 rounded-2xl shadow-lg absolute -bottom-10 sm:bottom-6 -right-2 sm:-right-8 z-10">
-                                            <item.IconBottom className="text-xl sm:text-3xl text-nef-50" />
+                                        <div className="p-4 sm:p-5 bg-nef-400 rounded-2xl shadow-lg absolute -bottom-10 sm:bottom-6 -right-2 sm:-right-8 z-10">
+                                            <item.IconBottom className="text-2xl sm:text-3xl text-nef-50" />
                                         </div>
                                         <div
                                             className={`
