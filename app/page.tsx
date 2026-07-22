@@ -1,6 +1,5 @@
 import Banner from "@/components/home/banner";
 import Convenios from "@/components/home/convenios";
-import Convenios1 from "@/components/home/convenios1";
 import Diferenciais from "@/components/home/diferenciais";
 import Estrutura from "@/components/home/estrutura";
 import Noticias from "@/components/home/noticias";
@@ -22,7 +21,7 @@ export default function Home() {
                 <Servicos />
                 <Noticias />
                 <Estrutura />
-                <Convenios1 />
+                <Convenios />
             </main>
         </div>
     );

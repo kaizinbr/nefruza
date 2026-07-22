@@ -4,39 +4,41 @@ import Image from "next/image";
 import Link from "next/link";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-import {
-    FaChevronLeft,
-    FaChevronRight,
-    FaHouseChimneyMedical,
-    FaUserDoctor,
-    FaKitMedical,
-    FaHeartPulse,
-} from "react-icons/fa6";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 const convenios = [
     { src: "/img/afrapep.webp", alt: "Convênio Afrapep Saúde" },
+    { src: "/img/amil2.webp", alt: "Convênio Amil Saúde" },
     { src: "/img/assefaz.webp", alt: "Convênio Assefaz Saúde" },
     { src: "/img/brad.webp", alt: "Convênio Bradesco Saúde" },
-    { src: "/img/camed.webp", alt: "Convênio Camed Saúde" },
-    { src: "/img/capesaude.webp", alt: "Convênio Capesaúde" },
+    // { src: "/img/camed.webp", alt: "Convênio Camed Saúde" },
+    { src: "/img/capesaude.webp", alt: "Convênio CAPESESP" },
     { src: "/img/cassi.webp", alt: "Convênio Cassi" },
     { src: "/img/comseder.webp", alt: "Convênio Comseder" },
-    { src: "/img/faschef.webp", alt: "Convênio Faschef" },
-    { src: "/img/fusex.webp", alt: "Convênio Fusex" },
-    { src: "/img/fusma.webp", alt: "Convênio Fusma" },
+    { src: "/img/funasa.png", alt: "Convênio Funasa" },
+    // { src: "/img/faschef.webp", alt: "Convênio Faschef" },
+    // { src: "/img/fusex.webp", alt: "Convênio Fusex" },
+    // { src: "/img/fusma.webp", alt: "Convênio Fusma" },
     { src: "/img/gama.webp", alt: "Convênio Gama Saúde" },
-    { src: "/img/mediservice.webp", alt: "Convênio Mediservice" },
+    { src: "/img/geap.webp", alt: "Convênio Geap Saúde" },
+    // { src: "/img/mediservice.webp", alt: "Convênio Mediservice" },
     { src: "/img/smile.webp", alt: "Convênio Smile" },
-    { src: "/img/sulamerica.webp", alt: "Convênio sulamerica" },
+    // { src: "/img/sulamerica.webp", alt: "Convênio sulamerica" },
     { src: "/img/hapvida.webp", alt: "Convênio Hapvida" },
     { src: "/img/petro.webp", alt: "Convênio Petrobras" },
     { src: "/img/unimed2.webp", alt: "Convênio Unimed" },
 ];
 
-export default function Convenios() {
+export default function Convenios1() {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
-        align: "center",
+        align: "start",
+        dragFree: true,
+        slidesToScroll: 1,
+        breakpoints: {
+            "(min-width: 640px)": { slidesToScroll: 2 },
+            "(min-width: 1024px)": { slidesToScroll: 3 },
+        },
     });
 
     const [canScrollPrev, setCanScrollPrev] = useState(false);
@@ -99,24 +101,75 @@ export default function Convenios() {
                         a um atendimento de excelência.
                     </h2>
                 </div>
-                <div
-                    className={`
-                        flex flex-row flex-wrap items-start justify-start 
-                        w-full lg:w-8/10 m-auto relative lg:pr-8 mb-8 lg:mb-auto
-                        text-center
-                    `}
-                >
-                    {convenios.map((convenio, index) => (
-                        <Image
-                            src={convenio.src}
-                            alt={convenio.alt}
-                            key={index}
-                            width={210}
-                            height={220}
-                            className="w-1/2 sm:w-1/3 p-4"
-                        />
-                    ))}
+
+                {/* Slider de convênios */}
+                <div className="relative w-full mx-auto">
+                    {/* Viewport */}
+                    <div className="overflow-hidden" ref={emblaRef}>
+                        {/* Container — uma única linha horizontal */}
+                        <div className="flex touch-pan-y">
+                            {convenios.map((item) => (
+                                <div
+                                    key={item.src}
+                                    className={`
+                                        flex-none
+                                        w-1/2 sm:w-1/3 lg:w-1/4
+                                        flex items-center justify-center
+                                        px-2
+                                    `}
+                                >
+                                    <Image
+                                        src={item.src}
+                                        alt={item.alt}
+                                        width={210}
+                                        height={220}
+                                        className="w-full h-auto p-4 object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Setas */}
+                    <button
+                        type="button"
+                        onClick={scrollPrev}
+                        disabled={!canScrollPrev}
+                        aria-label="Anterior"
+                        className={`
+                            absolute left-2 top-1/2 -translate-y-1/2 -translate-x-1/2
+                            z-10 flex h-10 w-10 items-center justify-center
+                            rounded-xl bg-white shadow-md border border-zinc-200
+                            transition-opacity duration-200
+                            hover:bg-zinc-50
+                            disabled:opacity-0 disabled:pointer-events-none
+                        `}
+                    >
+                        <FaChevronLeft className="text-nef-600" size={16} />
+                    </button>
+                    <button
+                        type="button"
+                        onClick={scrollNext}
+                        disabled={!canScrollNext}
+                        aria-label="Próximo"
+                        className={`
+                            absolute right-2 top-1/2 -translate-y-1/2 translate-x-1/2
+                            z-10 flex h-10 w-10 items-center justify-center
+                            rounded-xl bg-white shadow-md border border-zinc-200
+                            transition-opacity duration-200
+                            hover:bg-zinc-50
+                            disabled:opacity-0 disabled:pointer-events-none
+                        `}
+                    >
+                        <FaChevronRight className="text-nef-600" size={16} />
+                    </button>
                 </div>
+                    <Link
+                        href="/convenios"
+                        className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors mx-auto"
+                    >
+                        Ver todos
+                    </Link>
             </div>
         </div>
     );

@@ -1,16 +1,17 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function AboutUs() {
     return (
         <>
             <div
                 className={`
-            flex flex-row 
-            items-start justify-center 
-            w-full overflow-x-clip
-            px-4 relative 
-            py-24
-        `}
+                    flex flex-row 
+                    items-start justify-center 
+                    w-full overflow-x-clip
+                    px-4 relative 
+                    py-24 mb-16
+                `}
             >
                 <div
                     className={`
@@ -28,41 +29,42 @@ export default function AboutUs() {
                                 lg:mr-12 lg:w-1/2
                             `}
                     >
-                        <h1 className="text-3xl font- text-center mb-4 font-title">
+                        <span className="text-sm font-bold text-nef-500 uppercase">
                             Quem somos
+                        </span>
+                        <h1 className="text-3xl font- text-start mb-4 font-title">
+                            Pioneirismo que se tornou{" "}
+                            <strong className="font-extrabold">tradição</strong>
                         </h1>
                         <p className="text-start text-muted-foreground pb-2">
-                            A NEFRUZA - Serviços Nefrológicos Fiúza Chaves Ltda
-                            é pioneira no serviço de hemodiálise de João Pessoa.
-                            Foi fundada em 1979 pelo nefrologista Dr. Mário de
-                            Oliveira Fiúza Chaves, também pioneiro em
-                            transplante renal da Paraíba.
+                            A Nefruza é pioneira no serviço de hemodiálise de
+                            João Pessoa. Fundada em 1979 pelo nefrologista Dr.
+                            Mário de Oliveira Fiúza Chaves, médico pioneiro em
+                            transplante renal na Paraíba, a clínica nasceu do
+                            compromisso de oferecer um tratamento humano e
+                            próximo para quem mais precisa.
                         </p>
                         <p className="text-start text-muted-foreground pb-6">
-                            Com mais de 35 anos de experiência, um dos seus
-                            principais serviços é a diálise, atendendo
-                            especialmente aos pacientes que apresentam
+                            Há mais de <strong>47 anos</strong> cuidamos de pacientes com
                             insuficiência renal crônica, aguda ou crônica
-                            agudizada.
+                            agudizada, unindo experiência clínica consolidada a
+                            um atendimento acolhedor, geração após geração.
                         </p>
-                        <button className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors">
+                        <Link href="#" className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors">
                             Saiba mais sobre nossa história
-                        </button>
+                        </Link>
                     </div>
-                <div
-                    className={`
+                    <div
+                        className={`
                         flex items-center justify-center
-                        w-8/10 lg:w-1/2 h-full relative
+                        w-full lg:w-1/2 min-h-full relative
+                        gap-4
                     `}
-                >
-                    <Image
-                        src="/img/teste-nefruza.png"
-                        alt="Quem somos"
-                        width={600}
-                        height={400}
-                        className="object-cover rounded-lg z-10"
-                    />
-                </div>
+                    >
+                        <div className="h-98 lg:h-145 w-78 rounded-2xl bg-nef-800 " />
+                        <div className="h-98 lg:h-145 w-56 rounded-2xl bg-nef-800 " />
+                        <div className="h-98 lg:h-145 w-44 rounded-2xl bg-nef-800 " />
+                    </div>
                 </div>
             </div>
             <div
@@ -101,13 +103,13 @@ export default function AboutUs() {
                             renal, impactando milhares de vidas com seu
                             compromisso com a excelência e inovação.
                         </p>
-                            <div className="">
-                                <Image
-                                    src="/img/impacto-vidas.webp"
-                                    alt="Impacto de vidas"
-                                    width={500}
-                                    height={400}
-                                    className={`
+                        <div className="">
+                            <Image
+                                src="/img/impacto-vidas.webp"
+                                alt="Impacto de vidas"
+                                width={500}
+                                height={400}
+                                className={`
                                         absolute
                                         -right-6
                                         md:-left-16 md:-top-12 w-96
@@ -115,8 +117,8 @@ export default function AboutUs() {
                                         flex items-center justify-center
                                         object-cover rounded-full z-10
                                     `}
-                                />
-                            </div>
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

@@ -52,7 +52,9 @@ export default function RootLayout({
             </head>
             <body className="min-h-full flex flex-col">
                 <MantineProvider>
-                <Navbar />{children}</MantineProvider>
+                    <Navbar />
+                    {children}
+                </MantineProvider>
                 <Footer />
             </body>
         </html>

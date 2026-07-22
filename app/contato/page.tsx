@@ -4,7 +4,7 @@ import FormContato from "@/components/contato/form";
 import Image from "next/image";
 import Link from "next/link";
 import { PiPhoneCallFill } from "react-icons/pi";
-import { TbMailFilled, TbMapPinFilled } from "react-icons/tb";
+import { TbMailFilled, TbBrandWhatsappFilled } from "react-icons/tb";
 
 export default function Home() {
     return (
@@ -29,13 +29,29 @@ export default function Home() {
                         Fale conosco
                     </h1>
                     <p className="text-start text-muted-foreground mb-2">
-                        Telefone Nefruza
+                        Telefones Nefruza
                     </p>
                     <Link
                         href="tel:(83) 3225-1619"
                         className="text-2xl font-bold text-zinc-900 flex flex-row items-center gap-2 hover:text-nef-900 transition-colors mb-2"
                     >
                         <PiPhoneCallFill /> (83) 3225-1619
+                    </Link>
+                    <Link
+                        href="tel:(83) 3225-1985"
+                        className="text-2xl font-bold text-zinc-900 flex flex-row items-center gap-2 hover:text-nef-900 transition-colors mb-2"
+                    >
+                        <PiPhoneCallFill /> (83) 3225-1985
+                    </Link>
+                    <p className="text-start text-muted-foreground my-2">
+                        WhatsApp Nefruza
+                    </p>
+                    <Link
+                        href="https://wa.me/5583999452332?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Vim%20pelo%20site%20da%20Nefruza."
+                            target="_blank"
+                        className="text-2xl font-bold text-zinc-900 flex flex-row items-center gap-2 hover:text-nef-900 transition-colors mb-2"
+                    >
+                        <TbBrandWhatsappFilled /> (83) 99945-2332
                     </Link>
                     <span className="text-sm text-zinc-600 mb-6">
                         Disponível de segunda a sexta-feira, das 8h às 18h.
