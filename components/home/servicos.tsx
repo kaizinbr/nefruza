@@ -61,6 +61,7 @@ export default function Servicos() {
                         flex flex-row flex-wrap items-center justify-start gap-4 
                         w-full lg:w-8/12 pt-8
                         p-4 lg:p-0
+                        -top-14 lg:top-0
                     `}
                     >
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">

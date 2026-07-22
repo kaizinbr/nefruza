@@ -19,7 +19,7 @@ type Noticia = {
 const noticias: Noticia[] = [
     {
         slug: "noticia-1",
-        titulo: "Lorem ipsum dolor sit amet",
+        titulo: "Como um acompanhamento psicológico profissional pode melhorar a qualidade de vida de pacientes de diálise",
         resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
         data: "17/07/2026",
         imagem: "https://www.nefruza.com.br/images/blog/blog-paciente5.jpg",
@@ -30,7 +30,7 @@ const noticias: Noticia[] = [
         titulo: "Lorem ipsum dolor sit amet",
         resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
         data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente3.jpg",
+        imagem: "/img/placeholder.webp",
         tags: ["noticia", "tag2"],
     },
     {
@@ -38,7 +38,7 @@ const noticias: Noticia[] = [
         titulo: "Lorem ipsum dolor sit amet",
         resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros",
         data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/nefruza_edit.jpg",
+        imagem: "/img/placeholder.webp",
         tags: ["noticia", "tag2"],
     },
     {
@@ -46,7 +46,7 @@ const noticias: Noticia[] = [
         titulo: "Lorem ipsum dolor sit amet",
         resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
         data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente5.jpg",
+        imagem: "/img/placeholder.webp",
         tags: ["noticia", "tag2"],
     },
     {
@@ -54,7 +54,7 @@ const noticias: Noticia[] = [
         titulo: "Lorem ipsum dolor sit amet",
         resumo: "onsectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. Nullam ac risus purus. Integer accumsan tellus metus, sed efficitur nibh condimentum vel. Fusce interdum purus sed odio finibus imperdiet. Vivamus non velit quis felis vestibulum faucibus at non augue. Suspendisse potenti. Phasellus vehicula eu enim a dictum. Vestibulum volutpat vehicula bibendum. Sed eget posuere dolor.",
         data: "17/07/2026",
-        imagem: "https://www.nefruza.com.br/images/blog/blog-paciente3.jpg",
+        imagem: "/img/placeholder.webp",
         tags: ["noticia", "tag2"],
     },
     {
@@ -110,90 +110,217 @@ export default function UltimasNoticias() {
     return (
         <section className="w-full bg-white overflow-x-clip py-24">
             {/* header + botões: preso ao max-w-6xl, igual ao resto do site */}
-            <div className="max-w-6xl mx-auto flex items-end justify-between mb-8 px-4 xl:px-0">
-                <h2 className="text-3xl font-title text-nef-700">
-                    Últimas notícias
-                </h2>
-
-                <div className="flex gap-2">
-                    <button
-                        type="button"
-                        onClick={scrollPrev}
-                        disabled={!canScrollPrev}
-                        className="p-3 rounded-xl bg-nef-700 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
-                    >
-                        <FaChevronLeft className="text-xl text-white" />
-                    </button>
-                    <button
-                        type="button"
-                        onClick={scrollNext}
-                        disabled={!canScrollNext}
-                        className="p-3 rounded-xl bg-nef-700 disabled:opacity-40 disabled:cursor-not-allowed transition-opacity"
-                    >
-                        <FaChevronRight className="text-xl text-white" />
-                    </button>
+            <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between mb-8 px-4 xl:px-0">
+                <div className="flex flex-col gap-4 mb-6 md:mb-0">
+                    <h2 className="text-3xl font-title text-nef-700">
+                        Por dentro da nefruza
+                    </h2>
+                    <span className="text-zinc-700">
+                        Fique por dentro das notícias, comunicados e novidades
+                        da Nefruza
+                    </span>
                 </div>
-            </div>
-
-            <div
-                className="overflow-hidden pl-[max(1rem,calc((100vw-72rem)/2+1rem))]"
-                ref={emblaRef}
-            >
-                <div className="flex gap-6">
-                    {noticias.map((noticia) => (
-                        <Link
-                            href={`/blog/${noticia.slug}`}
-                            key={noticia.slug}
-                            className={`
-                                flex-none w-[85%] sm:w-[60%] md:w-[45%] lg:w-[31%]
-                                flex flex-col
-                                rounded-3xl overflow-hidden bg-nef-50
-                                border border-transparent hover:border-nef-400
-                                transition-all group
-                            `}
-                        >
-                            <div className="relative w-full aspect-5/3">
-                                <Image
-                                    src={noticia.imagem}
-                                    alt={noticia.titulo}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-1 flex-col items-start justify-between">
-                                <div>
-                                    <span className="text-xs text-nef-600 font-bold uppercase">
-                                        {noticia.data} ·{" "}
-                                        {noticia.tags.join(", ")}
-                                    </span>
-                                    <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
-                                        {noticia.titulo}
-                                    </h3>
-                                    <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
-                                        {noticia.resumo}
-                                    </p>
-                                </div>
-                                <span className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors justify-self-end">
-                                    Leia mais →
-                                </span>
-                            </div>
-                        </Link>
-                    ))}
-
-                    {/* espaçador pra sobrar respiro depois do último card ao vazar até a borda */}
-                    <div className="flex-none w-4 lg:w-[calc((100vw-72rem)/2)]" />
-                </div>
-            </div>
-
-            {/* CTA "ver todas", preso de volta ao max-w-6xl */}
-            <div className="max-w-6xl mx-auto flex justify-end mt-8 mr-6 md:mr-auto">
                 <Link
                     href="/blog"
-                    className="flex items-center gap-2 text-nef-700 font-bold hover:gap-3 transition-all"
+                    className={`
+                            flex flex-row items-center bg-nef-600 text-white font-bold py-3 px-8 gap-2 
+                            rounded-full cursor-pointer hover:bg-nef-600/90  transition-all
+                            w-fit
+                        `}
                 >
-                    Ver todas as notícias <FaArrowRight />
+                    Ver todas <FaArrowRight />
                 </Link>
             </div>
+            <div
+                className={`
+                    flex gap-8 flex-col md:flex-row max-w-6xl mx-auto
+                    min-h-152 px-4
+                `}
+            >
+                <Link
+                    href={`/blog/${noticias[0].slug}`}
+                    key={noticias[0].slug}
+                    className={`
+                                flex-none w-full md:w-[calc(50%-16px)] min-h-124 md:min-h-0
+                                flex flex-col
+                                rounded-3xl overflow-hidden 
+                                border border-transparent 
+                                transition-all group
+                                relative
+                            `}
+                >
+                    <div className="absolute w-full h-full flex items-center justify-center z-0">
+                        <Image
+                            src={noticias[0].imagem}
+                            alt={noticias[0].titulo}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                    </div>
+                    <div
+                        className={`
+                            absolute bottom-4 left-4 right-4 z-10 p-6 
+                            flex flex-1 flex-col items-start justify-between
+                            bg-nef-50 rounded-2xl
+                        `}
+                    >
+                        <div>
+                            <span className="text-xs text-zinc-500 font-bold uppercase">
+                                {noticias[0].data} ·{" "}
+                                {noticias[0].tags.join(", ")}
+                            </span>
+                            <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
+                                {noticias[0].titulo}
+                            </h3>
+                            <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
+                                {noticias[0].resumo}
+                            </p>
+                        </div>
+                        <p className="text-nef-600 font-bold cursor-pointer  transition-colors justify-self-end flex flex-row gap-2">
+                            Leia mais{" "}
+                            <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                →
+                            </p>
+                        </p>
+                    </div>
+                </Link>
+                <div className="flex flex-col gap-y-8 lex-none w-full lg:w-[calc(50%-16px)]">
+                    <Link
+                        href={`/blog/${noticias[1].slug}`}
+                        key={noticias[1].slug}
+                        className={`
+                                w-full 
+                                flex flex-row
+                                transition-all group gap-4
+                                
+                            `}
+                    >
+                        <div className="h-full max-h-48 aspect-square flex items-center justify-center overflow-clip rounded-2xl">
+                            <Image
+                                src={noticias[1].imagem}
+                                alt={noticias[1].titulo}
+                                width={180}
+                                height={180}
+                                className="object-cover group-hover:scale-105 transition-transform duration-300 size-full"
+                            />
+                        </div>
+                        <div
+                            className={`
+                            flex flex-1 flex-col items-start justify-between
+                        `}
+                        >
+                            <div>
+                                <span className="text-xs text-zinc-500 font-bold uppercase">
+                                    {noticias[1].data} ·{" "}
+                                    {noticias[1].tags.join(", ")}
+                                </span>
+                                <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
+                                    {noticias[1].titulo}
+                                </h3>
+                                <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
+                                    {noticias[1].resumo}
+                                </p>
+                            </div>
+                            <p className="text-nef-600 font-bold cursor-pointer transition-colors justify-self-end flex flex-row gap-2">
+                                Leia mais{" "}
+                                <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                    →
+                                </p>
+                            </p>
+                        </div>
+                    </Link>
+                    <Link
+                        href={`/blog/${noticias[2].slug}`}
+                        key={noticias[2].slug}
+                        className={`
+                                w-full 
+                                flex flex-row
+                                transition-all group gap-4
+                                
+                            `}
+                    >
+                        <div className="h-full max-h-48 aspect-square flex items-center justify-center overflow-clip rounded-2xl">
+                            <Image
+                                src={noticias[2].imagem}
+                                alt={noticias[2].titulo}
+                                width={180}
+                                height={180}
+                                className="object-cover group-hover:scale-105 transition-transform duration-300 size-full"
+                            />
+                        </div>
+                        <div
+                            className={`
+                            flex flex-1 flex-col items-start justify-between
+                        `}
+                        >
+                            <div>
+                                <span className="text-xs text-zinc-500 font-bold uppercase">
+                                    {noticias[2].data} ·{" "}
+                                    {noticias[2].tags.join(", ")}
+                                </span>
+                                <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
+                                    {noticias[2].titulo}
+                                </h3>
+                                <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
+                                    {noticias[2].resumo}
+                                </p>
+                            </div>
+                            <p className="text-nef-600 font-bold cursor-pointer transition-colors justify-self-end flex flex-row gap-2">
+                                Leia mais{" "}
+                                <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                    →
+                                </p>
+                            </p>
+                        </div>
+                    </Link>
+                    <Link
+                        href={`/blog/${noticias[3].slug}`}
+                        key={noticias[3].slug}
+                        className={`
+                                w-full 
+                                flex flex-row
+                                transition-all group gap-4
+                                
+                            `}
+                    >
+                        <div className="h-full max-h-48 aspect-square flex items-center justify-center overflow-clip rounded-2xl">
+                            <Image
+                                src={noticias[3].imagem}
+                                alt={noticias[3].titulo}
+                                width={180}
+                                height={180}
+                                className="object-cover group-hover:scale-105 transition-transform duration-300 size-full"
+                            />
+                        </div>
+                        <div
+                            className={`
+                            flex flex-1 flex-col items-start justify-between
+                        `}
+                        >
+                            <div>
+                                <span className="text-xs text-zinc-500 font-bold uppercase">
+                                    {noticias[3].data} ·{" "}
+                                    {noticias[3].tags.join(", ")}
+                                </span>
+                                <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
+                                    {noticias[3].titulo}
+                                </h3>
+                                <p className="text-sm text-muted-foreground line-clamp-4">
+                                    {noticias[3].resumo}
+                                </p>
+                            </div>
+                            <p className="text-nef-600 font-bold cursor-pointer transition-colors justify-self-end flex flex-row gap-2">
+                                Leia mais{" "}
+                                <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                    →
+                                </p>
+                            </p>
+                        </div>
+                    </Link>
+                </div>
+            </div>
+
+            <div className="max-w-6xl mx-auto flex justify-end mt-8 mr-6 md:mr-auto"></div>
         </section>
     );
 }

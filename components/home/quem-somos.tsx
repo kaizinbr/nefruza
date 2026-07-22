@@ -33,7 +33,7 @@ export default function AboutUs() {
                             Quem somos
                         </span>
                         <h1 className="text-3xl font- text-start mb-4 font-title">
-                            Pioneirismo que se tornou{" "}
+                            <strong className="font-extrabold">Pioneirismo</strong> que se tornou{" "}
                             <strong className="font-extrabold">tradição</strong>
                         </h1>
                         <p className="text-start text-muted-foreground pb-2">
@@ -61,9 +61,13 @@ export default function AboutUs() {
                         gap-4
                     `}
                     >
-                        <div className="h-98 lg:h-145 w-78 rounded-2xl bg-nef-800 " />
-                        <div className="h-98 lg:h-145 w-56 rounded-2xl bg-nef-800 " />
-                        <div className="h-98 lg:h-145 w-44 rounded-2xl bg-nef-800 " />
+                        <div className="h-98 lg:h-145 w-78 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden" >
+                            <Image src="/img/images1.webp" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" />
+                        </div>
+                        <div className="h-98 lg:h-145 w-56 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden" >
+                            <Image src="/img/images2.jpg" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" /></div>
+                        <div className="h-98 lg:h-145 w-44 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden" >
+                            <Image src="/img/images.jpg" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" /></div>
                     </div>
                 </div>
             </div>
@@ -111,7 +115,7 @@ export default function AboutUs() {
                                 height={400}
                                 className={`
                                         absolute
-                                        -right-6
+                                        left-1/2 -translate-x-1/2
                                         md:-left-16 md:-top-12 w-96
                                 
                                         flex items-center justify-center

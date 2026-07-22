@@ -162,12 +162,6 @@ export default function Diferenciais() {
                                             <p className="text-start text-[14px] text-muted-foreground pb-4">
                                                 {item.descricao}
                                             </p>
-                                            <Link
-                                                href="/noticias"
-                                                className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
-                                            >
-                                                Leia mais →
-                                            </Link>
                                         </div>
                                     </div>
                                 </div>
