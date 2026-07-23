@@ -178,9 +178,9 @@ export default function UltimasNoticias() {
                         </div>
                         <p className="text-nef-600 font-bold cursor-pointer  transition-colors justify-self-end flex flex-row gap-2">
                             Leia mais{" "}
-                            <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                            <span className="group-hover:translate-x-2 relative transition-all duration-300">
                                 →
-                            </p>
+                            </span>
                         </p>
                     </div>
                 </Link>
@@ -223,9 +223,9 @@ export default function UltimasNoticias() {
                             </div>
                             <p className="text-nef-600 font-bold cursor-pointer transition-colors justify-self-end flex flex-row gap-2">
                                 Leia mais{" "}
-                                <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                <span className="group-hover:translate-x-2 relative transition-all duration-300">
                                     →
-                                </p>
+                                </span>
                             </p>
                         </div>
                     </Link>
@@ -267,9 +267,9 @@ export default function UltimasNoticias() {
                             </div>
                             <p className="text-nef-600 font-bold cursor-pointer transition-colors justify-self-end flex flex-row gap-2">
                                 Leia mais{" "}
-                                <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                <span className="group-hover:translate-x-2 relative transition-all duration-300">
                                     →
-                                </p>
+                                </span>
                             </p>
                         </div>
                     </Link>
@@ -311,9 +311,9 @@ export default function UltimasNoticias() {
                             </div>
                             <p className="text-nef-600 font-bold cursor-pointer transition-colors justify-self-end flex flex-row gap-2">
                                 Leia mais{" "}
-                                <p className="group-hover:translate-x-2 relative transition-all duration-300">
+                                <span className="group-hover:translate-x-2 relative transition-all duration-300">
                                     →
-                                </p>
+                                </span>
                             </p>
                         </div>
                     </Link>

@@ -115,7 +115,7 @@ export default function AboutUs() {
                                 height={400}
                                 className={`
                                         absolute
-                                        left-1/2 -translate-x-1/2
+                                        left-1/2 -translate-x-1/2 md:translate-x-0
                                         md:-left-16 md:-top-12 w-96
                                 
                                         flex items-center justify-center
