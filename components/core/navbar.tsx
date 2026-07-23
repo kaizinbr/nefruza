@@ -67,14 +67,14 @@ const navigationItems: NavItem[] = [
         href: "/institucional",
         label: "Sobre",
         children: [
-            { href: "/institucional", label: "A Nefruza" },
+            // { href: "/institucional", label: "A Nefruza" },
             { href: "/institucional", label: "Nossa história" },
             { href: "/institucional/estrutura", label: "Nossa estrutura" },
             {
                 href: "/institucional/proposito-e-valores",
                 label: "Propósito e valores",
             },
-            { href: "/institucional#pioneirismo", label: "Pioneirismo" },
+            // { href: "/institucional#pioneirismo", label: "Pioneirismo" },
         ],
     },
 ];
@@ -133,7 +133,7 @@ export default function Navbar() {
             {/* Header desktop (topo da página) */}
             <header
                 className={`fixed inset-x-0 top-0 z-40 hidden w-full items-center justify-center border-b border-zinc-200 bg-white px-16 py-4 
-                     h-24
+                    h-24
                     transition-transform duration-500 ease-out lg:flex ${
                         scrolled ? "-translate-y-full" : "translate-y-0"
                     }`}
@@ -268,7 +268,7 @@ export default function Navbar() {
                         }}
                         className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-white"
                     >
-                        <div className="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+                        <div className="flex items-center justify-between w-full px-8 md:px-6 py-4  max-w-7xl mx-auto">
                             <Link
                                 href="/"
                                 className="flex items-center gap-4"
@@ -304,7 +304,7 @@ export default function Navbar() {
                                 },
                                 closed: {},
                             }}
-                            className="flex flex-1 flex-col items-center justify-center gap-1 py-8"
+                            className="flex flex-1 flex-col items-start justify-center gap-1 py-8 max-w-7xl mx-auto w-full"
                         >
                             {navigationItems.map((item) => {
                                 const active = isActive(item.href);
@@ -318,7 +318,7 @@ export default function Navbar() {
                                             closed: { opacity: 0, y: -12 },
                                         }}
                                         transition={{ duration: 0.3 }}
-                                        className="flex w-full flex-col items-center"
+                                        className="flex w-full flex-col items-start"
                                     >
                                         <div className="flex items-center gap-1">
                                             <Link
@@ -374,7 +374,7 @@ export default function Navbar() {
                                                 transitionDuration={250}
                                                 className="w-full"
                                             >
-                                                <div className="flex flex-col items-center gap-1 pb-4">
+                                                <div className="flex flex-col items-start gap-1 pb-4">
                                                     {item.children.map(
                                                         (sub) => (
                                                             <Link

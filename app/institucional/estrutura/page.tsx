@@ -2,10 +2,10 @@ import Image from "next/image";
 
 export default function Estrutura() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-centerfont-sans">
+        <div className="flex flex-col flex-1 items-center justify-center font-sans">
             <main
                 className={`
-                    flex flex-1 w-full max-w-7xl flex-col items-center justify-start py-32 px-16 sm:items-start
+                    flex flex-1 w-full max-w-6xl flex-col items-center justify-start py-16 md:py-32 px-4 sm:items-start
                 `}
             >
                 <span className="text-sm font-bold text-nef-500 uppercase">
@@ -34,12 +34,12 @@ export default function Estrutura() {
                 </div>
                 <div
                     className={`
-                        flex flex-col
+                        flex flex-row flex-wrap
                         items-start justify-center
-                        w-full
+                        w-full gap-4
                     `}
                 >
-                    <div className="flex flex-col justify-center items-center p-6 rounded-2xl bg-nef-200 w-124">
+                    <div className="flex flex-col justify-center items-center p-6 rounded-2xl bg-nef-100 w-full md:w-[calc(50%-16px)]">
                         <Image src="https://www.nefruza.com.br/images/gallery/consultorio2.jpg"
                             alt="Consultórios"
                             width={386}
@@ -53,7 +53,7 @@ export default function Estrutura() {
                             serviços clínicos e hospitalares. Aenean vel urna mi.
                         </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center p-6 rounded-2xl bg-nef-200 w-124">
+                    <div className="flex flex-col justify-center items-center p-6 rounded-2xl bg-nef-100 w-full md:w-[calc(50%-16px)]">
                         <Image src="https://www.nefruza.com.br/images/gallery/consultorio2.jpg"
                             alt="Consultórios"
                             width={386}
@@ -67,7 +67,7 @@ export default function Estrutura() {
                             serviços clínicos e hospitalares. Aenean vel urna mi.
                         </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center p-6 rounded-2xl bg-nef-200 w-124">
+                    <div className="flex flex-col justify-center items-center p-6 rounded-2xl bg-nef-100 w-full md:w-[calc(50%-16px)]">
                         <Image src="https://www.nefruza.com.br/images/gallery/consultorio2.jpg"
                             alt="Consultórios"
                             width={386}

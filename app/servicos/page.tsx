@@ -1,107 +1,97 @@
 "use client";
 
-import FormContato from "@/components/contato/form";
-import Image from "next/image";
-import Link from "next/link";
-import { PiPhoneCallFill } from "react-icons/pi";
-import { TbMailFilled, TbBrandWhatsappFilled } from "react-icons/tb";
-import LinhaDoTempo from "@/components/institucional/timeline"; // ajuste o caminho conforme seu projeto
+import {
+    TbDroplet,
+    TbFilter,
+    TbStethoscope,
+    TbBabyCarriage,
+    TbFlask,
+    TbInfinity,
+} from "react-icons/tb";
+import ServiceBand, { Service } from "@/components/servicos/band";
+
+const clinicalServices: Service[] = [
+    {
+        icon: TbDroplet,
+        title: "Hemodiálise convencional",
+        description:
+            "Sessões regulares de filtragem do sangue para pacientes com insuficiência renal, com acompanhamento médico contínuo.",
+    },
+    {
+        icon: TbFilter,
+        title: "Hemodiafiltração (HDF)",
+        description:
+            "Técnica que combina diálise e filtração para remover toxinas de forma ainda mais eficiente, indicada para casos específicos.",
+    },
+    {
+        icon: TbStethoscope,
+        title: "Consulta nefrológica especializada",
+        description:
+            "Avaliação e acompanhamento clínico para adultos e crianças, do diagnóstico ao manejo da doença renal crônica.",
+    },
+];
+
+const hospitalServices: Service[] = [
+    {
+        icon: TbBabyCarriage,
+        title: "Diálise peritoneal pediátrica",
+        description:
+            "Tratamento adaptado para crianças, realizado através do peritônio, com suporte especializado para o público infantil.",
+    },
+    {
+        icon: TbDroplet,
+        title: "Hemodiálise para adultos e crianças",
+        description:
+            "Atendimento hospitalar de hemodiálise convencional, com estrutura adequada para pacientes de todas as idades.",
+    },
+    {
+        icon: TbFlask,
+        title: "Plasmaférese",
+        description:
+            "Procedimento que filtra o plasma sanguíneo para remover substâncias nocivas, indicado em condições específicas.",
+    },
+    {
+        icon: TbInfinity,
+        title: "Diálise contínua",
+        description:
+            "Terapia de substituição renal prolongada, voltada a pacientes em estado crítico que exigem suporte hospitalar constante.",
+    },
+];
 
 export default function Servicos() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center  font-sans py-16 md:py-32 ">
-            <main
-                className={`
-                    flex flex-1 w-full max-w-6xl flex-col items-start justify-start
-                    mb-8 px-4 
-                `}
-            >
-                <div
-                    className={`
-                        flex flex-col
-                        items-start justify-center
-                        w-full
-                    `}
-                >
-                    <span className="text-sm font-bold text-nef-500 uppercase">
+        <div className="flex flex-1 flex-col items-center justify-center font-sans py-16 md:py-32">
+            <main className="mb-8 flex w-full max-w-6xl flex-1 flex-col items-start justify-start gap-12 px-4">
+                <div className="flex w-full flex-col items-start justify-center text-left">
+                    <span className="text-sm font-bold uppercase text-nef-500">
                         Serviços
                     </span>
-                    <h1 className="text-3xl font- text-center mb-4 font-title">
+                    <h1 className="mb-4 font-title text-3xl">
                         Conheça os serviços da Nefruza
                     </h1>
-                </div>
-                <div
-                    className={`
-                        flex flex-col
-                        items-start justify-center
-                        w-full
-                    `}
-                >
-                    <p className="text-  mb-4">
+                    <p className="max-w-2xl text-zinc-600">
                         Buscando sempre fornecer o melhor atendimento para
                         nossos pacientes, a Nefruza atua com uma gama de
-                        serviços clínicos e hospitalares. Aenean vel urna mi.
-                        Fusce pretium in nisi vitae pellentesque. Curabitur a
-                        egestas augue, eget faucibus odio. Praesent pharetra
-                        orci non metus pellentesque, et sagittis enim aliquet.
-                        Ut ullamcorper mollis nulla at sodales. Vivamus dolor
-                        elit, sagittis eu dignissim id, imperdiet laoreet erat.
+                        serviços clínicos e hospitalares, acompanhando cada
+                        paciente em todas as fases do tratamento renal.
                     </p>
                 </div>
-                <div
-                    className={`
-                        flex flex-col flex- gap-4 justify-between
-                        items-start
-                        w-full mt-4
-                    `}
-                >
-                    <h1 className="text-2xl p-4 bg-nef-700 rounded-2xl font-bold text-nef-50 text-center mb-4 font-title mx-auto">
-                        Serviços clínicos
-                    </h1>
-                    <div className="flex w-full justify-between gap-4">
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Hemodiálise convencional</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Hemodiafiltração (HDF)</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Consulta nefrológica especializada para adultos e crianças</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    className={`
-                        flex flex-col flex- gap-4 justify-between
-                        items-start
-                        w-full mt-12
-                    `}
-                >
-                    <h1 className="text-2xl p-4 bg-nef-500 rounded-2xl font-bold text-nef-50 text-center mb-4 font-title mx-auto">
-                        Serviços hospitalares
-                    </h1>
-                    <div className="flex w-ful items justify-between gap-4 flex-wrap">
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Diálise peritoneal pediátrica</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Hemodiálise convencional para adultos e crianças</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Plasmaférese para adultos e crianças</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                        <div className=" w-78 p-6 rounded-2xl bg-nef-200 flex flex-col justify-center items-center">
-                            <h2 className="text-xl font-bold text-center mb-4">Diálise contínua para adultos e crianças</h2>
-                            <p className="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus beatae ratione porro libero dolore quis ex saepe reprehenderit labore exercitationem.</p>
-                        </div>
-                    </div>
-                </div>
+
+                <ServiceBand
+                    eyebrow="Serviços clínicos"
+                    title="Atendimento ambulatorial contínuo"
+                    services={clinicalServices}
+                    tone="light"
+                    variant="grid"
+                />
+
+                <ServiceBand
+                    eyebrow="Serviços hospitalares"
+                    title="Suporte completo em ambiente hospitalar"
+                    services={hospitalServices}
+                    tone="dark"
+                    variant="list"
+                />
             </main>
         </div>
     );

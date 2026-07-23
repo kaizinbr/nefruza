@@ -124,10 +124,10 @@ function CategoryFilters() {
 
 export default function Home() {
     return (
-        <div className="flex flex-col flex-1 items-center justify-center font-sans px-4 md:px-16">
+        <div className="flex flex-col flex-1 items-center justify-center font-sans">
             <main
                 className={`
-                    flex flex-1 w-full max-w-6xl flex-col items-start justify-start py-32 sm:items-start
+                    flex flex-1 w-full max-w-6xl flex-col items-start justify-start py-16 md:py-32 px-4 sm:items-start
                 `}
             >
                 <span className="text-sm font-bold text-nef-500 uppercase">

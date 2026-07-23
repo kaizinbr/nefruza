@@ -1,5 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import {
+  LuUsers,
+  LuFlag,
+  LuHeartHandshake,
+} from "react-icons/lu";
+
+import { UsersGroupTwoRoundedIcon } from '@solar-icons/react/bold/users-group-two-rounded'
+import { Flag2Icon } from '@solar-icons/react/bold/flag-2'
+import { HandHeartIcon } from '@solar-icons/react/bold/hand-heart'
 
 export default function QuemSomos() {
     return (
@@ -50,7 +59,7 @@ export default function QuemSomos() {
                         <div className="w-full flex flex-col lg:flex-row justify-between relative z-10">
                             <div className="flex flex-col gap-6 mb-8 lg:mb-0 items-center relative translate-y-0 lg:translate-y-full">
                                 <div className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76">
-                                    <p className="font-extrabold mb-3">
+                                    <p className="font-extrabold font-title mb-3">
                                         Equipe especializada
                                     </p>
                                     <p className="leading-6">
@@ -59,11 +68,13 @@ export default function QuemSomos() {
                                         4 décadas.
                                     </p>
                                 </div>
-                                <div className="size-16 rounded-full border border-zinc-300 bg-white shadow-md"></div>
+                                <div className="size-16 flex items-center justify-center rounded-full border border-zinc-300 bg-white shadow-md">
+                                    <UsersGroupTwoRoundedIcon size={36} className="text-nef-600" />
+                                </div>
                             </div>
                             <div className="flex flex-col gap-6 items-center top-0 mb-8 lg:top-16 relative">
                                 <div className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76">
-                                    <p className="font-extrabold mb-3">
+                                    <p className="font-extrabold font-title mb-3">
                                         Pioneirismo
                                     </p>
                                     <p className="leading-6">
@@ -72,11 +83,13 @@ export default function QuemSomos() {
                                         transplante renal na Paraíba.
                                     </p>
                                 </div>
-                                <div className="size-16 rounded-full border border-zinc-300 bg-white shadow-md"></div>
+                                <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
+                                    <Flag2Icon size={36} className="text-nef-600" />
+                                </div>
                             </div>
                             <div className="flex flex-col gap-6 mb-8 lg:mb-0 items-center relative translate-y-0 lg:translate-y-full">
                                 <div className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76">
-                                    <p className="font-extrabold mb-3">
+                                    <p className="font-extrabold font-title mb-3">
                                         Cuidado humanizado
                                     </p>
                                     <p className="leading-6">
@@ -85,7 +98,9 @@ export default function QuemSomos() {
                                         nutricional ao longo da jornada.
                                     </p>
                                 </div>
-                                <div className="size-16 rounded-full border border-zinc-300 bg-white shadow-md"></div>
+                                <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
+                                    <HandHeartIcon size={36} className="text-nef-600" />
+                                </div>
                             </div>
                         </div>
                         <div className="lg:hidden bg-linear-to-b from-nef-400 to-nef-900 to-75% w-4 rounded-full absolute z-0 h-7/10"></div>
