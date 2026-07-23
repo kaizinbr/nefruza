@@ -1,16 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import {
-  LuUsers,
-  LuFlag,
-  LuHeartHandshake,
-} from "react-icons/lu";
+import { LuUsers, LuFlag, LuHeartHandshake } from "react-icons/lu";
 
-import { UsersGroupTwoRoundedIcon } from '@solar-icons/react/bold/users-group-two-rounded'
-import { Flag2Icon } from '@solar-icons/react/bold/flag-2'
-import { HandHeartIcon } from '@solar-icons/react/bold/hand-heart'
+import { UsersGroupTwoRoundedIcon } from "@solar-icons/react/bold/users-group-two-rounded";
+import { Flag2Icon } from "@solar-icons/react/bold/flag-2";
+import { HandHeartIcon } from "@solar-icons/react/bold/hand-heart";
+
+import { motion, useReducedMotion } from "motion/react";
 
 export default function QuemSomos() {
+    const prefersReducedMotion = useReducedMotion();
+
     return (
         <>
             <div
@@ -58,22 +60,51 @@ export default function QuemSomos() {
                     >
                         <div className="w-full flex flex-col lg:flex-row justify-between relative z-10">
                             <div className="flex flex-col gap-6 mb-8 lg:mb-0 items-center relative translate-y-0 lg:translate-y-full">
-                                <div className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76">
+                                <motion.div
+                                    className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76"
+                                    initial={
+                                        prefersReducedMotion
+                                            ? { opacity: 1, y: 0 }
+                                            : { opacity: 0, y: 24 }
+                                    }
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.35 }}
+                                    transition={{
+                                        duration: 0.35,
+                                        ease: "easeOut",
+                                    }}
+                                >
                                     <p className="font-extrabold font-title mb-3">
                                         Equipe especializada
                                     </p>
                                     <p className="leading-6">
                                         Equipe médica experiente, referência em
-                                        tratamento de doenças renais há mais de
-                                        4 décadas.
+                                        tratamento de doenças renais há mais de 4
+                                        décadas.
                                     </p>
-                                </div>
+                                </motion.div>
                                 <div className="size-16 flex items-center justify-center rounded-full border border-zinc-300 bg-white shadow-md">
-                                    <UsersGroupTwoRoundedIcon size={36} className="text-nef-600" />
+                                    <UsersGroupTwoRoundedIcon
+                                        size={36}
+                                        className="text-nef-600"
+                                    />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-6 items-center top-0 mb-8 lg:top-16 relative">
-                                <div className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76">
+                                <motion.div
+                                    className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76"
+                                    initial={
+                                        prefersReducedMotion
+                                            ? { opacity: 1, y: 0 }
+                                            : { opacity: 0, y: 24 }
+                                    }
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.35 }}
+                                    transition={{
+                                        duration: 0.35,
+                                        ease: "easeOut",
+                                    }}
+                                >
                                     <p className="font-extrabold font-title mb-3">
                                         Pioneirismo
                                     </p>
@@ -82,13 +113,29 @@ export default function QuemSomos() {
                                         Chaves, pioneira em hemodiálise e
                                         transplante renal na Paraíba.
                                     </p>
-                                </div>
+                                </motion.div>
                                 <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
-                                    <Flag2Icon size={36} className="text-nef-600" />
+                                    <Flag2Icon
+                                        size={36}
+                                        className="text-nef-600"
+                                    />
                                 </div>
                             </div>
                             <div className="flex flex-col gap-6 mb-8 lg:mb-0 items-center relative translate-y-0 lg:translate-y-full">
-                                <div className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76">
+                                <motion.div
+                                    className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76"
+                                    initial={
+                                        prefersReducedMotion
+                                            ? { opacity: 1, y: 0 }
+                                            : { opacity: 0, y: 24 }
+                                    }
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true, amount: 0.35 }}
+                                    transition={{
+                                        duration: 0.35,
+                                        ease: "easeOut",
+                                    }}
+                                >
                                     <p className="font-extrabold font-title mb-3">
                                         Cuidado humanizado
                                     </p>
@@ -97,14 +144,17 @@ export default function QuemSomos() {
                                         unindo tratamento clínico e suporte
                                         nutricional ao longo da jornada.
                                     </p>
-                                </div>
+                                </motion.div>
                                 <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
-                                    <HandHeartIcon size={36} className="text-nef-600" />
+                                    <HandHeartIcon
+                                        size={36}
+                                        className="text-nef-600"
+                                    />
                                 </div>
                             </div>
                         </div>
                         <div className="lg:hidden bg-linear-to-b from-nef-400 to-nef-900 to-75% w-4 rounded-full absolute z-0 h-7/10"></div>
-                        <div className="w-full relative flex items-start justify-center h-132 overflow-hidden">
+                        <div className="w-full relative flex items-start justify-center lg:h-132 overflow-hidden">
                             <div
                                 className={`
                                     w-full aspect-square sm:size-124 lg:size-244 rounded-full p-3

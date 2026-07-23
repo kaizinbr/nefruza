@@ -171,7 +171,7 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
                         return (
                             <p
                                 key={i}
-                                className="text-xl leading-relaxed text-zinc-700 mb-6 wrap-break-word"
+                                className="text leading-relaxed text-zinc-700 mb-6 wrap-break-word"
                             >
                                 {block.text}
                             </p>
@@ -367,7 +367,7 @@ export default function Blog({
                     <span className="text-sm font-bold text-nef-500 uppercase">
                         {noticia.categoria}
                     </span>
-                    <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 mt-1 font-title text-nef-800 leading-tight">
+                    <h1 className="text-3xl sm:text-4xl font-extrabold mb-4 mt-1 font-title leading-tight">
                         {noticia.titulo}
                     </h1>
 

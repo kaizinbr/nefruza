@@ -133,7 +133,7 @@ export default function Home() {
                 <span className="text-sm font-bold text-nef-500 uppercase">
                     Fique por dentro
                 </span>
-                <h1 className="text-4xl font- text-center mb-4 font-title">
+                <h1 className="text-4xl font- text-start mb-4 font-title">
                     Notícias e novidades
                 </h1>
                 <Suspense fallback={<div className="mb-8" />}>
