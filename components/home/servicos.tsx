@@ -36,8 +36,13 @@ export default function Servicos() {
                                 items-start justify-center
                                 w-full
                                 bg-nef-700 text-zinc-50 p-12 rounded-2xl
+                                relative overflow-hidden
                             `}
                         >
+                            <div
+                                aria-hidden
+                                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-linear-to-br from-nef-100 to-nef-300 opacity-20 blur-3xl"
+                            />
                             <h1 className="text-3xl font- text-start mb-4 font-title">
                                 Conheça nossos serviços
                             </h1>
@@ -66,7 +71,12 @@ export default function Servicos() {
                     >
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-200">
-                                <Image src="/img/dialise.png" alt="" width={38} height={38} />
+                                <Image
+                                    src="/img/dialise.png"
+                                    alt=""
+                                    width={38}
+                                    height={38}
+                                />
                             </div>
                             <p className="text-lg font-semibold">Hemodiálise</p>
                         </div>
@@ -78,7 +88,12 @@ export default function Servicos() {
                         </div> */}
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-100">
-                                <Image src="/img/house.png" alt="" width={38} height={38} />
+                                <Image
+                                    src="/img/house.png"
+                                    alt=""
+                                    width={38}
+                                    height={38}
+                                />
                             </div>
                             <p className="text-lg font-semibold">
                                 Diálises externas
@@ -92,7 +107,12 @@ export default function Servicos() {
                         </div> */}
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-200">
-                                <Image src="/img/health.png" alt="" width={38} height={38} />
+                                <Image
+                                    src="/img/health.png"
+                                    alt=""
+                                    width={38}
+                                    height={38}
+                                />
                             </div>
                             <p className="text-lg font-semibold">
                                 Atendimento Ambulatorial
@@ -100,7 +120,12 @@ export default function Servicos() {
                         </div>
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-100">
-                                <Image src="/img/nutri.png" alt="" width={38} height={38} />
+                                <Image
+                                    src="/img/nutri.png"
+                                    alt=""
+                                    width={38}
+                                    height={38}
+                                />
                             </div>
                             <p className="text-lg font-semibold">
                                 Nutricionista
@@ -108,13 +133,23 @@ export default function Servicos() {
                         </div>
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-200">
-                                <Image src="/img/psi2.png" alt="" width={38} height={38} />
+                                <Image
+                                    src="/img/psi2.png"
+                                    alt=""
+                                    width={38}
+                                    height={38}
+                                />
                             </div>
                             <p className="text-lg font-semibold">Psicologia</p>
                         </div>
                         <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-100">
-                                <Image src="/img/care2.png" alt="" width={38} height={38} />
+                                <Image
+                                    src="/img/care2.png"
+                                    alt=""
+                                    width={38}
+                                    height={38}
+                                />
                             </div>
                             <p className="text-lg font-semibold">
                                 Assistência Social

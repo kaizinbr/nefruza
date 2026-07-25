@@ -11,36 +11,49 @@ import {
     FaUserDoctor,
     FaKitMedical,
     FaHeartPulse,
+    FaHospital 
 } from "react-icons/fa6";
+import { GiFruitBowl } from "react-icons/gi";
+import { MdEmojiFoodBeverage } from "react-icons/md";
+import { MdHealthAndSafety } from "react-icons/md";
+import { RiMentalHealthFill } from "react-icons/ri";
+import { FaNotesMedical } from "react-icons/fa";
 
 const diferenciais = [
     {
-        titulo: "Diferencial",
+        titulo: "Exclusividade",
         descricao:
-            "Todas as instalações são novas e contamos com maquinas de ultima geração, garantindo uma maior segurança para os nossos pacientes e colaborados.",
-        IconTop: FaHouseChimneyMedical,
-        IconBottom: FaKitMedical,
+            "Somos a primeira e única clínica de hemodiálise de João Pessoa a realizar plasmaférese e hemodiálise contínua, procedimentos decisivos nos casos mais complexos.",
+        IconTop: RiMentalHealthFill,
+        IconBottom: MdHealthAndSafety,
     },
     {
         titulo: "Instalações",
         descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien. Nulla aliquet lorem nec pharetra volutpat. In nec tempor purus. ",
-        IconTop: FaHouseChimneyMedical,
+            "Nossas instalações são climatizadas e equipadas com tudo necessário para fornecer o máximo conforto a pacientes e acompanhantes",
+        IconTop: FaHospital,
         IconBottom: FaKitMedical,
     },
     {
-        titulo: "Profissionais Qualificados",
+        titulo: "Equipe",
         descricao:
-            "Nossa equipe é composta por profissionais altamente qualificados e experientes, garantindo o melhor atendimento para os nossos pacientes.",
+            "Médicos, enfermeiros e técnicos especializados em nefrologia, que acompanham cada paciente de perto e conhecem sua rotina, não só o prontuário.",
         IconTop: FaUserDoctor,
         IconBottom: FaHeartPulse,
     },
     {
-        titulo: "Diferencial",
+        titulo: "Suporte nutricional",
         descricao:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu erat venenatis, maximus eros ut, condimentum sapien.",
+            "O tratamento vai além da diálise. Contamos com acompanhamento nutricional integrado, cuidando da saúde do paciente em todas as etapas.",
+        IconTop: GiFruitBowl,
+        IconBottom: MdEmojiFoodBeverage,
+    },
+    {
+        titulo: "Continuidade",
+        descricao:
+            "O paciente é acompanhado de forma contínua, não apenas durante as sessões. Isso permite identificar mudanças cedo e ajustar o tratamento com mais precisão.",
         IconTop: FaHouseChimneyMedical,
-        IconBottom: FaKitMedical,
+        IconBottom: FaNotesMedical,
     },
 ];
 
@@ -100,10 +113,7 @@ export default function Diferenciais() {
                     `}
                 >
                     <h1 className="text-2xl sm:text-3xl mb-4 font-title w-full mx-auto">
-                        Com os maiores diferenciais do mercado,{" "}
-                        <strong className="font-extrabold">
-                            a Nefruza é referência de serviços nefrológicos
-                        </strong>
+                        Com os maiores diferenciais do mercado
                     </h1>
                     <h2 className="">
                         Com alto grau de satisfação de nossos clientes, fica

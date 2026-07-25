@@ -46,8 +46,9 @@ export default function QuemSomos() {
                             Nefrologia com história e propósito
                         </h1>
                         <p className="text-center text-muted-foreground pb-6">
-                            Há mais de 45 anos ao lado de quem precisa cuidar da
-                            saúde renal, com ciência, respeito e humanização.
+                            Há 47 anos ao lado de quem precisa cuidar da saúde
+                            renal, com ciência, respeito e um olhar que enxerga
+                            além do diagnóstico.
                         </p>
                     </div>
 
@@ -75,12 +76,10 @@ export default function QuemSomos() {
                                     }}
                                 >
                                     <p className="font-extrabold font-title mb-3">
-                                        Equipe especializada
+                                        Equipe
                                     </p>
                                     <p className="leading-6">
-                                        Equipe médica experiente, referência em
-                                        tratamento de doenças renais há mais de 4
-                                        décadas.
+                                        Uma equipe médica experiente, que acompanha cada paciente de perto e conhece sua história, não só o diagnóstico.
                                     </p>
                                 </motion.div>
                                 <div className="size-16 flex items-center justify-center rounded-full border border-zinc-300 bg-white shadow-md">
@@ -109,9 +108,7 @@ export default function QuemSomos() {
                                         Pioneirismo
                                     </p>
                                     <p className="leading-6">
-                                        Fundada em 1979 pelo Dr. Mário Fiúza
-                                        Chaves, pioneira em hemodiálise e
-                                        transplante renal na Paraíba.
+                                        Fundada em 1979 pelo Dr. Mário Fiúza Chaves, fomos a primeira clínica de hemodiálise da Paraíba.
                                     </p>
                                 </motion.div>
                                 <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
@@ -140,9 +137,7 @@ export default function QuemSomos() {
                                         Cuidado humanizado
                                     </p>
                                     <p className="leading-6">
-                                        Acompanhamento contínuo do paciente,
-                                        unindo tratamento clínico e suporte
-                                        nutricional ao longo da jornada.
+                                        Com uma equipe multidisciplinar, nosso atendimento é elaborado com cuidado para cada fase da jornada do paciente.
                                     </p>
                                 </motion.div>
                                 <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
@@ -166,10 +161,10 @@ export default function QuemSomos() {
                             >
                                 <div className="w-full aspect-square sm:size-120 lg:size-238 rounded-full bg-zinc-100 flex flex-col items-center justify-center lg:pt-44 lg:justify-start">
                                     <h1 className="text-4xl font-extrabold font-title text-center text-nef-600">
-                                        Mais de 47 anos <br /> mudando vidas
+                                        47 anos cuidando <br /> de vidas na Paraíba
                                     </h1>
                                     <Link
-                                        href="#"
+                                        href="/institucional"
                                         className={`
                                                 border border-nef-600 text-nef-600 font-bold
                                                 py-3 px-8 w-fit h-fit rounded-full
@@ -177,7 +172,7 @@ export default function QuemSomos() {
                                                 mt-6
                                             `}
                                     >
-                                        Saiba mais sobre nossa história
+                                        Conheça nossa história
                                     </Link>
                                 </div>
                             </div>

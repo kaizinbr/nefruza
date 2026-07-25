@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function AboutUs() {
+export default function Card() {
     return (
         <>
-            <div
+            {/* <div
                 className={`
                     flex flex-row 
                     items-start justify-center 
@@ -70,7 +70,7 @@ export default function AboutUs() {
                             <Image src="/img/images.jpg" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" /></div>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div
                 className={`
                     flex flex-row 
@@ -99,13 +99,10 @@ export default function AboutUs() {
                     `}
                     >
                         <h1 className="text-2xl lg:text-3xl w-full text-start mb-4 font-title">
-                            Pioneirismo que impacta vidas
+                            XX vidas impactadas
                         </h1>
                         <p className="text-start lg:text-lg text-muted-foreground pb-2 max-w-104 md:max-w-full">
-                            Ao longo de 35 anos de história, a Nefruza tem se
-                            destacado como referência em serviços de saúde
-                            renal, impactando milhares de vidas com seu
-                            compromisso com a excelência e inovação.
+                            Ao longo de sua história, a Nefruza já realizou mais de XX transplantes e impactou a vida de milhares de pessoas pelo Estado.
                         </p>
                         <div className="">
                             <Image

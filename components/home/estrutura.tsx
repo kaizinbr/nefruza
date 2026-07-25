@@ -87,10 +87,7 @@ export default function Estrutura() {
                     `}
                 >
                     <h1 className="text-2xl sm:text-3xl mb-4 font-title w-full md:w-3/5 ">
-                        <strong className="font-extrabold">
-                            Uma estrutura de ponta
-                        </strong>{" "}
-                        para oferecer o melhor atendimento aos nossos pacientes.
+                        Uma estrutura de ponta
                     </h1>
                     <h2 className="w-full md:w-3/5">
                         Com alto grau de satisfação de nossos clientes, fica

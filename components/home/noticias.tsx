@@ -112,7 +112,7 @@ export default function UltimasNoticias() {
             {/* header + botões: preso ao max-w-6xl, igual ao resto do site */}
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between mb-8 px-4 xl:px-0">
                 <div className="flex flex-col gap-4 mb-6 md:mb-0">
-                    <h2 className="text-3xl font-title text-nef-700">
+                    <h2 className="text-3xl font-title ">
                         Por dentro da nefruza
                     </h2>
                     <span className="text-zinc-700">

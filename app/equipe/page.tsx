@@ -2,11 +2,11 @@ import TeamCarousel, { TeamMember } from "@/components/equipe/team-carousel";
 
 const team: TeamMember[] = [
     {
-        id: "ingrid-fiuza",
-        name: "Ingrid Fiúza",
-        role: "Recursos Humanos",
-        bio: "Cuida de aspectos administrativos e de pessoal da clínica. Sempre empenhada em resolver problemas e buscar melhorias.",
-        image: "/img/equipe/ingrid.webp",
+        id: "ana-lucia",
+        name: "Ana Lúcia Pinto",
+        role: "Assistente social",
+        bio: `Graduada em Serviço Social pela UFPB, com especialização em Psicopedagogia e formação técnica em Enfermagem, atua como assistente social na clínica Nefruza. Possui experiência em saúde e gestão, com passagens pelo Hospital Memorial São Francisco e pela Prefeitura de João Pessoa, além de constante atualização profissional, destacando-se sua participação no II Congresso Nordeste de Transplante.`,
+        image: "/img/placeholder.webp",
     },
     {
         id: "psicologa",
@@ -43,9 +43,9 @@ export default function Equipe() {
                 </h1>
                 <p className="mb-16 max-w-3xl">
                     Buscando sempre fornecer o melhor atendimento para nossos
-                    pacientes, a Nefruza atua com uma equipe médica,
-                    psicológica e nutricional dedicada ao cuidado renal em
-                    todas as suas fases.
+                    pacientes, a Nefruza atua com uma equipe médica, psicológica
+                    e nutricional dedicada ao cuidado renal em todas as suas
+                    fases.
                 </p>
 
                 <TeamCarousel members={team} />
