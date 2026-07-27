@@ -1,5 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BiSolidDonateBlood } from "react-icons/bi";
+import {
+    FaChevronLeft,
+    FaChevronRight,
+    FaHouseChimneyMedical,
+    FaUserDoctor,
+    FaKitMedical,
+    FaHeartPulse,
+    FaHospital,
+} from "react-icons/fa6";
+import { RiMentalHealthFill } from "react-icons/ri";
+import { GiFruitBowl } from "react-icons/gi";
+import { FaNotesMedical } from "react-icons/fa";
 
 export default function Servicos() {
     return (
@@ -39,17 +52,17 @@ export default function Servicos() {
                                 relative overflow-hidden
                             `}
                         >
-                            <div
+                            {/* <div
                                 aria-hidden
-                                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-linear-to-br from-nef-100 to-nef-300 opacity-20 blur-3xl"
-                            />
+                                className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-linear-to-br from-nef-100 to-nef-300 opacity-30 blur-3xl"
+                            /> */}
                             <h1 className="text-3xl font- text-start mb-4 font-title">
-                                Conheça nossos serviços
+                                Serviços especializados
                             </h1>
                             <p className="text-start text-muted-foreground pb-4">
-                                A Nefruza oferece serviços especializados em
-                                nefrologia, com atendimento de qualidade e foco
-                                nas necessidades de cada paciente.
+                                Reunimos atendimento especializado, equipe
+                                multidisciplinar e serviços integrados para
+                                acompanhar cada etapa da jornada do paciente.
                             </p>
 
                             <Link
@@ -69,89 +82,77 @@ export default function Servicos() {
                         -top-14 lg:top-0
                     `}
                     >
-                        <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-200">
-                                <Image
-                                    src="/img/dialise.png"
-                                    alt=""
-                                    width={38}
-                                    height={38}
+                                <BiSolidDonateBlood
+                                    size={32}
+                                    className="text-nef-600"
                                 />
                             </div>
-                            <p className="text-lg font-semibold">Hemodiálise</p>
+                            <p className="text-xl font-semibold">Hemodiálise</p>
                         </div>
-                        {/* <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        {/* <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-8 rounded-xl bg-nef-400"></div>
-                            <p className="text-lg font-semibold">
+                            <p className="text-xl font-semibold">
                                 Diálise Peritoneal Ambulatorial Contínua
                             </p>
                         </div> */}
-                        <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-100">
-                                <Image
-                                    src="/img/house.png"
-                                    alt=""
-                                    width={38}
-                                    height={38}
+                                <FaHouseChimneyMedical
+                                    size={32}
+                                    className="text-nef-600"
                                 />
                             </div>
-                            <p className="text-lg font-semibold">
+                            <p className="text-xl font-semibold">
                                 Diálises externas
                             </p>
                         </div>
-                        {/* <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        {/* <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-8 rounded-xl bg-nef-400"></div>
-                            <p className="text-lg font-semibold">
+                            <p className="text-xl font-semibold">
                                 Implantes vasculáres
                             </p>
                         </div> */}
-                        <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-200">
-                                <Image
-                                    src="/img/health.png"
-                                    alt=""
-                                    width={38}
-                                    height={38}
+                                <FaKitMedical
+                                    size={32}
+                                    className="text-nef-600"
                                 />
                             </div>
-                            <p className="text-lg font-semibold">
+                            <p className="text-xl font-semibold">
                                 Atendimento Ambulatorial
                             </p>
                         </div>
-                        <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-100">
-                                <Image
-                                    src="/img/nutri.png"
-                                    alt=""
-                                    width={38}
-                                    height={38}
+                                <GiFruitBowl
+                                    size={32}
+                                    className="text-nef-600"
                                 />
                             </div>
-                            <p className="text-lg font-semibold">
+                            <p className="text-xl font-semibold">
                                 Nutricionista
                             </p>
                         </div>
-                        <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-200">
-                                <Image
-                                    src="/img/psi2.png"
-                                    alt=""
-                                    width={38}
-                                    height={38}
+                                <RiMentalHealthFill
+                                    size={32}
+                                    className="text-nef-600"
                                 />
                             </div>
-                            <p className="text-lg font-semibold">Psicologia</p>
+                            <p className="text-xl font-semibold">Psicologia</p>
                         </div>
-                        <div className="flex items-center p-6 bg-white text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
                             <div className="p-2 rounded-xl bg-nef-100">
-                                <Image
-                                    src="/img/care2.png"
-                                    alt=""
-                                    width={38}
-                                    height={38}
+                                <FaNotesMedical
+                                    size={32}
+                                    className="text-nef-600"
                                 />
                             </div>
-                            <p className="text-lg font-semibold">
+                            <p className="text-xl font-semibold">
                                 Assistência Social
                             </p>
                         </div>

@@ -21,7 +21,7 @@ export default function QuemSomos() {
                     items-start justify-center 
                     w-full overflow-x-clip
                     px-4 relative 
-                    py-24 mb-16
+                    py-24
                 `}
             >
                 <div
@@ -42,13 +42,13 @@ export default function QuemSomos() {
                         <span className="text-sm font-bold text-nef-500 uppercase mb-1">
                             Quem somos
                         </span>
-                        <h1 className="text-4xl text-center mb-4 font-title">
+                        <h1 className="md:text-4xl lg:text-5xl text-3xl text-center mb-4 font-title">
                             Nefrologia com história e propósito
                         </h1>
-                        <p className="text-center text-muted-foreground pb-6">
-                            Há 47 anos ao lado de quem precisa cuidar da saúde
-                            renal, com ciência, respeito e um olhar que enxerga
-                            além do diagnóstico.
+                        <p className="text-center md:text-lg text-zinc-600">
+                            Há 47 anos, a Nefruza acompanha pacientes e famílias
+                            com experiência, proximidade e cuidado em cada etapa
+                            do tratamento renal.
                         </p>
                     </div>
 
@@ -56,7 +56,7 @@ export default function QuemSomos() {
                         className={`
                                 flex flex-col
                                 items-center justify-center
-                                w-full
+                                w-full lg:-top-8 relative
                             `}
                     >
                         <div className="w-full flex flex-col lg:flex-row justify-between relative z-10">
@@ -79,7 +79,9 @@ export default function QuemSomos() {
                                         Equipe
                                     </p>
                                     <p className="leading-6">
-                                        Uma equipe médica experiente, que acompanha cada paciente de perto e conhece sua história, não só o diagnóstico.
+                                        Uma equipe experiente e próxima, que
+                                        conhece cada paciente, acompanha sua
+                                        história e cuida além do diagnóstico.
                                     </p>
                                 </motion.div>
                                 <div className="size-16 flex items-center justify-center rounded-full border border-zinc-300 bg-white shadow-md">
@@ -89,7 +91,7 @@ export default function QuemSomos() {
                                     />
                                 </div>
                             </div>
-                            <div className="flex flex-col gap-6 items-center top-0 mb-8 lg:top-16 relative">
+                            <div className="flex flex-col gap-6 items-center top-0 mb-8 lg:top-20 relative">
                                 <motion.div
                                     className="p-6 bg-white rounded-2xl border border-zinc-300 shadow-md text-center max-w-76"
                                     initial={
@@ -108,7 +110,8 @@ export default function QuemSomos() {
                                         Pioneirismo
                                     </p>
                                     <p className="leading-6">
-                                        Fundada em 1979 pelo Dr. Mário Fiúza Chaves, fomos a primeira clínica de hemodiálise da Paraíba.
+                                        A primeira clínica de hemodiálise da
+                                        Paraíba, fundada em 1979
                                     </p>
                                 </motion.div>
                                 <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
@@ -137,7 +140,9 @@ export default function QuemSomos() {
                                         Cuidado humanizado
                                     </p>
                                     <p className="leading-6">
-                                        Com uma equipe multidisciplinar, nosso atendimento é elaborado com cuidado para cada fase da jornada do paciente.
+                                        Um cuidado multidisciplinar pensado
+                                        para as necessidades de cada paciente e
+                                        para cada etapa de sua jornada.
                                     </p>
                                 </motion.div>
                                 <div className="size-16 flex items-center justify-center  rounded-full border border-zinc-300 bg-white shadow-md">
@@ -149,19 +154,62 @@ export default function QuemSomos() {
                             </div>
                         </div>
                         <div className="lg:hidden bg-linear-to-b from-nef-400 to-nef-900 to-75% w-4 rounded-full absolute z-0 h-7/10"></div>
-                        <div className="w-full relative flex items-start justify-center lg:h-132 overflow-hidden">
+                        <div className="w-full relative flex items-start justify-center lg:h-112 overflow-hidden">
                             <div
                                 className={`
                                     w-full aspect-square sm:size-124 lg:size-244 rounded-full p-3
                                     bg-transparent
-                                    bg-radial-[at_25%_25%] from-nef-400 to-nef-900 to-75%
+                                    bg-radial-[at_25%_25%] from-nef-300 via-nef-600 to-nef-900 to-75%
                                     flex justify-center items-center
                                     z-0
                                 `}
                             >
-                                <div className="w-full aspect-square sm:size-120 lg:size-238 rounded-full bg-zinc-100 flex flex-col items-center justify-center lg:pt-44 lg:justify-start">
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-0 aspect-square sm:size-120 lg:size-238 rounded-full bg-white
+                                    `}
+                                />
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-5 aspect-square sm:size-98 lg:size-214 rounded-full bg-white border border-nef-300/80
+                                    `}
+                                />
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-5 aspect-square sm:size-72 lg:size-190 rounded-full bg-white border border-nef-300/50
+                                    `}
+                                />
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-5 aspect-square sm:size-98 lg:size-164 rounded-full bg-white border border-nef-200
+                                    `}
+                                />
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-5 aspect-square sm:size-98 lg:size-140 rounded-full bg-white border border-nef-200/80
+                                    `}
+                                />
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-5 aspect-square sm:size-98 lg:size-116 rounded-full bg-white border border-nef-200/50
+                                    `}
+                                />
+                                <div
+                                    className={`
+                                        absolute
+                                        w-full z-5 aspect-square sm:size-98 lg:size-92 rounded-full bg-white border border-nef-200/30
+                                    `}
+                                />
+                                <div className="w-full z-20 aspect-square sm:size-120 lg:size-238 rounded-full  flex flex-col items-center justify-center lg:pt-44 lg:justify-start">
                                     <h1 className="text-4xl font-extrabold font-title text-center text-nef-600">
-                                        47 anos cuidando <br /> de vidas na Paraíba
+                                        47 anos cuidando <br /> de vidas na
+                                        Paraíba
                                     </h1>
                                     <Link
                                         href="/institucional"
@@ -175,8 +223,8 @@ export default function QuemSomos() {
                                         Conheça nossa história
                                     </Link>
                                 </div>
+                                <div className="hidden lg:flex bg-linear-to-t from-white to-transparent w-full h-44 absolute bottom-0 z-8" />
                             </div>
-                            <div className="hidden lg:flex bg-linear-to-t from-zinc-100 to-transparent w-full h-44 absolute bottom-0"></div>
                         </div>
                     </div>
                 </div>

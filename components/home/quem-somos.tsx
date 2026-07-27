@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Card() {
     return (
         <>
-            {/* <div
+            <div
                 className={`
                     flex flex-row 
                     items-start justify-center 
@@ -29,29 +29,23 @@ export default function Card() {
                                 lg:mr-12 lg:w-1/2
                             `}
                     >
-                        <span className="text-sm font-bold text-nef-500 uppercase">
-                            Quem somos
-                        </span>
                         <h1 className="text-3xl font- text-start mb-4 font-title">
-                            <strong className="font-extrabold">Pioneirismo</strong> que se tornou{" "}
-                            <strong className="font-extrabold">tradição</strong>
+                            Por que famílias confiam na Nefruza?
                         </h1>
                         <p className="text-start text-muted-foreground pb-2">
-                            A Nefruza é pioneira no serviço de hemodiálise de
-                            João Pessoa. Fundada em 1979 pelo nefrologista Dr.
-                            Mário de Oliveira Fiúza Chaves, médico pioneiro em
-                            transplante renal na Paraíba, a clínica nasceu do
-                            compromisso de oferecer um tratamento humano e
-                            próximo para quem mais precisa.
+                            Há pacientes que chegam para um tratamento. <br />E há
+                            histórias que passamos a acompanhar por anos. 
                         </p>
                         <p className="text-start text-muted-foreground pb-6">
-                            Há mais de <strong>47 anos</strong> cuidamos de pacientes com
-                            insuficiência renal crônica, aguda ou crônica
-                            agudizada, unindo experiência clínica consolidada a
-                            um atendimento acolhedor, geração após geração.
+                            Na Nefruza, experiência e tecnologia caminham ao lado
+                            da escuta, da proximidade e do respeito pela vida de
+                            cada pessoa.
                         </p>
-                        <Link href="#" className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors">
-                            Saiba mais sobre nossa história
+                        <Link
+                            href="#"
+                            className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
+                        >
+                            Conheça nossa história
                         </Link>
                     </div>
                     <div
@@ -61,17 +55,37 @@ export default function Card() {
                         gap-4
                     `}
                     >
-                        <div className="h-98 lg:h-145 w-78 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden" >
-                            <Image src="/img/images1.webp" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" />
+                        <div className="h-98 lg:h-124 w-78 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden">
+                            <Image
+                                src="/img/images1.webp"
+                                width={500}
+                                height={500}
+                                alt="paciente de hemodiálise"
+                                className="h-full object-cover"
+                            />
                         </div>
-                        <div className="h-98 lg:h-145 w-56 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden" >
-                            <Image src="/img/images2.jpg" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" /></div>
-                        <div className="h-98 lg:h-145 w-44 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden" >
-                            <Image src="/img/images.jpg" width={500} height={500} alt="paciente de hemodiálise" className="h-full object-cover" /></div>
+                        <div className="h-98 lg:h-124 w-56 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden">
+                            <Image
+                                src="/img/images2.jpg"
+                                width={500}
+                                height={500}
+                                alt="paciente de hemodiálise"
+                                className="h-full object-cover"
+                            />
+                        </div>
+                        <div className="h-98 lg:h-124 w-44 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden">
+                            <Image
+                                src="/img/images.jpg"
+                                width={500}
+                                height={500}
+                                alt="paciente de hemodiálise"
+                                className="h-full object-cover"
+                            />
+                        </div>
                     </div>
                 </div>
-            </div> */}
-            <div
+            </div>
+            {/* <div
                 className={`
                     flex flex-row 
                     items-start justify-center 
@@ -122,7 +136,7 @@ export default function Card() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 }

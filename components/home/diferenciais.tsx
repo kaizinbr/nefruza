@@ -11,7 +11,7 @@ import {
     FaUserDoctor,
     FaKitMedical,
     FaHeartPulse,
-    FaHospital 
+    FaHospital,
 } from "react-icons/fa6";
 import { GiFruitBowl } from "react-icons/gi";
 import { MdEmojiFoodBeverage } from "react-icons/md";
@@ -21,39 +21,39 @@ import { FaNotesMedical } from "react-icons/fa";
 
 const diferenciais = [
     {
-        titulo: "Exclusividade",
+        titulo: "Pioneirismo",
         descricao:
-            "Somos a primeira e única clínica de hemodiálise de João Pessoa a realizar plasmaférese e hemodiálise contínua, procedimentos decisivos nos casos mais complexos.",
+            "Primeira e única clínica de hemodiálise de João Pessoa a realizar plasmaférese e hemodiálise contínua, oferecendo suporte especializado para casos de maior complexidade.",
         IconTop: RiMentalHealthFill,
         IconBottom: MdHealthAndSafety,
     },
     {
-        titulo: "Instalações",
+        titulo: "Estrutura",
         descricao:
-            "Nossas instalações são climatizadas e equipadas com tudo necessário para fornecer o máximo conforto a pacientes e acompanhantes",
+            "Ambientes climatizados, planejados para proporcionar conforto, segurança e bem-estar durante todas as etapas do atendimento.",
         IconTop: FaHospital,
-        IconBottom: FaKitMedical,
+        IconBottom: "FaKitMedical",
     },
     {
-        titulo: "Equipe",
+        titulo: "Equipe próxima",
         descricao:
-            "Médicos, enfermeiros e técnicos especializados em nefrologia, que acompanham cada paciente de perto e conhecem sua rotina, não só o prontuário.",
+            "Uma equipe multidisciplinar que acompanha cada paciente de forma próxima, conhecendo sua história e oferecendo um cuidado verdadeiramente individualizado.",
         IconTop: FaUserDoctor,
-        IconBottom: FaHeartPulse,
+        IconBottom: "FaHeartPulse",
     },
     {
-        titulo: "Suporte nutricional",
+        titulo: "Cuidado nutricional",
         descricao:
-            "O tratamento vai além da diálise. Contamos com acompanhamento nutricional integrado, cuidando da saúde do paciente em todas as etapas.",
+            "O acompanhamento nutricional faz parte do tratamento, contribuindo para a saúde, o bem-estar e a qualidade de vida em cada fase da jornada do paciente.",
         IconTop: GiFruitBowl,
-        IconBottom: MdEmojiFoodBeverage,
+        IconBottom: "MdEmojiFoodBeverage",
     },
     {
-        titulo: "Continuidade",
+        titulo: "Acompanhamento contínuo",
         descricao:
-            "O paciente é acompanhado de forma contínua, não apenas durante as sessões. Isso permite identificar mudanças cedo e ajustar o tratamento com mais precisão.",
+            "O cuidado vai além das sessões de diálise. Nossa equipe acompanha a evolução do paciente de forma contínua para oferecer um tratamento seguro e humanizado.",
         IconTop: FaHouseChimneyMedical,
-        IconBottom: FaNotesMedical,
+        IconBottom: "FaNotesMedical",
     },
 ];
 
@@ -113,15 +113,15 @@ export default function Diferenciais() {
                     `}
                 >
                     <h1 className="text-2xl sm:text-3xl mb-4 font-title w-full mx-auto">
-                        Com os maiores diferenciais do mercado
+                        Confiança construída todos os dias
                     </h1>
                     <h2 className="">
-                        Com alto grau de satisfação de nossos clientes, fica
-                        claro que nossa dedicação em oferecer atendimento de
-                        qualidade apreciada.
+                        Nossa história é feita de escolhas que colocam a
+                        segurança, a inovação e o cuidado com o paciente em
+                        primeiro lugar. Veja nossos diferenciais!
                     </h2>
                 </div>
-                <div className="flex flex-row items-start justify-start w-full lg:w-3/5 mx-auto relative gap-8 lg:pl-6">
+                <div className="flex flex-row items-start justify-start w-full lg:w-1/2 mx-auto relative gap-8 lg:pl-6">
                     <button
                         type="button"
                         onClick={scrollPrev}
@@ -149,27 +149,27 @@ export default function Diferenciais() {
                                             mx-auto relative
                                         `}
                                     >
-                                        <div className="p-4 sm:p-5 bg-nef-700 rounded-2xl shadow-lg absolute -top-10 sm:top-6 -left-2 sm:-left-12 z-10">
-                                            <item.IconTop className="text-2xl sm:text-3xl text-nef-50" />
-                                        </div>
-                                        <div className="p-4 sm:p-5 bg-nef-400 rounded-2xl shadow-lg absolute -bottom-10 sm:bottom-6 -right-2 sm:-right-8 z-10">
+                                        {/* <div className="p-4 sm:p-5 bg-nef-400 rounded-2xl shadow-lg absolute -bottom-10 sm:bottom-6 -right-2 sm:-right-8 z-10">
                                             <item.IconBottom className="text-2xl sm:text-3xl text-nef-50" />
-                                        </div>
+                                        </div> */}
                                         <div
                                             className={`
                                                 flex flex-col
                                                 items-start justify-center
                                                 w-[85vw] max-w-84
-                                                p-10 lg:p-16 bg-white
+                                                p-10 lg:p-12 bg-white
                                                 border border-transparent rounded-3xl
                                                 hover:shadow-lg hover:border-nef-400 transition-all
                                                 relative z-5
                                             `}
                                         >
+                                            <div className="p-4 sm:p-5 bg-nef-700 rounded-2xl shadow-lg mb-4">
+                                                <item.IconTop className="text-2xl sm:text-3xl text-nef-50" />
+                                            </div>
                                             <h2 className="text-2xl text-nef-700 font-bold mb-2 line-clamp-2">
                                                 {item.titulo}
                                             </h2>
-                                            <p className="text-start text-[14px] text-muted-foreground pb-4">
+                                            <p className="text-start text-[14px] text-muted-foreground">
                                                 {item.descricao}
                                             </p>
                                         </div>

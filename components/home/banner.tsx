@@ -46,7 +46,7 @@ export default function Banner() {
     }, [next]);
 
     return (
-        <div className="relative flex w-full flex-col items-center min-h-[60vh] sm:min-h-[80vh] mb-84">
+        <div className="relative flex w-full flex-col items-center min-h-[60vh] sm:min-h-[80vh] mb-64">
             <div className="relative w-full h-[80vh] sm:h-[80vh] lg:absolute lg:inset-0 lg:h-full overflow-hidden bg-nef-800">
                 {slides.map((slide, index) => (
                     <div
