@@ -60,7 +60,7 @@ function validate(values: ContactFormValues): ContactFormErrors {
 }
 
 export default function FormContato() {
-    const [expanded, { toggle }] = useDisclosure(false);
+    const [expanded, { toggle }] = useDisclosure(true);
     const [values, setValues] = useState<ContactFormValues>(initialValues);
     const [type, setType] = useState<string | null>("mail");
     const [errors, setErrors] = useState<ContactFormErrors>({});
@@ -121,13 +121,13 @@ export default function FormContato() {
                             flex flex-row items-center justify-between gap-8 text-sm font-bold w-full mx-auto
                         `}
                 >
-                    <span>
+                    {/* <span>
                         Não encontrou o que procurava? Preencha o formulário
                         para que possamos ajudá-lo.
                     </span>
                     <div className="text-xl bg-nef-600 text-nef-50 rounded-full p-2 flex items-center justify-center">
                         <HiOutlineChevronDown />
-                    </div>
+                    </div> */}
                 </UnstyledButton>
             </Group>
 
@@ -135,18 +135,8 @@ export default function FormContato() {
                 <Stack
                     gap="md"
                     mt="md"
-                    className="border-t border-zinc-400 pt-4"
+                    className=""
                 >
-                    <div>
-                        <Text fw={700} size="lg" className="text-zinc-900">
-                            Fale com a gente
-                        </Text>
-                        <Text size="sm" c="dimmed">
-                            Preencha os campos abaixo, retornaremos o mais breve
-                            possível.
-                        </Text>
-                    </div>
-
                     <TextInput
                         label="E-mail"
                         placeholder="nome.sobrenome@mail.com"

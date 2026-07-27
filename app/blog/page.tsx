@@ -127,59 +127,95 @@ export default function Home() {
         <div className="flex flex-col flex-1 items-center justify-center font-sans">
             <main
                 className={`
-                    flex flex-1 w-full max-w-6xl flex-col items-start justify-start py-16 md:py-32 px-4 sm:items-start
+                    w-full
                 `}
             >
-                <span className="text-sm font-bold text-nef-500 uppercase">
-                    Fique por dentro
-                </span>
-                <h1 className="text-4xl font- text-start mb-4 font-title">
-                    Notícias e novidades
-                </h1>
-                <Suspense fallback={<div className="mb-8" />}>
-                    <CategoryFilters />
-                </Suspense>
-                <div className="flex flex-row w-full gap-8 justify-between flex-wrap mb-8">
-                    {noticias.map((noticia) => (
-                        <Link
-                            href={`/blog/${noticia.slug}`}
-                            key={noticia.slug}
-                            className={`
-                                flex-none w-full md:w-[45%] lg:w-[31%]
-                                flex flex-col
-                                rounded-3xl overflow-hidden bg-nef-50
-                                border border-transparent hover:border-nef-400
-                                transition-all group
-                            `}
-                        >
-                            <div className="relative w-full aspect-5/3">
-                                <Image
-                                    src={noticia.imagem}
-                                    alt={noticia.titulo}
-                                    fill
-                                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                />
-                            </div>
-                            <div className="p-6 flex flex-1 flex-col items-start justify-between">
-                                <div>
-                                    <span className="text-xs text-nef-600 font-bold uppercase">
-                                        {noticia.data} ·{" "}
-                                        {noticia.tags.join(", ")}
-                                    </span>
-                                    <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
-                                        {noticia.titulo}
-                                    </h3>
-                                    <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
-                                        {noticia.resumo}
-                                    </p>
+                
+                <section className="relative isolate overflow-hidden bg-nef-900">
+                    <div
+                        aria-hidden="true"
+                        className="absolute -right-24 -top-40 h-[34rem] w-[34rem] rounded-full border border-white/10"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="absolute -right-10 -top-20 h-[26rem] w-[26rem] rounded-full border border-white/10"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="absolute right-14 top-12 h-[17rem] w-[17rem] rounded-full bg-white/[0.04]"
+                    />
+                    <div className="relative mx-auto flex w-full max-w-6xl flex-col px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+                        <span className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-white/70">
+                            Notícias
+                        </span>
+                        <h1 className="max-w-2xl font-title text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+                            Notícias e novidades
+                        </h1>
+                        <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
+                            Fique por dentro das notícias, comunicados e novidades
+                        da Nefruza
+                        </p>
+                    </div>
+                </section>
+
+                <section className={`
+                        relative z-10 mx-auto  
+                        w-full max-w-6xl 
+                        px-4 sm:px-6 lg:px-8 
+                        py-6 sm:py-8 lg:py-10 xl:py-12
+                        flex flex-col gap-4
+                    `}>
+                    {/* <span className="text-sm font-bold text-nef-500 uppercase">
+                        Fique por dentro
+                    </span>
+                    <h1 className="text-4xl font- text-start mb-4 font-title">
+                        Notícias e novidades
+                    </h1> */}
+                    <Suspense fallback={<div className="mb-8" />}>
+                        <CategoryFilters />
+                    </Suspense>
+                    <div className="flex flex-row w-full gap-8 justify-between flex-wrap mb-8">
+                        {noticias.map((noticia) => (
+                            <Link
+                                href={`/blog/${noticia.slug}`}
+                                key={noticia.slug}
+                                className={`
+                                    flex-none w-full md:w-[45%] lg:w-[31%]
+                                    flex flex-col
+                                    rounded-3xl overflow-hidden bg-nef-50
+                                    border border-transparent hover:border-nef-400
+                                    transition-all group
+                                `}
+                            >
+                                <div className="relative w-full aspect-5/3">
+                                    <Image
+                                        src={noticia.imagem}
+                                        alt={noticia.titulo}
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                                    />
                                 </div>
-                                <span className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors justify-self-end">
-                                    Leia mais →
-                                </span>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
+                                <div className="p-6 flex flex-1 flex-col items-start justify-between">
+                                    <div>
+                                        <span className="text-xs text-nef-600 font-bold uppercase">
+                                            {noticia.data} ·{" "}
+                                            {noticia.tags.join(", ")}
+                                        </span>
+                                        <h3 className="text-lg font-bold text-nef-700 mt-1 mb-2 line-clamp-2">
+                                            {noticia.titulo}
+                                        </h3>
+                                        <p className="text-sm text-muted-foreground line-clamp-4 mb-4">
+                                            {noticia.resumo}
+                                        </p>
+                                    </div>
+                                    <span className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors justify-self-end">
+                                        Leia mais →
+                                    </span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
             </main>
         </div>
     );
