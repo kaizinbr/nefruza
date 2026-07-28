@@ -131,18 +131,18 @@ export default function Home() {
                 `}
             >
                 
-                <section className="relative isolate overflow-hidden bg-nef-900">
+                <section className="relative isolate overflow-hidden  bg-linear-to-br from-nef-900 to-nef-600">
                     <div
                         aria-hidden="true"
-                        className="absolute -right-24 -top-40 h-[34rem] w-[34rem] rounded-full border border-white/10"
+                        className="absolute -right-24 -top-40 size-136 rounded-full border border-white/10"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute -right-10 -top-20 h-[26rem] w-[26rem] rounded-full border border-white/10"
+                        className="absolute -right-10 -top-20 size-104 rounded-full border border-white/10"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute right-14 top-12 h-[17rem] w-[17rem] rounded-full bg-white/[0.04]"
+                        className="absolute right-14 top-12 size-68 rounded-full bg-white/[0.04]"
                     />
                     <div className="relative mx-auto flex w-full max-w-6xl flex-col px-4 py-16 sm:px-6 md:py-24 lg:px-8">
                         <span className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-white/70">

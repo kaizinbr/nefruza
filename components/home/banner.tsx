@@ -20,11 +20,12 @@ const slides = [
 ];
 
 const menuItems = [
-    { icon: CallChatRoundedIcon, label: "Sobre nós" },
-    { icon: CallChatRoundedIcon, label: "Contato" },
-    { icon: DocumentMedicineIcon, label: "Serviços" },
-    { icon: UserIdIcon, label: "Notícias" },
-    { icon: UserIdIcon, label: "Convênios" },
+    { icon: CallChatRoundedIcon, label: "Sobre nós", url: "" },
+    { icon: CallChatRoundedIcon, label: "Contato", url: ""  },
+    { icon: DocumentMedicineIcon, label: "Serviços", url: ""  },
+    { icon: UserIdIcon, label: "Notícias", url: ""  },
+    { icon: UserIdIcon, label: "Convênios", url: ""  },
+    { icon: UserIdIcon, label: "Localização", url: "https://maps.app.goo.gl/BSiF3bnGe8WeimKV8"  },
 ];
 
 const AUTOPLAY_INTERVAL = 6000;
@@ -137,7 +138,7 @@ export default function Banner() {
                     lg:-translate-x-1/2 lg:-translate-y-1/3 
                     -mt-16 lg:mt-0
 
-                    grid-cols-2 gap-4 z-30 grid w-[92%] max-w-5xl
+                    grid-cols-2 gap-4 z-30 grid w-[92%] max-w-6xl
                     rounded-3xl bg-white p-6 shadow-xl
                     sm:flex sm:flex-row sm:flex-wrap sm:items-start sm:justify-center
                     sm:gap-6 sm:p-8

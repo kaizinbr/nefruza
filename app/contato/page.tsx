@@ -7,6 +7,7 @@ import {
     PiEnvelopeSimpleFill,
     PiMapPinFill,
     PiPhoneCallFill,
+    PiQuestionFill,
 } from "react-icons/pi";
 import { TbBrandWhatsappFilled } from "react-icons/tb";
 
@@ -23,20 +24,20 @@ const telefones = [
 
 export default function Home() {
     return (
-        <div className="flex flex-1 flex-col bg-white font-sans">
+        <div className="flex flex-1 flex-col bg-white font-sans mb-16">
             <main className="w-full">
-                <section className="relative isolate overflow-hidden bg-nef-900">
+                <section className="relative isolate overflow-hidden bg-linear-to-br from-nef-900 to-nef-600">
                     <div
                         aria-hidden="true"
-                        className="absolute -right-24 -top-40 h-[34rem] w-[34rem] rounded-full border border-white/10"
+                        className="absolute -right-24 -top-40 size-136 rounded-full border border-white/10"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute -right-10 -top-20 h-[26rem] w-[26rem] rounded-full border border-white/10"
+                        className="absolute -right-10 -top-20 size-104 rounded-full border border-white/10"
                     />
                     <div
                         aria-hidden="true"
-                        className="absolute right-14 top-12 h-[17rem] w-[17rem] rounded-full bg-white/[0.04]"
+                        className="absolute right-14 top-12 size-68 rounded-full bg-white/4"
                     />
                     <div className="relative mx-auto flex w-full max-w-6xl flex-col px-4 py-16 sm:px-6 md:py-24 lg:px-8">
                         <span className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-white/70">
@@ -62,8 +63,9 @@ export default function Home() {
                                 Escolha como falar conosco
                             </h2>
                             <p className="mt-4 max-w-md leading-7 text-zinc-600">
-                                Nossa equipe está disponível para orientar você e
-                                encaminhar sua solicitação ao setor responsável.
+                                Nossa equipe está disponível para orientar você
+                                e encaminhar sua solicitação ao setor
+                                responsável.
                             </p>
 
                             <div className="mt-9 divide-y divide-zinc-200">
@@ -222,6 +224,15 @@ export default function Home() {
                             referrerPolicy="strict-origin-when-cross-origin"
                         />
                     </div>
+
+                    <Link
+                        href="/perguntas-frequentes"
+                        className="bg-zinc-100 mx-auto rounded-2xl p-6 sm:p-8 lg:p-10 xl:p-6 mt-8 flex flex-row gap-2 items-start md:items-center justify-center text-nef-700 font-semibold text-lg transition-colors hover:text-nef-900"
+                    >
+                        <PiQuestionFill size={32} />
+                        Não encontrou o que procurava? Acesse nossas perguntas
+                        frequentes.
+                    </Link>
                 </section>
             </main>
         </div>

@@ -164,9 +164,13 @@ export default function Convenios1() {
                         <FaChevronRight className="text-nef-600" size={16} />
                     </button>
                 </div>
+                
+                    <span className="text-zinc-600 text-center text-sm">
+                        *O convênio Amil atende apenas atendimento de consultório.
+                    </span>
                     <Link
                         href="/convenios"
-                        className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors mx-auto"
+                        className="bg-nef-600 text-white font-bold py-3 px-8 mt-6 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors mx-auto"
                     >
                         Ver todos
                     </Link>

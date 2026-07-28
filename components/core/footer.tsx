@@ -186,14 +186,11 @@ export default function Footer() {
                                 Notícias
                             </Link>
                             <Link
-                                href={{
-                                    pathname: "/blog",
-                                    query: { category: "comunicados" },
-                                }}
+                                href="/perguntas-frequentes"
                                 rel="noopener noreferrer"
                                 className=" hover:text-nef-300 transition-colors"
                             >
-                                Comunicados
+                                Perguntas frequentes
                             </Link>
                             <Link
                                 href="/politica-de-privacidade"

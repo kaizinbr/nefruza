@@ -18,22 +18,22 @@ const convenios = [
     { src: "/img/amil2.webp", alt: "Convênio Amil Saúde" },
     { src: "/img/assefaz.webp", alt: "Convênio Assefaz Saúde" },
     { src: "/img/brad.webp", alt: "Convênio Bradesco Saúde" },
-    // { src: "/img/camed.webp", alt: "Convênio Camed Saúde" },
     { src: "/img/capesaude.webp", alt: "Convênio CAPESESP" },
     { src: "/img/cassi.webp", alt: "Convênio Cassi" },
     { src: "/img/comseder.webp", alt: "Convênio Comseder" },
     { src: "/img/funasa.png", alt: "Convênio Funasa" },
-    // { src: "/img/faschef.webp", alt: "Convênio Faschef" },
-    // { src: "/img/fusex.webp", alt: "Convênio Fusex" },
-    // { src: "/img/fusma.webp", alt: "Convênio Fusma" },
     { src: "/img/gama.webp", alt: "Convênio Gama Saúde" },
-    { src: "/img/geap.webp", alt: "Convênio Geap Saúde" },
-    // { src: "/img/mediservice.webp", alt: "Convênio Mediservice" },
+    { src: "/img/geap.png", alt: "Convênio Geap Saúde" },
     { src: "/img/smile.webp", alt: "Convênio Smile" },
-    // { src: "/img/sulamerica.webp", alt: "Convênio sulamerica" },
     { src: "/img/hapvida.webp", alt: "Convênio Hapvida" },
     { src: "/img/petro.webp", alt: "Convênio Petrobras" },
     { src: "/img/unimed2.webp", alt: "Convênio Unimed" },
+    // { src: "/img/faschef.webp", alt: "Convênio Faschef" },
+    // { src: "/img/fusex.webp", alt: "Convênio Fusex" },
+    // { src: "/img/fusma.webp", alt: "Convênio Fusma" },
+    // { src: "/img/mediservice.webp", alt: "Convênio Mediservice" },
+    // { src: "/img/camed.webp", alt: "Convênio Camed Saúde" },
+    // { src: "/img/sulamerica.webp", alt: "Convênio sulamerica" },
 ];
 
 export default function Convenios() {
@@ -76,53 +76,75 @@ export default function Convenios() {
 
     return (
         <div
-            id="diferenciais"
             className={`
-                flex 
-                items-start justify-center 
-                w-full bg-white overflow-x-clip
-                px-4 py-24
+                flex flex-1 flex-col bg-white font-sans pb-16
             `}
         >
-            <div className="flex flex-col w-full max-w-6xl">
-                <div
+            <div className="w-full">
+                <section className="relative isolate overflow-hidden bg-linear-to-br from-nef-900 to-nef-600">
+                    <div
+                        aria-hidden="true"
+                        className="absolute -right-24 -top-40 size-136 rounded-full border border-white/10"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="absolute -right-10 -top-20 size-104 rounded-full border border-white/10"
+                    />
+                    <div
+                        aria-hidden="true"
+                        className="absolute right-14 top-12 size-68 rounded-full bg-white/4"
+                    />
+                    <div className="relative mx-auto flex w-full max-w-6xl flex-col px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+                        <span className="mb-4 text-sm font-bold uppercase tracking-[0.18em] text-white/70">
+                            Convênios
+                        </span>
+                        <h1 className="max-w-2xl font-title text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
+                            Saiba quais são nossos parceiros
+                        </h1>
+                        <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
+                            Conheça os convênios que atuam em parceria conosco
+                            para fornecer o melhor atendimento de consultório e
+                            hospitalares.
+                        </p>
+                    </div>
+                </section>
+                <section
                     className={`
-                        flex flex-col items-start justify-start 
-                        w-full m-auto relative mb-8
-                        text-center
+                        relative z-10 mx-auto  
+                        w-full max-w-6xl 
+                        px-4 sm:px-6 lg:px-8 
+                        py-6 sm:py-8 lg:py-10 xl:py-12
+                        flex flex-col gap-4
                     `}
                 >
-                    <h1 className="text-3xl sm:text-3xl mb-4 font-title w-full mx-auto">
-                        Parceiros no{" "}
-                        <strong className="font-extrabold">cuidado</strong> com
-                        a sua <strong className="font-extrabold">saúde</strong>
-                    </h1>
-                    <h2 className="text-xl w-full">
-                        Aceitamos diversos convênios para que você tenha acesso
-                        a um atendimento de excelência.
-                    </h2>
-                </div>
-                <div
-                    className={`
-                        flex flex-row flex-wrap items-center justify-center 
-                        w-full lg:w-8/10 m-auto relative mb-8 lg:mb-auto
-                        text-center
-                    `}
-                >
-                    {convenios.map((convenio, index) => (
-                        <div key={index} className="flex h-full flex-col items-center justify-between">
-                            <Image
-                                src={convenio.src}
-                                alt={convenio.alt}
+                    <p className=" leading-7 text-zinc-600">
+                                Importante: o convênio Amil oferece apenas atendimento de consultório conosco.
+                            </p>
+                    <div
+                        className={`
+                            flex flex-row flex-wrap items-center justify-center
+                            w-full lg:w-8/10 m-auto relative mb-8 lg:mb-auto
+                            text-center
+                        `}
+                    >
+                        {convenios.map((convenio, index) => (
+                            <div
                                 key={index}
-                                width={186}
-                                height={220}
-                                className="md:w-8/10 h-full p-4"
-                            />
-                            {/* <span className="text-sm bottom-0 align-bottom">{convenio.alt}</span> */}
-                        </div>
-                    ))}
-                </div>
+                                className="flex h-full flex-col items-center justify-between"
+                            >
+                                <Image
+                                    src={convenio.src}
+                                    alt={convenio.alt}
+                                    key={index}
+                                    width={186}
+                                    height={220}
+                                    className="md:w-8/10 h-full p-4"
+                                />
+                                {/* <span className="text-sm bottom-0 align-bottom">{convenio.alt}</span> */}
+                            </div>
+                        ))}
+                    </div>
+                </section>
             </div>
         </div>
     );
