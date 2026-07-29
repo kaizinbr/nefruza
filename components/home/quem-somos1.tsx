@@ -153,7 +153,7 @@ export default function QuemSomos() {
                                 </div>
                             </div>
                         </div>
-                        <div className="lg:hidden bg-linear-to-b from-nef-400 to-nef-900 to-75% w-4 rounded-full absolute z-0 h-7/10"></div>
+                        <div className="lg:hidden top-2 bg-linear-to-b from-nef-400 to-nef-900 to-75% w-4 rounded-full absolute z-0 h-7/10"></div>
                         <div className="w-full relative flex items-start justify-center lg:h-112 overflow-hidden">
                             <div
                                 className={`
@@ -167,47 +167,47 @@ export default function QuemSomos() {
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-0 aspect-square sm:size-120 lg:size-238 rounded-full bg-white
+                                        w-9/10 z-0 aspect-square sm:size-120 lg:size-238 rounded-full bg-white
                                     `}
                                 />
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-5 aspect-square sm:size-98 lg:size-214 rounded-full bg-white border border-nef-300/80
+                                        w-[95%] z-5 aspect-square sm:size-98 lg:size-214 rounded-full bg-white border border-nef-300/80
                                     `}
                                 />
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-5 aspect-square sm:size-72 lg:size-190 rounded-full bg-white border border-nef-300/50
+                                        w-[95%] z-5 aspect-square sm:size-72 lg:size-190 rounded-full bg-white border border-nef-300/50
                                     `}
                                 />
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-5 aspect-square sm:size-98 lg:size-164 rounded-full bg-white border border-nef-200
+                                        w-[95%] z-5 aspect-square sm:size-98 lg:size-164 rounded-full bg-white border border-nef-200
                                     `}
                                 />
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-5 aspect-square sm:size-98 lg:size-140 rounded-full bg-white border border-nef-200/80
+                                        w-[95%] z-5 aspect-square sm:size-98 lg:size-140 rounded-full bg-white border border-nef-200/80
                                     `}
                                 />
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-5 aspect-square sm:size-98 lg:size-116 rounded-full bg-white border border-nef-200/50
+                                        w-[95%] z-5 aspect-square sm:size-98 lg:size-116 rounded-full bg-white border border-nef-200/50
                                     `}
                                 />
                                 <div
                                     className={`
                                         absolute
-                                        w-full z-5 aspect-square sm:size-98 lg:size-92 rounded-full bg-white border border-nef-200/30
+                                        w-[95%] z-5 aspect-square sm:size-98 lg:size-92 rounded-full bg-white border border-nef-200/30
                                     `}
                                 />
                                 <div className="w-full z-20 aspect-square sm:size-120 lg:size-238 rounded-full  flex flex-col items-center justify-center lg:pt-44 lg:justify-start">
-                                    <h1 className="text-4xl font-extrabold font-title text-center text-nef-600">
+                                    <h1 className="text-2xl sm:text-4xl font-extrabold font-title text-center text-nef-600">
                                         47 anos cuidando <br /> de vidas na
                                         Paraíba
                                     </h1>

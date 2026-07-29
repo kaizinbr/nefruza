@@ -154,7 +154,7 @@ export default function Banner() {
                             bg-white px-4 py-8 text-center shadow-sm
                             transition-all duration-300
                             hover:-translate-y-1 hover:border-nef-500 hover:shadow-lg
-                            sm:h-56 sm:w-36 sm:px-8 sm:py-12
+                            sm:h-56 sm:w-34 sm:px-8 sm:py-12
                         `}
                     >
                         <div
