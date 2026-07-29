@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,7 +12,7 @@ import {
 } from "motion/react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { LuChevronDown } from "react-icons/lu";
-import { HoverCard, Collapse } from "@mantine/core";
+import { Collapse } from "@mantine/core";
 
 type HrefValue = string | { pathname: string; query?: Record<string, string> };
 
@@ -28,7 +28,7 @@ interface NavItem {
 }
 
 // Itens principais do menu + sub-itens espelhando as colunas do Footer.
-// Alterar aqui reflete tanto no menu desktop (hover) quanto no menu
+// Alterar aqui reflete tanto no menu desktop (mega menu) quanto no menu
 // fullscreen/mobile (collapse), já que ambos consomem este mesmo array.
 const navigationItems: NavItem[] = [
     { href: "/", label: "Home" },
@@ -80,6 +80,9 @@ const navigationItems: NavItem[] = [
 ];
 
 const HEADER_HEIGHT = 96;
+// pequeno delay para não fechar o painel ao passar o mouse entre o
+// acionador e o painel (hover intent)
+const CLOSE_DELAY = 120;
 
 function hrefToPath(href: HrefValue) {
     return typeof href === "string" ? href : href.pathname;
@@ -91,6 +94,9 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     // controla qual item do menu fullscreen está com o submenu expandido
     const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
+    // controla qual item do header desktop tem o mega menu aberto
+    const [activeItem, setActiveItem] = useState<string | null>(null);
+    const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const { scrollY } = useScroll();
 
@@ -107,6 +113,8 @@ export default function Navbar() {
         setMenuOpen(false);
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setOpenSubmenu(null);
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setActiveItem(null);
     }, [pathname]);
 
     useEffect(() => {
@@ -125,41 +133,85 @@ export default function Navbar() {
         return () => window.removeEventListener("keydown", onKeyDown);
     }, [menuOpen]);
 
+    // limpa qualquer timeout pendente ao desmontar
+    useEffect(() => {
+        return () => {
+            if (closeTimeout.current) clearTimeout(closeTimeout.current);
+        };
+    }, []);
+
     const isActive = (href: string) =>
         href === "/" ? pathname === "/" : pathname.startsWith(href);
 
+    const openItem = (href: string) => {
+        if (closeTimeout.current) {
+            clearTimeout(closeTimeout.current);
+            closeTimeout.current = null;
+        }
+        setActiveItem(href);
+    };
+
+    const scheduleClose = () => {
+        if (closeTimeout.current) clearTimeout(closeTimeout.current);
+        closeTimeout.current = setTimeout(() => {
+            setActiveItem(null);
+        }, CLOSE_DELAY);
+    };
+
+    const activeNavItem = navigationItems.find(
+        (item) => item.href === activeItem && item.children,
+    );
+
     return (
         <>
-            {/* Header desktop (topo da página) */}
+            {/* Header desktop (topo da página) — agora expande para baixo (mega menu) */}
             <header
-                className={`fixed inset-x-0 top-0 z-40 hidden w-full items-center justify-center border-b border-zinc-200 bg-white px-16 py-4 
-                    h-24
-                    transition-transform duration-500 ease-out lg:flex ${
-                        scrolled ? "-translate-y-full" : "translate-y-0"
-                    }`}
+                onMouseLeave={scheduleClose}
+                className={`fixed inset-x-0 top-0 z-40 hidden w-full flex-col border-b border-zinc-200 bg-white transition-transform duration-500 ease-out lg:flex ${
+                    scrolled ? "-translate-y-full" : "translate-y-0"
+                }`}
             >
-                <nav className="flex w-full max-w-7xl items-center justify-between">
-                    <Link href="/" className="flex items-center gap-4">
-                        <Image
-                            src="/img/logo.webp"
-                            alt="Nefruza Logo"
-                            width={170}
-                            height={32}
-                            priority
-                        />
-                    </Link>
+                <nav className="flex w-full items-center justify-between px-16 py-4 h-24">
+                    <div className="flex w-full max-w-7xl items-center justify-between mx-auto">
+                        <Link href="/" className="flex items-center gap-4">
+                            <Image
+                                src="/img/logo.webp"
+                                alt="Nefruza Logo"
+                                width={170}
+                                height={32}
+                                priority
+                            />
+                        </Link>
 
-                    <div className="flex items-center gap-4">
-                        {navigationItems.map((item) => {
-                            const active = isActive(item.href);
+                        <div className="flex items-center gap-4">
+                            {navigationItems.map((item) => {
+                                const active = isActive(item.href);
+                                const isOpen = activeItem === item.href;
 
-                            const linkClasses = `flex items-center gap-1 rounded-md px-4 py-2 transition-colors ${
-                                active
-                                    ? "font-bold text-nef"
-                                    : "text-zinc-700 hover:text-nef"
-                            }`;
+                                const linkClasses = `flex items-center gap-1 rounded-md px-4 py-2 transition-colors ${
+                                    active || isOpen
+                                        ? "font-bold text-nef-700"
+                                        : "text-zinc-700 hover:text-nef-700"
+                                }`;
 
-                            if (!item.children) {
+                                if (!item.children) {
+                                    return (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            aria-current={
+                                                active ? "page" : undefined
+                                            }
+                                            className={linkClasses}
+                                            onMouseEnter={() =>
+                                                setActiveItem(null)
+                                            }
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    );
+                                }
+
                                 return (
                                     <Link
                                         key={item.href}
@@ -167,61 +219,62 @@ export default function Navbar() {
                                         aria-current={
                                             active ? "page" : undefined
                                         }
+                                        aria-expanded={isOpen}
                                         className={linkClasses}
+                                        onMouseEnter={() => openItem(item.href)}
+                                        onFocus={() => openItem(item.href)}
                                     >
                                         {item.label}
+                                        <LuChevronDown
+                                            className={`text-sm transition-transform duration-300 ${
+                                                isOpen ? "rotate-180" : ""
+                                            }`}
+                                        />
                                     </Link>
                                 );
-                            }
-
-                            return (
-                                <HoverCard
-                                    key={item.href}
-                                    width={220}
-                                    shadow="md"
-                                    radius="md"
-                                    openDelay={80}
-                                    closeDelay={150}
-                                    position="bottom"
-                                    withinPortal
-                                >
-                                    <HoverCard.Target>
-                                        <Link
-                                            href={item.href}
-                                            aria-current={
-                                                active ? "page" : undefined
-                                            }
-                                            className={linkClasses}
-                                        >
-                                            {item.label}
-                                            <LuChevronDown className="text-sm" />
-                                        </Link>
-                                    </HoverCard.Target>
-                                    <HoverCard.Dropdown className="!border-zinc-200 !p-2">
-                                        <div className="flex flex-col">
-                                            {item.children.map((sub) => (
-                                                <Link
-                                                    key={
-                                                        item.label +
-                                                        hrefToPath(sub.href) +
-                                                        sub.label
-                                                    }
-                                                    href={sub.href}
-                                                    className="rounded-md px-3 py-2 text-base text-zinc-700 transition-colors hover:bg-zinc-50 hover:text-nef"
-                                                >
-                                                    {sub.label}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </HoverCard.Dropdown>
-                                </HoverCard>
-                            );
-                        })}
+                            })}
+                        </div>
                     </div>
                 </nav>
+
+                {/* Painel do mega menu: todo o header cresce para baixo e
+                    exibe os sub-itens do item ativo em uma única faixa */}
+                <AnimatePresence>
+                    {activeNavItem && (
+                        <motion.div
+                            key="mega-panel"
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{
+                                duration: 0.35,
+                                ease: [0.65, 0, 0.35, 1],
+                            }}
+                            className="w-full overflow-hidden border-t border-zinc-100 bg-white"
+                            onMouseEnter={() => openItem(activeNavItem.href)}
+                        >
+                            <div className="mx-auto flex w-full max-w-7xl items-center justify-end gap-2 px-16 py-4">
+                                {activeNavItem.children!.map((sub) => (
+                                    <Link
+                                        key={
+                                            activeNavItem.label +
+                                            hrefToPath(sub.href) +
+                                            sub.label
+                                        }
+                                        href={sub.href}
+                                        onClick={() => setActiveItem(null)}
+                                        className="rounded-md px-4 py-2 text-base text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-nef"
+                                    >
+                                        {sub.label}
+                                    </Link>
+                                ))}
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </header>
 
-            {/* Header fixo (aparece ao rolar / usado no mobile) */}
+            {/* Header fixo (aparece ao rolar / usado no mobile) — inalterado */}
             <header
                 className={`
                     fixed inset-x-0 top-0 z-40 flex w-full items-center justify-between border-b border-zinc-200 bg-white px-6 py-4 
@@ -254,7 +307,7 @@ export default function Navbar() {
 
             <div style={{ height: HEADER_HEIGHT }} />
 
-            {/* Menu fullscreen colapsável (reutilizado no scroll do desktop e no mobile) */}
+            {/* Menu fullscreen colapsável (reutilizado no scroll do desktop e no mobile) — inalterado */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
@@ -332,8 +385,8 @@ export default function Navbar() {
                                                 }
                                                 className={`block px-4 py-3 text-center text-2xl transition-colors ${
                                                     active
-                                                        ? "font-bold text-nef"
-                                                        : "text-zinc-700 hover:text-nef"
+                                                        ? "font-bold text-nef-600"
+                                                        : "text-zinc-700 hover:text-nef-600"
                                                 }`}
                                             >
                                                 {item.label}

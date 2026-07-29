@@ -91,7 +91,7 @@ export default function FAQ() {
                                 panel: "text-left",
                                 content: `
                                     pb-16 p-6
-                                    text-sm leading-7 text-zinc-600
+                                    text-sm leading-7 text-zinc-800
                                     sm:text-base
                                 `,
                                 itemTitle: "border-b border-nef-600",
