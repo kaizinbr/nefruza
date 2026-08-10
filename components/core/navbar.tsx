@@ -65,7 +65,7 @@ const navigationItems: NavItem[] = [
     { href: "/equipe", label: "Equipe" },
     {
         href: "/institucional",
-        label: "Sobre",
+        label: "Quem somos",
         children: [
             // { href: "/institucional", label: "A Nefruza" },
             { href: "/institucional", label: "Nossa história" },

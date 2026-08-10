@@ -2,11 +2,11 @@ import TeamCarousel, { TeamMember } from "@/components/equipe/team-carousel";
 
 const team: TeamMember[] = [
     {
-        id: "ana-lucia",
-        name: "Ana Lúcia Pinto",
-        role: "Assistente social",
-        bio: `Graduada em Serviço Social pela UFPB, com especialização em Psicopedagogia e formação técnica em Enfermagem, atua como assistente social na clínica Nefruza. Possui experiência em saúde e gestão, com passagens pelo Hospital Memorial São Francisco e pela Prefeitura de João Pessoa, além de constante atualização profissional, destacando-se sua participação no II Congresso Nordeste de Transplante.`,
-        image: "/img/equipe/ana-lucia.jpeg",
+        id: "nutricionista",
+        name: "Jordana Carvalho",
+        role: "Nutricionista",
+        bio: "Responsável pelo plano alimentar dos pacientes em diálise, fundamental para o bem-estar durante o tratamento.",
+        image: "/img/equipe/jordana-carvalho.jpeg",
     },
     {
         id: "psicologa",
@@ -16,18 +16,18 @@ const team: TeamMember[] = [
         image: "/img/equipe/paula.jpeg",
     },
     {
-        id: "medica",
-        name: "Erika Fiúza",
-        role: "Médica Nefrologista",
-        bio: "Especialista em nefrologia, com anos de experiência em hemodiálise e acompanhamento de doença renal crônica.",
-        image: "/img/equipe/erika-fiuza.jpeg",
+        id: "ana-lucia",
+        name: "Ana Lúcia Pinto",
+        role: "Assistente social",
+        bio: `Graduada em Serviço Social pela UFPB, com especialização em Psicopedagogia e formação técnica em Enfermagem, atua como assistente social na clínica Nefruza. Possui experiência em saúde e gestão, com passagens pelo Hospital Memorial São Francisco e pela Prefeitura de João Pessoa, além de constante atualização profissional, destacando-se sua participação no II Congresso Nordeste de Transplante.`,
+        image: "/img/equipe/ana-lucia-pinto.jpeg",
     },
     {
-        id: "nutricionista",
-        name: "Jordana Carvalho",
-        role: "Nutricionista",
-        bio: "Responsável pelo plano alimentar dos pacientes em diálise, fundamental para o bem-estar durante o tratamento.",
-        image: "/img/equipe/jordana-carvalho.jpeg",
+        id: "medica",
+        name: "Maria José de Sousa",
+        role: "Assistente social",
+        bio: "descrição vai aqui...",
+        image: "/img/equipe/maria.jpeg",
     },
 ];
 
@@ -53,11 +53,10 @@ export default function Equipe() {
                             Equipe
                         </span>
                         <h1 className="max-w-2xl font-title text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
-                            Conheça nosso time
+                            Conheça nossa equipe multidisciplinar
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
-                            Nossa equipe é completa e capacitada para prestar o
-                            melhor atendimento para nossos pacientes.
+                            Nossa equipe atua em conjunto para garantir o melhor cuidado aos pacientes, oferecendo além do suporte médico, o apoio psicológico e nutricional em todas as fases do tratamento renal.
                         </p>
                     </div>
                 </section>

@@ -32,7 +32,7 @@ export default function Footer() {
                                 <PiPhoneCallFill /> (83) 3225-1619
                             </Link>
                             <span className="text-xs text-zinc-300">
-                                Segunda a sexta-feira, das 8h às 18h
+                                Segunda a sábado, das 6h às 21h
                             </span>
                         </div>
                         <div className="flex flex-col items-start gap-2">
@@ -46,7 +46,7 @@ export default function Footer() {
                                 <PiPhoneCallFill /> (83) 3225-1985
                             </Link>
                             <span className="text-xs text-zinc-300">
-                                Segunda a sexta-feira, das 8h às 18h
+                                Segunda a sábado, das 6h às 21h
                             </span>
                         </div>
                         <div className="flex flex-col items-start gap-2">
@@ -61,7 +61,7 @@ export default function Footer() {
                                 <TbBrandWhatsappFilled /> (83) 9 9945-2332
                             </Link>
                             <span className="text-xs text-zinc-300">
-                                Segunda a sexta-feira, das 8h às 18h
+                                Segunda a sábado, das 6h às 21h
                             </span>
                         </div>
                         <Link

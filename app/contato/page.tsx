@@ -90,6 +90,13 @@ export default function Home() {
                                                     {telefone.numero}
                                                 </Link>
                                             ))}
+                                        <p className="mt-2 flex items-start gap-2 text-sm leading-6 text-zinc-500">
+                                            <PiClockFill
+                                                aria-hidden="true"
+                                                className="mt-1 shrink-0"
+                                            />
+                                            Segunda a sábado, das 6h às 21h. 
+                                        </p>
                                         </div>
                                     </div>
                                 </div>
@@ -118,8 +125,7 @@ export default function Home() {
                                                 aria-hidden="true"
                                                 className="mt-1 shrink-0"
                                             />
-                                            Segunda a sexta-feira, das 8h às
-                                            18h.
+                                            Segunda a sábado, das 6h às 21h. 
                                         </p>
                                     </div>
                                 </div>
