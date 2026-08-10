@@ -11,7 +11,7 @@ export default function Footer() {
             <div
                 className={`
                     flex flex-wrap w-full  flex-col items-center justify-center
-                    bg-nef-700 px-4 md:px-16 pt-12 text-zinc-200
+                    bg-nef-700 px-4 md:px-16 pt-12 text-zinc-100
                 `}
             >
                 <div
@@ -22,7 +22,7 @@ export default function Footer() {
                 >
                     <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 xl:gap-18 w-full mb-8">
                         <div className="flex flex-col items-start gap-2">
-                            <span className="font-bold font-title ext-sm uppercase">
+                            <span className="font-bold font-title text-sm uppercase">
                                 Telefone fixo
                             </span>
                             <Link

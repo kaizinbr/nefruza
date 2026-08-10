@@ -35,6 +35,14 @@ const initialValues: ContactFormValues = {
     mensagem: "",
 };
 
+const inputClassName = `
+    w-full rounded-xl border border-zinc-300 bg-white
+    px-3 py-2 text-sm! text-zinc-950 outline-none
+    transition placeholder:text-zinc-400
+    focus:border-nef-600 focus:ring-2 focus:ring-nef-600/15
+    disabled:cursor-not-allowed disabled:bg-zinc-100
+`;
+
 /**
  * Stub — troque pela chamada real (server action, rota de API, etc.).
  * Deve retornar o número do ticket gerado no backend.
@@ -132,44 +140,99 @@ export default function FormContato() {
             </Group>
 
             <Collapse expanded={expanded}>
-                <Stack
-                    gap="md"
-                    mt="md"
-                    className=""
-                >
-                    <TextInput
-                        label="E-mail"
-                        placeholder="nome.sobrenome@mail.com"
-                        value={values.email}
-                        onChange={(e) =>
-                            setField("email")(e.currentTarget.value)
-                        }
-                        error={errors.email}
-                        withAsterisk
-                        classNames={{ input: "focus:border-nef-600" }}
-                    />
-                    <TextInput
-                        label="Telefone"
-                        placeholder="(XX) 9XXXX-XXXX"
-                        type="tel"
-                        inputMode="tel"
-                        value={values.tel}
-                        onChange={(e) => setField("tel")(e.currentTarget.value)}
-                        error={errors.tel}
-                        // withAsterisk
-                        classNames={{ input: "focus:border-nef-600" }}
-                    />
-                    <TextInput
-                        label="Nome"
-                        placeholder="Como podemos te chamar?"
-                        value={values.name}
-                        onChange={(e) =>
-                            setField("name")(e.currentTarget.value)
-                        }
-                        error={errors.name}
-                        withAsterisk
-                        classNames={{ input: "focus:border-nef-600" }}
-                    />
+                <Stack gap="md" mt="md" className="">
+
+                    <div>
+                        <label
+                            className="mb-2 block text-sm font-medium text-zinc-800"
+                            htmlFor="newsletter-name"
+                        >
+                            E-mail{" "}
+                            <span className="font-normal text-nef-500">*</span>
+                        </label>
+
+                        <input
+                            className={inputClassName}
+                            // disabled={pending}
+                            id="mail"
+                            maxLength={120}
+                            name="email"
+                            placeholder="nome.sobrenome@mail.com"
+                            type="email"
+                            onChange={(e) =>
+                                setField("email")(e.currentTarget.value)
+                            }
+                        />
+                    </div>
+                    <div>
+                        <label
+                            className="mb-2 block text-sm font-medium text-zinc-800"
+                            htmlFor="tel"
+                        >
+                            Telefone{" "}
+                            {/* <span className="font-normal text-nef-500">*</span> */}
+                        </label>
+
+                        <input
+                            className={inputClassName}
+                            value={values.tel}
+                            id="tel"
+                            maxLength={120}
+                            name="tel"
+                            placeholder="(XX) 9XXXX-XXXX"
+                            type="tel"
+                            onChange={(e) =>
+                                setField("tel")(e.currentTarget.value)
+                            }
+                        />
+                    </div>
+
+                    
+                    <div>
+                        <label
+                            className="mb-2 block text-sm font-medium text-zinc-800"
+                            htmlFor="name"
+                        >
+                            Nome{" "}
+                            <span className="font-normal text-nef-500">*</span>
+                        </label>
+
+                        <input
+                            className={inputClassName}
+                            // disabled={pending}
+                            value={values.name}
+                            id="newsletter-name"
+                            maxLength={120}
+                            name="name"
+                            placeholder="Como podemos chamar você?"
+                            type="text"
+                            onChange={(e) =>
+                                setField("name")(e.currentTarget.value)
+                            }
+                        />
+                    </div>
+                    <div>
+                        <label
+                            className="mb-2 block text-sm font-medium text-zinc-800"
+                            htmlFor="newsletter-name"
+                        >
+                            Nome{" "}
+                            <span className="font-normal text-zinc-500">
+                                (opcional)
+                            </span>
+                        </label>
+
+                        <input
+                            className={inputClassName}
+                            // disabled={pending}
+                            id="newsletter-name"
+                            maxLength={120}
+                            name="name"
+                            placeholder="Como podemos chamar você?"
+                            type="text"
+                        />
+                    </div>
+                    
                     <Select
                         data={Object.values(CONTACT_SECTORS).map((sector) => ({
                             value: sector.slug,
@@ -180,20 +243,32 @@ export default function FormContato() {
                         label="Setor de Contato"
                         error={errors.sector}
                         withAsterisk
+                        classNames={{ input: "focus:border-nef-600! rounded-xl!" }}
                     />
-                    <TextInput
-                        label="Título"
-                        placeholder="Qual a motivação de seu contato?"
-                        value={values.titulo}
-                        onChange={(e) =>
-                            setField("titulo")(e.currentTarget.value)
-                        }
-                        error={errors.titulo}
-                        withAsterisk
-                        classNames={{
-                            input: "!border !border-zinc-300 !bg-zinc-100",
-                        }}
-                    />
+
+                    
+                    <div>
+                        <label
+                            className="mb-2 block text-sm font-medium text-zinc-800"
+                            htmlFor="titulo"
+                        >
+                            Título{" "}
+                            <span className="font-normal text-nef-500">*</span>
+                        </label>
+
+                        <input
+                            className={inputClassName}
+                            // disabled={pending}
+                            id="titulo"
+                            maxLength={120}
+                            name="titulo"
+                            placeholder="Qual a motivação de seu contato?"
+                            type="text"
+                            onChange={(e) =>
+                                setField("titulo")(e.currentTarget.value)
+                            }
+                        />
+                    </div>
 
                     <Chip.Group
                         multiple={false}
@@ -207,14 +282,14 @@ export default function FormContato() {
                             <Chip
                                 value="mail"
                                 classNames={{
-                                    label: "data-checked:bg-nef-600!",
+                                    label: "data-checked:bg-nef-600! bg-zinc-200!",
                                 }}
                             >
                                 E-mail
                             </Chip>
                             <Chip
                                 classNames={{
-                                    label: "data-checked:bg-nef-600!",
+                                    label: "data-checked:bg-nef-600! bg-zinc-200!",
                                 }}
                                 value="phone"
                             >
@@ -234,7 +309,7 @@ export default function FormContato() {
                         withAsterisk
                         autosize
                         minRows={5}
-                        classNames={{ input: "focus:border-nef-600" }}
+                        classNames={{ input: "focus:border-nef-600! rounded-xl!" }}
                     />
 
                     {submitError && (
@@ -246,7 +321,7 @@ export default function FormContato() {
                     <Button
                         onClick={handleSubmit}
                         loading={submitting}
-                        className="bg-nef-600! rounded-full py-3 font-bold text-white transition-colors hover:bg-nef-600/90"
+                        className="bg-nef-600! rounded-xl! py-3 font-bold text-white transition-colors hover:bg-nef-600/80!"
                     >
                         Enviar mensagem
                     </Button>
@@ -271,7 +346,8 @@ export default function FormContato() {
                         #{ticketNumber}
                     </Text>
                     <Text size="sm" c="dimmed" ta="center">
-                        Você receberá esse ticket no e-mail informado. Entraremos em contato em breve para resolução.
+                        Você receberá esse ticket no e-mail informado.
+                        Entraremos em contato em breve para resolução.
                     </Text>
                     <Button
                         onClick={closeSuccess}
