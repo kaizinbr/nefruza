@@ -6,28 +6,28 @@ const team: TeamMember[] = [
         name: "Ana Lúcia Pinto",
         role: "Assistente social",
         bio: `Graduada em Serviço Social pela UFPB, com especialização em Psicopedagogia e formação técnica em Enfermagem, atua como assistente social na clínica Nefruza. Possui experiência em saúde e gestão, com passagens pelo Hospital Memorial São Francisco e pela Prefeitura de João Pessoa, além de constante atualização profissional, destacando-se sua participação no II Congresso Nordeste de Transplante.`,
-        image: "/img/placeholder.webp",
+        image: "/img/equipe/ana-lucia.jpeg",
     },
     {
         id: "psicologa",
-        name: "Nome da Psicóloga",
+        name: "Paula Frassinetti",
         role: "Psicóloga",
-        bio: "Profissional com mestrado em saúde mental, atua no acompanhamento psicológico de pacientes em tratamento renal.",
-        image: "/img/placeholder.webp",
+        bio: "Psicóloga clínica com experiência na área da saúde em hemodiálise. Tem atuação em clínicas de tratamento renal promovendo e desenvolvendo trabalhos e atividades voltadas ao autocuidado e saúde mental dos pacientes, familiares e equipe de saúde. Participa ativamente de campanhas para o Dia Mundia do Rim.",
+        image: "/img/equipe/paula.jpeg",
     },
     {
         id: "medica",
-        name: "Nome da Médica",
+        name: "Erika Fiúza",
         role: "Médica Nefrologista",
         bio: "Especialista em nefrologia, com anos de experiência em hemodiálise e acompanhamento de doença renal crônica.",
-        image: "/img/placeholder.webp",
+        image: "/img/equipe/erika-fiuza.jpeg",
     },
     {
         id: "nutricionista",
-        name: "Nome da Nutricionista",
+        name: "Jordana Carvalho",
         role: "Nutricionista",
         bio: "Responsável pelo plano alimentar dos pacientes em diálise, fundamental para o bem-estar durante o tratamento.",
-        image: "/img/placeholder.webp",
+        image: "/img/equipe/jordana-carvalho.jpeg",
     },
 ];
 
@@ -56,18 +56,21 @@ export default function Equipe() {
                             Conheça nosso time
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
-                            Nossa equipe é completa e capacitada para prestar o melhor atendimento para nossos pacientes.
+                            Nossa equipe é completa e capacitada para prestar o
+                            melhor atendimento para nossos pacientes.
                         </p>
                     </div>
                 </section>
-                <section className={`
+                <section
+                    className={`
                         relative z-10 mx-auto  
                         w-full max-w-6xl 
                         px-4 sm:px-6 lg:px-8 
                         py-6 sm:py-8 lg:py-10 xl:py-12
                     
                         flex flex-col 
-                    `}>
+                    `}
+                >
                     {/* <span className="text-sm font-bold uppercase text-nef-500">
                         Equipe
                     </span>

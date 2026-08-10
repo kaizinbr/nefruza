@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import api from "@/lib/api";
 
 // nomeclatura dos tickets: 3 a 5 letras pro tipo de contato seguidas de zeros (pra sempre ser 5) + ano e mês + 6 números aleatórios
 // exemplo: SAC000202406123456
@@ -42,7 +43,25 @@ export default async function submitContactForm(
         timeStyle: "short",
     });
 
-    // 1. Notifica o administrativo primeiro — se isso falhar, abortamos:
+    const saveTicketResponse = await api.post("/tickets/create", {
+        ticketNumber,
+        name: values.name,
+        email: values.email,
+        phone: values.tel,
+        subject: values.titulo,
+        sector: sectorLabel,
+        type: values.type ? CONTACT_METHOD_LABELS[values.type] : "Não informado",
+        message: values.mensagem,
+        date: new Date(),
+    });
+
+    if (saveTicketResponse.data?.error) {
+        throw new Error(
+            `Falha ao salvar o ticket: ${saveTicketResponse.data.error.message}`,
+        );
+    }
+
+    // 2. Notifica o administrativo primeiro — se isso falhar, abortamos:
     // não faz sentido confirmar um ticket que ninguém na clínica vai ver.
     const adminEmail = await resend.emails.send({
         from: "Site Nefruza <site@kaizin.work>",
@@ -67,7 +86,7 @@ export default async function submitContactForm(
         );
     }
 
-    // 2. Só então confirma pro usuário. Se esse envio falhar, não derruba
+    // 23 Só então confirma pro usuário. Se esse envio falhar, não derruba
     // o fluxo — o ticket já existe e a equipe já foi avisada; só registramos
     // o erro pra investigar depois.
     const userEmail = await resend.emails.send({
