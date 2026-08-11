@@ -74,6 +74,7 @@ const navigationItems: NavItem[] = [
                 href: "/institucional/proposito-e-valores",
                 label: "Propósito e valores",
             },
+            { href: "/trabalhe-conosco", label: "Trabalhe conosco" },
             // { href: "/institucional#pioneirismo", label: "Pioneirismo" },
         ],
     },

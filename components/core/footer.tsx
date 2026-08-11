@@ -108,6 +108,13 @@ export default function Footer() {
                             >
                                 Pioneirismo
                             </Link>
+                            <Link
+                                href="/trabalhe-conosco"
+                                rel="noopener noreferrer"
+                                className=" hover:text-nef-300 transition-colors"
+                            >
+                                Trabalhe conosco
+                            </Link>
                         </div>
                         <div className="flex flex-col gap-2 md:w-1/5 lg:w-auto w-1/1">
                             <Link

@@ -1,18 +1,19 @@
 import TeamCarousel, { TeamMember } from "@/components/equipe/team-carousel";
+import Image from "next/image";
 
 const team: TeamMember[] = [
     {
         id: "nutricionista",
         name: "Jordana Carvalho",
         role: "Nutricionista",
-        bio: "Responsável pelo plano alimentar dos pacientes em diálise, fundamental para o bem-estar durante o tratamento.",
+        bio: `Nutricionista há 20 anos, com sólida experiência em Nutrição Clínica, atuando de forma humanizada e baseada em evidências científicas. Especialista em Nutrição Clínica, possui ampla experiência no atendimento de pacientes com doenças crônicas, idosos e pessoas em terapia renal substitutiva (hemodiálise).\n\n Integrante da equipe Multidisciplinar da Nefruza, responsável técnica pelo Serviço de Alimentação e Nutrição. Professora de Nutrição do curso de técnicos de enfermagem e palestrante.`,
         image: "/img/equipe/jordana-carvalho.jpeg",
     },
     {
         id: "psicologa",
         name: "Paula Frassinetti",
         role: "Psicóloga",
-        bio: "Psicóloga clínica com experiência na área da saúde em hemodiálise. Tem atuação em clínicas de tratamento renal promovendo e desenvolvendo trabalhos e atividades voltadas ao autocuidado e saúde mental dos pacientes, familiares e equipe de saúde. Participa ativamente de campanhas para o Dia Mundia do Rim.",
+        bio: `Psicóloga clínica com experiência na área da saúde e atuação em serviços de hemodiálise. Desenvolve trabalhos e atividades voltados ao autocuidado, à saúde mental e ao bem-estar de pacientes, familiares e equipes de saúde em clínicas de tratamento renal. Participa ativamente de ações de conscientização e campanhas relacionadas ao Dia Mundial do Rim.`,
         image: "/img/equipe/paula.jpeg",
     },
     {
@@ -26,7 +27,8 @@ const team: TeamMember[] = [
         id: "medica",
         name: "Maria José de Sousa",
         role: "Assistente social",
-        bio: "descrição vai aqui...",
+        bio: `Com trajetória de 15 anos na área da Nefrologia, iniciou sua atuação profissional como Técnica de Enfermagem, experiência que lhe proporcionou amplo conhecimento sobre a rotina, os desafios e as necessidades dos pacientes em tratamento renal. Há 7 anos atua como Assistente Social, desenvolvendo um trabalho voltado ao acolhimento, orientação e acompanhamento de pacientes e familiares, especialmente daqueles em tratamento de hemodiálise.\n\n Entre suas principais atribuições estão o acolhimento e a escuta qualificada, a orientação sobre direitos sociais e benefícios, o acompanhamento de pacientes em situação de vulnerabilidade, a busca ativa de pacientes internados ou ausentes às sessões e o apoio aos familiares, sempre com dedicação, responsabilidade, compromisso e olhar humanizado.
+        `,
         image: "/img/equipe/maria.jpeg",
     },
 ];
@@ -56,7 +58,10 @@ export default function Equipe() {
                             Conheça nossa equipe multidisciplinar
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
-                            Nossa equipe atua em conjunto para garantir o melhor cuidado aos pacientes, oferecendo além do suporte médico, o apoio psicológico e nutricional em todas as fases do tratamento renal.
+                            Nossa equipe atua em conjunto para garantir o melhor
+                            cuidado aos pacientes, oferecendo além do suporte
+                            médico, o apoio psicológico e nutricional em todas
+                            as fases do tratamento renal.
                         </p>
                     </div>
                 </section>
@@ -83,6 +88,42 @@ export default function Equipe() {
                         fases.
                     </p> */}
                     <TeamCarousel members={team} />
+
+                    <div className="mt-16 overflow-hidden rounded-3xl bg-nef-50 sm:mt-20 lg:mt-24">
+                        <div className="grid lg:grid-cols-[1.35fr_1fr] lg:items-stretch">
+                            <div className="relative min-h-72 sm:min-h-96 lg:min-h-112">
+                                <Image
+                                    src="/img/equipe/equipe.jpeg"
+                                    alt="Equipe da Nefruza reunida"
+                                    fill
+                                    sizes="(min-width: 1024px) 640px, 100vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="flex flex-col justify-center px-6 py-10 sm:px-10 sm:py-12 lg:px-12">
+                                <span className="text-sm font-bold uppercase tracking-[0.14em] text-nef-600">
+                                    Cuidado integrado
+                                </span>
+                                <h2 className="mt-3 font-title text-3xl font-semibold leading-tight text-zinc-900 sm:text-4xl">
+                                    Uma equipe completa para cuidar de cada
+                                    etapa
+                                </h2>
+                                <p className="mt-5 leading-7 text-zinc-600">
+                                    Além dos profissionais apresentados, a
+                                    Nefruza conta com uma equipe completa e
+                                    preparada para acolher, orientar e atender
+                                    cada paciente com atenção, segurança e
+                                    cuidado humanizado.
+                                </p>
+                                <p className="mt-4 leading-7 text-zinc-600">
+                                    São diferentes áreas trabalhando de forma
+                                    integrada para tornar a experiência do
+                                    tratamento mais próxima e oferecer o suporte
+                                    necessário aos pacientes e seus familiares.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         </div>

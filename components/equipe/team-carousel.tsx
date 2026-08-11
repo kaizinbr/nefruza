@@ -65,7 +65,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
     if (members.length === 0) return null;
 
     return (
-        <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex w-full flex-col gap-8 lg:flex-row lg:items-start lg:gap-16">
             {/* Photos */}
             <div className="w-full lg:w-1/2">
                 <div className="overflow-hidden" ref={emblaRef}>
@@ -80,7 +80,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
                                     <button
                                         type="button"
                                         onClick={() => scrollTo(index)}
-                                        className="block w-full cursor-pointer rounded-2xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nef-500"
+                                        className="block  w-full cursor-pointer rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-nef-500"
                                         aria-label={`Ver ${member.name}`}
                                         aria-current={isActive}
                                     >
@@ -104,7 +104,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
                                                 alt={member.name}
                                                 width={480}
                                                 height={640}
-                                                className="aspect-[3/4] w-full object-cover"
+                                                className="aspect-3/4 w-full object-cover"
                                             />
                                         </motion.div>
                                     </button>
@@ -122,9 +122,9 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
                         disabled={!canScrollPrev}
                         aria-label="Pessoa anterior"
                         aria-disabled={!canScrollPrev}
-                        className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+                        className={`flex h-9 w-9 items-center cursor-pointer justify-center rounded-full transition ${
                             canScrollPrev
-                                ? "bg-nef-500 text-white hover:bg-nef-600"
+                                ? "bg-nef-600 text-white hover:bg-nef-800"
                                 : "cursor-not-allowed bg-zinc-200 text-zinc-400"
                         }`}
                     >
@@ -161,9 +161,9 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
                         disabled={!canScrollNext}
                         aria-label="Próxima pessoa"
                         aria-disabled={!canScrollNext}
-                        className={`flex h-9 w-9 items-center justify-center rounded-full transition ${
+                        className={`flex h-9 w-9 items-center cursor-pointer justify-center rounded-full transition ${
                             canScrollNext
-                                ? "bg-nef-500 text-white hover:bg-nef-600"
+                                ? "bg-nef-600 text-white hover:bg-nef-800"
                                 : "cursor-not-allowed bg-zinc-200 text-zinc-400"
                         }`}
                     >
@@ -205,7 +205,7 @@ export default function TeamCarousel({ members }: TeamCarouselProps) {
                         <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-nef-600">
                             {active.role}
                         </h3>
-                        <p className="text-zinc-600">{active.bio}</p>
+                        <p className="whitespace-pre-line text-zinc-600">{active.bio}</p>
                     </motion.div>
                 </AnimatePresence>
             </div>
