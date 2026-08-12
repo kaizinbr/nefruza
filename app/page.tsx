@@ -3,6 +3,7 @@ import Convenios from "@/components/home/convenios";
 import Diferenciais from "@/components/home/diferenciais";
 import Estrutura from "@/components/home/estrutura";
 import Noticias from "@/components/home/noticias";
+import { NewsletterSection } from "@/components/newsletter/newsletter-section";
 import Card from "@/components/home/quem-somos";
 import QuemSomos from "@/components/home/quem-somos1";
 import Servicos from "@/components/home/servicos";
@@ -26,6 +27,7 @@ export default function Home() {
                 <Estrutura />
                 <Convenios />
                 <Noticias />
+                <NewsletterSection />
                 <Link
                     href="/perguntas-frequentes"
                     className={`

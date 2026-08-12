@@ -183,6 +183,13 @@ export default function Footer() {
                                 Blog
                             </Link>
                             <Link
+                                href="/#newsletter"
+                                rel="noopener noreferrer"
+                                className=" hover:text-nef-300 transition-colors"
+                            >
+                                Newsletter
+                            </Link>
+                            <Link
                                 href={{
                                     pathname: "/blog",
                                     query: { category: "noticias" },
