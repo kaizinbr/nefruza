@@ -1,7 +1,12 @@
 "use server";
 
 import JobApplicationMail from "@/emails/job-application-mail";
+import {
+    JobApplicationRateLimitError,
+    storeJobApplication,
+} from "@/lib/job-application-storage";
 import type { JobApplicationState } from "@/lib/job-application-types";
+import { headers } from "next/headers";
 import { Resend } from "resend";
 
 const MAX_RESUME_SIZE = 5 * 1024 * 1024;
@@ -38,8 +43,17 @@ export default async function submitJobApplication(
     const linkedin = normalizeUrl(getText(formData, "linkedin"));
     const message = getText(formData, "message");
     const privacy = getText(formData, "privacy");
+    const website = getText(formData, "website");
     const resumeValue = formData.get("resume");
     const resume = resumeValue instanceof File ? resumeValue : null;
+
+    if (website) {
+        return {
+            success: true,
+            message:
+                "Currículo enviado com sucesso. Se surgir uma oportunidade compatível, nossa equipe entrará em contato.",
+        };
+    }
 
     const fieldErrors: NonNullable<JobApplicationState["fieldErrors"]> = {};
 
@@ -104,6 +118,12 @@ export default async function submitJobApplication(
         };
     }
 
+    const requestHeaders = await headers();
+    const ipAddress =
+        requestHeaders.get("cf-connecting-ip")?.trim() ||
+        requestHeaders.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+        requestHeaders.get("x-real-ip")?.trim() ||
+        null;
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
         console.error(
@@ -116,24 +136,32 @@ export default async function submitJobApplication(
         };
     }
 
-    const careersEmail =
-        process.env.NEFRUZA_CAREERS_EMAIL ?? "contato@nefruza.com.br";
-    const fromAddress =
-        process.env.RESEND_FROM_ADDRESS ?? "Site Nefruza <site@kaizin.work>";
-    const safeName = name.replace(/[\r\n]+/g, " ");
-    const safeFilename = resume!.name
-        .replace(/[^a-zA-Z0-9._-]/g, "-")
-        .replace(/-+/g, "-")
-        .slice(-120);
-
     try {
+        const application = await storeJobApplication({
+            area: AREA_LABELS[area],
+            city,
+            email,
+            ipAddress,
+            linkedin: linkedin || null,
+            message: message || null,
+            name,
+            phone,
+            resume: resumeBuffer,
+            resumeFilename: resume!.name,
+        });
+
         const resend = new Resend(apiKey);
         const result = await resend.emails.send({
-            from: fromAddress,
-            to: careersEmail,
+            from:
+                process.env.RESEND_FROM_ADDRESS ??
+                "Site Nefruza <site@kaizin.work>",
+            to:
+                process.env.NEFRUZA_CAREERS_EMAIL ??
+                "contato@nefruza.com.br",
             replyTo: email,
-            subject: `Nova candidatura - ${AREA_LABELS[area]} - ${safeName}`,
+            subject: `Nova candidatura - ${AREA_LABELS[area]} - ${name.replace(/[\r\n]+/g, " ")}`,
             react: JobApplicationMail({
+                applicationId: application.id,
                 name,
                 email,
                 phone,
@@ -141,6 +169,7 @@ export default async function submitJobApplication(
                 area: AREA_LABELS[area],
                 linkedin: linkedin || undefined,
                 message: message || undefined,
+                portalUrl: process.env.NEFRUZA_PORTAL_URL,
                 submittedAt: new Date().toLocaleString("pt-BR", {
                     dateStyle: "short",
                     timeStyle: "short",
@@ -150,17 +179,26 @@ export default async function submitJobApplication(
             attachments: [
                 {
                     content: resumeBuffer,
-                    filename: safeFilename || "curriculo.pdf",
+                    filename:
+                        resume!.name
+                            .replace(/[\r\n]/g, " ")
+                            .replace(/[^a-zA-Z0-9._ -]/g, "-")
+                            .trim()
+                            .slice(-180) || "curriculo.pdf",
                     contentType: "application/pdf",
                 },
             ],
         });
-
-        if (result.error) {
-            throw new Error(result.error.message);
-        }
+        if (result.error) throw new Error(result.error.message);
     } catch (error) {
         console.error("Falha ao enviar candidatura:", error);
+        if (error instanceof JobApplicationRateLimitError) {
+            return {
+                success: false,
+                message:
+                    "Recebemos várias candidaturas recentemente. Aguarde um pouco antes de tentar novamente.",
+            };
+        }
         return {
             success: false,
             message:

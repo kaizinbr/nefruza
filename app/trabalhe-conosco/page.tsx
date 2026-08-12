@@ -1,6 +1,11 @@
 import ApplicationForm from "@/components/trabalhe-conosco/application-form";
 import type { Metadata } from "next";
-import { LuHeartHandshake, LuMessagesSquare, LuSprout } from "react-icons/lu";
+import {
+    LuBriefcaseBusiness,
+    LuHeartHandshake,
+    LuMessagesSquare,
+    LuSprout,
+} from "react-icons/lu";
 
 export const metadata: Metadata = {
     title: "Trabalhe conosco | Nefruza",
@@ -26,6 +31,33 @@ const principles = [
         title: "Evolução contínua",
         description:
             "Procuramos profissionais abertos ao aprendizado e à melhoria constante do cuidado em saúde.",
+    },
+];
+
+const careerAreas = [
+    {
+        title: "Assistencial e enfermagem",
+        roles: "Enfermeiro(a), técnico(a) de enfermagem e áreas de apoio assistencial.",
+    },
+    {
+        title: "Equipe multiprofissional",
+        roles: "Nutricionista, psicólogo(a), assistente social e farmacêutico(a).",
+    },
+    {
+        title: "Corpo clínico",
+        roles: "Profissionais médicos com atuação ou interesse no cuidado renal.",
+    },
+    {
+        title: "Atendimento e recepção",
+        roles: "Recepcionista, atendimento ao paciente e relacionamento.",
+    },
+    {
+        title: "Administrativa",
+        roles: "Assistente administrativo, faturamento, financeiro e recursos humanos.",
+    },
+    {
+        title: "Serviços operacionais",
+        roles: "Higienização, manutenção, apoio e serviços gerais.",
     },
 ];
 
@@ -102,18 +134,42 @@ export default function TrabalheConoscoPage() {
                     </div>
                 </section>
                 
-                <section className="mx-auto w-full px-4 py-16 bg-nef-300 sm:px-6 md:py-24 lg:px-8">
+                <section className="w-full bg-nef-300 px-4 py-16 sm:px-6 md:py-24 lg:px-8">
                     <div className="mx-auto w-full max-w-6xl">
                         <div className="max-w-2xl">
                             <span className="text-sm font-bold uppercase tracking-[0.14em] text-nef-500">
-                                Nosso jeito de trabalhar
+                                Áreas de atuação
                             </span>
                             <h2 className="mt-3 font-title text-3xl font-semibold leading-tight text-zinc-900 md:text-4xl">
                                 Conheça os cargos e áreas de interesse
                             </h2>
                             <p className="mt-5 leading-7 text-zinc-600">
-                                
+                                Conheça alguns dos perfis que podem fazer parte
+                                do nosso banco de talentos. Os exemplos abaixo
+                                não representam vagas abertas neste momento.
                             </p>
+                        </div>
+
+                        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            {careerAreas.map((area) => (
+                                <article
+                                    className="rounded-2xl border border-nef-100 bg-white/90 p-6 shadow-sm"
+                                    key={area.title}
+                                >
+                                    <span className="flex size-11 items-center justify-center rounded-full bg-nef-50 text-nef-700">
+                                        <LuBriefcaseBusiness
+                                            aria-hidden="true"
+                                            size={20}
+                                        />
+                                    </span>
+                                    <h3 className="mt-4 font-title text-lg font-semibold text-zinc-900">
+                                        {area.title}
+                                    </h3>
+                                    <p className="mt-2 text-sm leading-6 text-zinc-600">
+                                        {area.roles}
+                                    </p>
+                                </article>
+                            ))}
                         </div>
                     </div>
                 </section>

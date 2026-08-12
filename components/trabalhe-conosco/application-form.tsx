@@ -47,6 +47,20 @@ export default function ApplicationForm() {
 
     return (
         <form action={formAction} className="space-y-6">
+            <div
+                aria-hidden="true"
+                className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden"
+            >
+                <label>
+                    Website
+                    <input
+                        autoComplete="off"
+                        name="website"
+                        tabIndex={-1}
+                        type="text"
+                    />
+                </label>
+            </div>
             <div className="grid gap-6 sm:grid-cols-2">
                 <label className="block text-sm font-semibold text-zinc-800">
                     Nome completo

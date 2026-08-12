@@ -10,6 +10,7 @@ import {
 } from "react-email";
 
 interface JobApplicationMailProps {
+    applicationId: string;
     name: string;
     email: string;
     phone: string;
@@ -17,10 +18,12 @@ interface JobApplicationMailProps {
     area: string;
     linkedin?: string;
     message?: string;
+    portalUrl?: string;
     submittedAt: string;
 }
 
 export default function JobApplicationMail({
+    applicationId,
     name,
     email,
     phone,
@@ -28,6 +31,7 @@ export default function JobApplicationMail({
     area,
     linkedin,
     message,
+    portalUrl,
     submittedAt,
 }: JobApplicationMailProps) {
     return (
@@ -132,8 +136,13 @@ export default function JobApplicationMail({
                             margin: "28px 0 0",
                         }}
                     >
-                        O currículo em PDF está anexado a este e-mail. Para
-                        responder à pessoa candidata, utilize o endereço
+                        O currículo em PDF está anexado a este e-mail e também
+                        foi armazenado com acesso privado para consulta no portal
+                        administrativo
+                        {portalUrl
+                            ? `: ${portalUrl}/candidaturas/${applicationId}`
+                            : "."}{" "}
+                        Para responder à pessoa candidata, utilize o endereço
                         informado acima.
                     </Text>
                 </Container>
