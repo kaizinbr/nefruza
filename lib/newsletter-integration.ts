@@ -1,5 +1,9 @@
 import "server-only";
 
+import axios from "axios";
+
+import api from "@/lib/api";
+
 type ConfirmationResult =
     | "confirmed"
     | "already-confirmed"
@@ -13,31 +17,33 @@ function requiredEnvironment(name: string) {
     return value;
 }
 
-function getEndpoint(pathname: string) {
-    const baseUrl = new URL(requiredEnvironment("NEFRUZA_PORTAL_URL"));
-    if (process.env.NODE_ENV === "production" && baseUrl.protocol !== "https:") {
-        throw new Error("NEFRUZA_PORTAL_URL deve utilizar HTTPS em produção.");
-    }
-    return new URL(pathname, `${baseUrl.origin}/`);
-}
-
 async function postToPortal<T>(pathname: string, body: unknown) {
-    const response = await fetch(getEndpoint(pathname), {
-        method: "POST",
-        cache: "no-store",
-        headers: {
-            Authorization: `Bearer ${requiredEnvironment("NEWSLETTER_INTEGRATION_SECRET")}`,
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-        signal: AbortSignal.timeout(15_000),
-    });
+    try {
+        const response = await api.post<T>(pathname, body, {
+            headers: {
+                Authorization: `Bearer ${requiredEnvironment("NEWSLETTER_INTEGRATION_SECRET")}`,
+            },
+            timeout: 15_000,
+        });
 
-    const result = (await response.json().catch(() => null)) as T | null;
-    if (!response.ok || !result) {
-        throw new Error(`A integração da newsletter respondeu com status ${response.status}.`);
+        if (!response.data) {
+            throw new Error("A integração da newsletter retornou uma resposta vazia.");
+        }
+
+        return response.data;
+    } catch (error) {
+        if (axios.isAxiosError(error)) {
+            const status = error.response?.status;
+            throw new Error(
+                status
+                    ? `A integração da newsletter respondeu com status ${status}.`
+                    : "Não foi possível conectar à integração da newsletter.",
+                { cause: error },
+            );
+        }
+
+        throw error;
     }
-    return result;
 }
 
 export async function requestNewsletterSignup(input: {
@@ -45,12 +51,12 @@ export async function requestNewsletterSignup(input: {
     name?: string;
     requesterId?: string;
 }) {
-    await postToPortal<{ ok: true }>("/api/v1/newsletter/signup", input);
+    await postToPortal<{ ok: true }>("/newsletter/signup", input);
 }
 
 export async function confirmNewsletterSignup(token: string) {
     const response = await postToPortal<{ result: ConfirmationResult }>(
-        "/api/v1/newsletter/confirm",
+        "/newsletter/confirm",
         { token },
     );
     return response.result;
