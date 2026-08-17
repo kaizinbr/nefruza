@@ -42,7 +42,7 @@ export default function Card() {
                             cada pessoa.
                         </p>
                         <Link
-                            href="#"
+                            href="/institucional"
                             className="bg-nef-600 text-white font-bold py-3 px-8 rounded-full cursor-pointer hover:bg-nef-600/90 transition-colors"
                         >
                             Conheça nossa história

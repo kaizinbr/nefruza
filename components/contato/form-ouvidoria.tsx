@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
     Box,
     Button,
@@ -62,7 +63,6 @@ function validate(values: ContactFormValues): ContactFormErrors {
 export default function FormOuvidoria() {
     const [expanded, { toggle }] = useDisclosure(false);
     const [values, setValues] = useState<ContactFormValues>(initialValues);
-    const [type, setType] = useState<string | null>("mail");
     const [errors, setErrors] = useState<ContactFormErrors>({});
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
@@ -252,6 +252,21 @@ export default function FormOuvidoria() {
                             {submitError}
                         </Text>
                     )}
+
+                    <p className="text-sm leading-6 text-zinc-600">
+                        Ao enviar, seus dados serão utilizados para registrar,
+                        encaminhar e responder esta manifestação. Evite incluir
+                        exames, diagnósticos ou documentos de saúde que não
+                        sejam necessários. Saiba mais na{" "}
+                        <Link
+                            href="/politica-de-privacidade#anexo-i"
+                            target="_blank"
+                            className="font-semibold text-nef-700 underline underline-offset-2"
+                        >
+                            Política de Privacidade
+                        </Link>
+                        .
+                    </p>
 
                     <Button
                         onClick={handleSubmit}

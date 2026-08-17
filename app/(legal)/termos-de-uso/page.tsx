@@ -15,7 +15,7 @@ export default function TermosDeUso() {
                 flex flex-1 flex-col bg-white font-sans pb-16
             `}
         >
-            <div className="w-full">
+            <main className="w-full">
                 <section className="relative isolate overflow-hidden bg-linear-to-br from-nef-900 to-nef-600">
                     <div
                         aria-hidden="true"
@@ -37,8 +37,9 @@ export default function TermosDeUso() {
                             Termos de uso
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
-                            Termos de uso da Nefruza, descrevendo as condições e
-                            regras para utilização do nosso site e serviços.
+                            Conheça as condições para utilizar o site, seus
+                            conteúdos, formulários e canais digitais com
+                            segurança e transparência.
                         </p>
                     </div>
                 </section>
@@ -53,7 +54,7 @@ export default function TermosDeUso() {
                 >
                     <TermsOfUseContent />
                 </section>
-            </div>
+            </main>
         </div>
     );
 }

@@ -300,11 +300,11 @@ export default function Footer() {
                     </div>
                     <div className="flex flex-col items-end gap-2 w-auto">
                         <Image
-                            src="/img/logo.webp"
+                            src="/logo branca.webp"
                             alt="Nefruza Logo"
                             width={164}
                             height={32}
-                            className="invert"
+                            className="h-16 w-auto"
                         />
                     </div>
                 </div>

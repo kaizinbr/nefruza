@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
     Box,
     Button,
@@ -13,12 +14,9 @@ import {
     Select,
     Text,
     Textarea,
-    TextInput,
     UnstyledButton,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-
-import { HiOutlineChevronDown } from "react-icons/hi";
 
 import { ContactFormValues, ContactFormErrors } from "@/lib/types";
 import { CONTACT_SECTORS } from "@/lib/generate-ticket";
@@ -70,7 +68,6 @@ function validate(values: ContactFormValues): ContactFormErrors {
 export default function FormContato() {
     const [expanded, { toggle }] = useDisclosure(true);
     const [values, setValues] = useState<ContactFormValues>(initialValues);
-    const [type, setType] = useState<string | null>("mail");
     const [errors, setErrors] = useState<ContactFormErrors>({});
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState<string | null>(null);
@@ -145,7 +142,7 @@ export default function FormContato() {
                     <div>
                         <label
                             className="mb-2 block text-sm font-medium text-zinc-800"
-                            htmlFor="newsletter-name"
+                            htmlFor="mail"
                         >
                             E-mail{" "}
                             <span className="font-normal text-nef-500">*</span>
@@ -191,7 +188,7 @@ export default function FormContato() {
                     <div>
                         <label
                             className="mb-2 block text-sm font-medium text-zinc-800"
-                            htmlFor="name"
+                            htmlFor="newsletter-name"
                         >
                             Nome{" "}
                             <span className="font-normal text-nef-500">*</span>
@@ -209,27 +206,6 @@ export default function FormContato() {
                             onChange={(e) =>
                                 setField("name")(e.currentTarget.value)
                             }
-                        />
-                    </div>
-                    <div>
-                        <label
-                            className="mb-2 block text-sm font-medium text-zinc-800"
-                            htmlFor="newsletter-name"
-                        >
-                            Nome{" "}
-                            <span className="font-normal text-zinc-500">
-                                (opcional)
-                            </span>
-                        </label>
-
-                        <input
-                            className={inputClassName}
-                            // disabled={pending}
-                            id="newsletter-name"
-                            maxLength={120}
-                            name="name"
-                            placeholder="Como podemos chamar você?"
-                            type="text"
                         />
                     </div>
                     
@@ -317,6 +293,21 @@ export default function FormContato() {
                             {submitError}
                         </Text>
                     )}
+
+                    <p className="text-sm leading-6 text-zinc-600">
+                        Ao enviar, seus dados serão utilizados para registrar,
+                        encaminhar e responder esta solicitação. Não inclua
+                        exames, diagnósticos ou documentos de saúde neste campo.
+                        Saiba mais na{" "}
+                        <Link
+                            href="/politica-de-privacidade#anexo-i"
+                            target="_blank"
+                            className="font-semibold text-nef-700 underline underline-offset-2"
+                        >
+                            Política de Privacidade
+                        </Link>
+                        .
+                    </p>
 
                     <Button
                         onClick={handleSubmit}

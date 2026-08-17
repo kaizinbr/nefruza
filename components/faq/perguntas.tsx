@@ -1,8 +1,8 @@
 "use client";
 
+import { Accordion } from "@mantine/core";
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { Accordion } from "@mantine/core";
 import { PiPlus } from "react-icons/pi";
 
 type FAQItem = {
@@ -11,11 +11,8 @@ type FAQItem = {
     answer: ReactNode;
 };
 
-const linkClassName = `
-    font-medium text-nef-700 underline
-    decoration-nef-300 underline-offset-4
-    transition-colors hover:text-nef-900
-`;
+const linkClassName =
+    "font-medium text-nef-700 underline decoration-nef-300 underline-offset-4 transition-colors hover:text-nef-900";
 
 export const faqItems: FAQItem[] = [
     {
@@ -23,128 +20,201 @@ export const faqItems: FAQItem[] = [
         question: "O que faz um médico nefrologista?",
         answer: (
             <p>
-                O nefrologista é o médico responsável pela prevenção, pelo
-                diagnóstico e pelo acompanhamento de doenças que afetam os rins
-                e o sistema urinário. O atendimento pode envolver avaliação da
-                função renal, controle da pressão arterial, acompanhamento de
-                alterações em exames e orientação individualizada.
+                O nefrologista é o médico especializado na prevenção, no
+                diagnóstico e no tratamento de doenças dos rins. A avaliação
+                pode incluir função renal, alterações na urina, pressão
+                arterial, equilíbrio de líquidos e sais, doença renal crônica e,
+                quando indicado, terapias de substituição da função renal. A
+                conduta depende da avaliação individual.
             </p>
         ),
     },
     {
         value: "quando-procurar-nefrologista",
-        question: "Quando devo procurar um nefrologista?",
+        question: "Quando devo procurar avaliação de um nefrologista?",
         answer: (
             <p>
-                A avaliação pode ser indicada pelo seu médico assistente ou
-                diante de alterações em exames relacionados à função renal.
-                Pessoas com hipertensão, diabetes, histórico familiar de doença
-                renal ou acompanhamento renal prévio também podem precisar de
-                avaliação especializada. Cada caso deve ser analisado
-                individualmente.
+                Procure orientação do seu médico quando houver alteração em
+                exames de sangue, urina ou imagem relacionada aos rins, doença
+                renal conhecida ou indicação de acompanhamento especializado.
+                Hipertensão, diabetes, doença cardiovascular e histórico
+                familiar de doença renal são fatores que merecem acompanhamento
+                de saúde, mas somente um profissional pode definir se e quando
+                o encaminhamento é necessário.
+            </p>
+        ),
+    },
+    {
+        value: "doenca-renal-tem-sintomas",
+        question: "Doença renal sempre provoca sintomas?",
+        answer: (
+            <p>
+                Não. A doença renal crônica pode evoluir sem sintomas,
+                especialmente nas fases iniciais. Por isso, pessoas com fatores
+                de risco devem manter acompanhamento regular e realizar somente
+                os exames indicados por profissional de saúde. Uma informação
+                na internet não permite confirmar nem excluir um diagnóstico.
+            </p>
+        ),
+    },
+    {
+        value: "servicos-nefruza",
+        question: "Quais serviços são apresentados pela Nefruza?",
+        answer: (
+            <p>
+                Consulte a{" "}
+                <Link href="/servicos" className={linkClassName}>
+                    página de serviços
+                </Link>{" "}
+                para conhecer as modalidades divulgadas no site. A indicação, a
+                disponibilidade e a cobertura dependem de avaliação clínica e,
+                quando aplicável, das regras do convênio. Confirme os detalhes
+                com a equipe antes de comparecer.
             </p>
         ),
     },
     {
         value: "como-agendar",
-        question: "Como posso agendar uma consulta na Nefruza?",
+        question: "Como solicito uma consulta ou informação de atendimento?",
         answer: (
             <p>
-                O agendamento pode ser solicitado pelos canais de atendimento da
-                clínica. Acesse nossa{" "}
+                Utilize os telefones, o WhatsApp ou o e-mail exibidos na{" "}
                 <Link href="/contato" className={linkClassName}>
                     página de contato
-                </Link>{" "}
-                para consultar os telefones, horários e demais formas de
-                atendimento.
+                </Link>
+                . Os horários de atendimento também estão informados nessa
+                página. A solicitação somente estará confirmada após o retorno
+                da equipe responsável.
+            </p>
+        ),
+    },
+    {
+        value: "formulario-agendamento",
+        question: "O envio do formulário confirma um agendamento?",
+        answer: (
+            <p>
+                Não. O formulário registra uma solicitação e gera um ticket para
+                análise. Ele não confirma consulta, procedimento, autorização de
+                convênio ou início de tratamento. Aguarde o retorno da equipe ou
+                use os canais de atendimento para confirmar as informações.
             </p>
         ),
     },
     {
         value: "precisa-encaminhamento",
-        question: "Preciso de encaminhamento para realizar uma consulta?",
+        question: "Preciso de pedido médico, encaminhamento ou autorização?",
         answer: (
             <p>
-                Isso depende das regras do seu convênio. Alguns planos exigem
-                pedido médico ou autorização prévia, enquanto outros permitem o
-                agendamento direto. Recomendamos confirmar essa informação com a
-                operadora antes da consulta.
+                Isso depende do serviço e das regras do seu plano de saúde.
+                Algumas operadoras exigem pedido, guia ou autorização prévia.
+                Confirme com a operadora e com a Nefruza antes do atendimento
+                para saber exatamente quais documentos serão necessários.
             </p>
         ),
     },
     {
         value: "convenios",
-        question: "Quais convênios são aceitos pela clínica?",
+        question: "Quais convênios são apresentados no site?",
         answer: (
             <p>
-                É possível consultar a lista de convênios aceitos através da
-                nossa{" "}
+                A lista disponível está na{" "}
                 <Link href="/convenios" className={linkClassName}>
                     página de convênios
                 </Link>
-                . No caso da Amil, a Nefruza oferece somente atendimento de
-                consultório.
+                . A cobertura varia por plano, contrato e procedimento e pode
+                mudar. No caso da Amil, o site informa atendimento somente de
+                consultório. Confirme elegibilidade e autorização antes de
+                comparecer.
             </p>
         ),
     },
     {
         value: "documentos-consulta",
-        question: "O que devo levar no dia da consulta?",
+        question: "Quais documentos devo levar ao atendimento?",
         answer: (
             <p>
-                Leve um documento oficial com foto, cartão do convênio, pedido
-                médico ou autorização, quando necessários, além de exames
-                recentes e uma lista dos medicamentos que utiliza. Caso tenha
-                relatórios médicos anteriores, eles também podem ajudar na
-                avaliação.
+                Os requisitos variam conforme o tipo de atendimento e o
+                convênio. No momento da confirmação, pergunte se serão
+                necessários documento oficial, cartão do plano, pedido médico,
+                autorização, relatórios, exames anteriores ou lista de
+                medicamentos. Siga a orientação específica fornecida pela
+                equipe.
             </p>
         ),
     },
     {
         value: "jejum",
-        question: "Preciso estar em jejum para a consulta?",
+        question: "Preciso estar em jejum?",
         answer: (
             <p>
-                Normalmente, a consulta não exige jejum. Entretanto, exames ou
-                procedimentos específicos podem exigir preparo prévio. Siga as
-                orientações recebidas no momento do agendamento ou entre em
-                contato com a clínica em caso de dúvida.
+                Não faça jejum por conta própria. Consultas, exames e
+                procedimentos podem ter preparos diferentes. Siga apenas a
+                orientação recebida no agendamento e, se ela não estiver clara,
+                confirme com a clínica antes de comparecer.
             </p>
         ),
     },
     {
-        value: "etica",
-        question: "O que posso ou não fazer durante a consulta?",
+        value: "exames-outros-laboratorios",
+        question: "Posso apresentar exames feitos em outro serviço?",
         answer: (
             <p>
-                A Nefruza dispõe de uma{" "}
+                A utilidade e a aceitação de exames anteriores dependem do tipo,
+                da data, da qualidade do resultado e da avaliação profissional.
+                Confirme no agendamento como levá-los. Não envie exames ou
+                documentos de saúde pelo formulário geral, salvo solicitação
+                expressa por um canal apropriado.
+            </p>
+        ),
+    },
+    {
+        value: "direitos-deveres",
+        question: "Onde consulto orientações de convivência e atendimento?",
+        answer: (
+            <p>
+                Consulte o{" "}
                 <Link href="/codigo-de-etica" className={linkClassName}>
-                    código de ética para pacientes
-                </Link>{" "}
-                com informações sobre direitos e deveres durante o atendimento. 
+                    Código de Ética para Pacientes
+                </Link>
+                , que reúne direitos, deveres e orientações de convivência. Em
+                caso de dúvida sobre uma situação específica, fale com a equipe
+                da Nefruza.
             </p>
         ),
     },
     {
-        value: "resultado-exames",
-        question: "Posso levar exames realizados em outros laboratórios?",
+        value: "dados-formularios",
+        question: "Como meus dados são usados nos formulários?",
         answer: (
             <p>
-                Sim. Exames realizados em outros laboratórios podem ser
-                apresentados durante a consulta. Sempre que possível, leve os
-                resultados completos, incluindo laudos e imagens, impressos ou
-                em formato digital.
+                Os dados são usados para registrar, encaminhar e responder sua
+                solicitação, administrar a newsletter ou avaliar uma
+                candidatura, conforme o formulário escolhido. Consulte a{" "}
+                <Link href="/politica-de-privacidade" className={linkClassName}>
+                    Política de Privacidade e o Anexo I — Tabela de Finalidades
+                </Link>{" "}
+                para conhecer dados, bases legais, compartilhamentos, retenção e
+                direitos.
             </p>
         ),
     },
     {
         value: "informacoes-confiaveis",
-        question:
-            "Onde posso encontrar informações confiáveis sobre saúde renal?",
+        question: "Onde encontro informações confiáveis sobre saúde renal?",
         answer: (
             <p>
-                Além das orientações fornecidas durante a consulta, você pode
-                acessar o site da{" "}
+                Prefira orientações do profissional que acompanha você e fontes
+                institucionais, como o{" "}
+                <a
+                    href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/drc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClassName}
+                >
+                    Ministério da Saúde
+                    <span className="sr-only">, abre em uma nova aba</span>
+                </a>{" "}
+                e a{" "}
                 <a
                     href="https://sbn.org.br/"
                     target="_blank"
@@ -154,21 +224,53 @@ export const faqItems: FAQItem[] = [
                     Sociedade Brasileira de Nefrologia
                     <span className="sr-only">, abre em uma nova aba</span>
                 </a>
-                . O conteúdo disponível na internet não substitui uma avaliação
-                médica individual.
+                . Conteúdo geral não substitui avaliação médica.
             </p>
         ),
     },
     {
         value: "urgencia",
-        question: "O que devo fazer em uma situação de urgência?",
+        question: "O que devo fazer em uma urgência ou emergência?",
         answer: (
             <p>
-                O FAQ e os canais administrativos da clínica não são adequados
-                para avaliar situações urgentes. Se você acredita que precisa de
-                atendimento imediato, procure um serviço de pronto atendimento
-                ou acione o serviço de emergência da sua região.
+                Não espere resposta do site, formulário, ouvidoria, e-mail ou
+                redes sociais. Se houver risco imediato, procure um serviço de
+                urgência ou emergência ou ligue gratuitamente para o SAMU no
+                número 192. Siga as orientações do serviço acionado.
             </p>
         ),
     },
 ];
+
+export default function FAQAccordion() {
+    return (
+        <Accordion
+            unstyled
+            className="w-full"
+            chevron={<PiPlus aria-hidden="true" size={25} />}
+            chevronPosition="right"
+            aria-label="Perguntas frequentes sobre a Nefruza"
+            classNames={{
+                item: "",
+                control:
+                    "flex w-full cursor-pointer flex-row-reverse items-center justify-between border-b border-nef-600 px-0 py-0 text-left text-nef-600 hover:bg-transparent",
+                label: "py-5 pr-4 text-base font-medium leading-7 sm:py-4 sm:text-lg",
+                chevron:
+                    "text-nef-600 transition-transform duration-200 data-[rotate]:rotate-45",
+                panel: "text-left",
+                content:
+                    "p-6 pb-12 text-sm leading-7 text-zinc-800 sm:text-base",
+                itemTitle: "border-b border-nef-600",
+            }}
+        >
+            {faqItems.map((item, index) => (
+                <Accordion.Item key={item.value} value={item.value}>
+                    <Accordion.Control>
+                        {index + 1}. {item.question}
+                    </Accordion.Control>
+                    <Accordion.Panel>{item.answer}</Accordion.Panel>
+                </Accordion.Item>
+            ))}
+        </Accordion>
+    );
+}

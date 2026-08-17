@@ -20,7 +20,7 @@ import type { ContactFormValues } from "@/lib/types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// TODO: trocar por "contato@nefruza.com.br" quando sair de testes.
+// TODO: trocar por "recep@nefruza.com.br" quando sair de testes.
 const ADMIN_EMAIL = "kaiolucas1812@gmail.com";
 
 const FROM_ADDRESS = "Nefruza <contato@kaizin.work>";

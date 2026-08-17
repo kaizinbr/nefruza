@@ -131,10 +131,10 @@ export default function Home() {
                                     E-mail
                                 </h3>
                                 <Link
-                                    href="mailto:contato@nefruza.com.br"
+                                    href="mailto:recep@nefruza.com.br"
                                     className="mt-2 inline-block break-all text-base font-semibold text-zinc-800 transition-colors hover:text-nef-700 sm:text-lg"
                                 >
-                                    contato@nefruza.com.br
+                                    recep@nefruza.com.br
                                 </Link>
                                 <p className="mt-2 text-sm leading-6 text-zinc-500">
                                     Retornaremos seu contato em até 5 dias

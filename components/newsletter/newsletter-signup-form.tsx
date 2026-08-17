@@ -73,8 +73,9 @@ export function NewsletterSignupForm() {
                     type="checkbox"
                 />
                 <span>
-                    Quero receber notícias e novidades da Nefruza por e-mail.
-                    Posso cancelar a inscrição a qualquer momento. Consulte a{" "}
+                    Autorizo o envio de notícias e novidades da Nefruza para
+                    este e-mail. A inscrição será ativada após confirmação e
+                    posso cancelar o recebimento a qualquer momento. Consulte a{" "}
                     <Link
                         className="font-semibold text-nef-700 underline underline-offset-2"
                         href="/politica-de-privacidade"

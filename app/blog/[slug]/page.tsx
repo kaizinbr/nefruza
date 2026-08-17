@@ -14,6 +14,8 @@ import {
     FaArrowRight,
 } from "react-icons/fa6";
 
+import { SITE_URL } from "@/lib/site-metadata";
+
 // ---------- Tipos ----------
 
 type ContentBlock =
@@ -230,12 +232,13 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
     );
 }
 
-function ShareBar({ titulo }: { titulo: string }) {
+function ShareBar({ titulo, slug }: { titulo: string; slug: string }) {
     const [copiado, setCopiado] = useState(false);
+    const pageUrl = `${SITE_URL}/blog/${encodeURIComponent(slug)}`;
 
     const handleCopy = async () => {
         try {
-            await navigator.clipboard.writeText(window.location.href);
+            await navigator.clipboard.writeText(pageUrl);
             setCopiado(true);
             setTimeout(() => setCopiado(false), 2000);
         } catch {
@@ -247,22 +250,22 @@ function ShareBar({ titulo }: { titulo: string }) {
         {
             label: "WhatsApp",
             icon: FaWhatsapp,
-            href: `https://wa.me/?text=${encodeURIComponent(titulo + " — " + window.location.href)}`,
+            href: `https://wa.me/?text=${encodeURIComponent(`${titulo} — ${pageUrl}`)}`,
         },
         {
             label: "Facebook",
             icon: FaFacebookF,
-            href: `https://www.facebook.com/sharer/sharer.php?u=${typeof window !== "undefined" ? encodeURIComponent(window.location.href) : ""}`,
+            href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`,
         },
         {
             label: "X",
             icon: FaXTwitter,
-            href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(titulo + " " + window.location.href)}`,
+            href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${titulo} ${pageUrl}`)}`,
         },
         {
             label: "LinkedIn",
             icon: FaLinkedinIn,
-            href: `https://www.linkedin.com/sharing/share-offsite/?url=${typeof window !== "undefined" ? encodeURIComponent(window.location.href) : ""}`,
+            href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(pageUrl)}`,
         },
     ];
 
@@ -401,7 +404,7 @@ export default function Blog({
                         <h4 className="font-bold text-nef-700 mb-4">
                             Compartilhe essa notícia
                         </h4>
-                        <ShareBar titulo={noticia.titulo} />
+                        <ShareBar titulo={noticia.titulo} slug={slug} />
                     </div>
 
                     {/* Autor */}

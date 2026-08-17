@@ -16,7 +16,7 @@ const convenios = [
     { src: "/img/comseder.webp", alt: "Convênio Comseder" },
     { src: "/img/funasa.png", alt: "Convênio Funasa" },
     { src: "/img/gama.webp", alt: "Convênio Gama Saúde" },
-    { src: "/img/geap.png", alt: "Convênio Geap Saúde" },
+    { src: "/img/geap-saude.png", alt: "Convênio Geap Saúde" },
     { src: "/img/smile.webp", alt: "Convênio Smile" },
     { src: "/img/hapvida.webp", alt: "Convênio Hapvida" },
     { src: "/img/petro.webp", alt: "Convênio Petrobras" },

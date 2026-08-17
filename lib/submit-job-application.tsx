@@ -13,7 +13,7 @@ const MAX_RESUME_SIZE = 5 * 1024 * 1024;
 
 const AREA_LABELS: Record<string, string> = {
     assistencial: "Assistencial e enfermagem",
-    administrativa: "Administrativa",
+    cozinha: "Cozinha e alimentação",
     atendimento: "Atendimento e recepção",
     clinica: "Corpo clínico",
     multiprofissional: "Equipe multiprofissional",
@@ -157,7 +157,7 @@ export default async function submitJobApplication(
                 "Site Nefruza <site@kaizin.work>",
             to:
                 process.env.NEFRUZA_CAREERS_EMAIL ??
-                "contato@nefruza.com.br",
+                "recep@nefruza.com.br",
             replyTo: email,
             subject: `Nova candidatura - ${AREA_LABELS[area]} - ${name.replace(/[\r\n]+/g, " ")}`,
             react: JobApplicationMail({

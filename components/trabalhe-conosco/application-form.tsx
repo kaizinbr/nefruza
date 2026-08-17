@@ -70,6 +70,7 @@ export default function ApplicationForm() {
                         name="name"
                         autoComplete="name"
                         maxLength={120}
+                        placeholder="Digite seu nome completo"
                         required
                         disabled={pending}
                     />
@@ -84,6 +85,7 @@ export default function ApplicationForm() {
                         name="email"
                         autoComplete="email"
                         maxLength={160}
+                        placeholder="contato@email.com"
                         required
                         disabled={pending}
                     />
@@ -113,6 +115,7 @@ export default function ApplicationForm() {
                         name="city"
                         autoComplete="address-level2"
                         maxLength={100}
+                        placeholder="Digite a cidade em que reside"
                         required
                         disabled={pending}
                     />
@@ -135,10 +138,8 @@ export default function ApplicationForm() {
                     <option value="assistencial">
                         Assistencial e enfermagem
                     </option>
-                    <option value="administrativa">Administrativa</option>
-                    <option value="atendimento">
-                        Atendimento e recepção
-                    </option>
+                    <option value="cozinha">Cozinha e alimentação</option>
+                    <option value="atendimento">Atendimento e recepção</option>
                     <option value="clinica">Corpo clínico</option>
                     <option value="multiprofissional">
                         Equipe multiprofissional
@@ -251,8 +252,10 @@ export default function ApplicationForm() {
                         disabled={pending}
                     />
                     <span>
-                        Autorizo o tratamento dos meus dados para participação
-                        em processos seletivos da Nefruza, conforme a{" "}
+                        Li o aviso e autorizo o tratamento dos meus dados e do
+                        currículo para avaliação e manutenção no banco de
+                        talentos da Nefruza. Posso revogar esta autorização pelo
+                        canal de privacidade, conforme a{" "}
                         <Link
                             href="/politica-de-privacidade"
                             target="_blank"

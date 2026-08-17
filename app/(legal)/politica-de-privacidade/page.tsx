@@ -15,7 +15,7 @@ export default function PoliticaDePrivacidade() {
                 flex flex-1 flex-col bg-white font-sans pb-16
             `}
         >
-            <div className="w-full">
+            <main className="w-full">
                 <section className="relative isolate overflow-hidden bg-linear-to-br from-nef-900 to-nef-600">
                     <div
                         aria-hidden="true"
@@ -37,9 +37,9 @@ export default function PoliticaDePrivacidade() {
                             Política de Privacidade
                         </h1>
                         <p className="mt-6 max-w-xl text-base leading-7 text-white/80 sm:text-lg">
-                            Política de privacidade da Nefruza, descrevendo como
-                            coletamos, usamos e protegemos as informações dos
-                            usuários em nosso site e serviços.
+                            Saiba quais dados são tratados nos canais digitais,
+                            para quais finalidades, com quem podem ser
+                            compartilhados e como exercer seus direitos.
                         </p>
                     </div>
                 </section>
@@ -54,7 +54,7 @@ export default function PoliticaDePrivacidade() {
                 >
                     <PrivacyPolicyContent />
                 </section>
-            </div>
+            </main>
         </div>
     );
 }

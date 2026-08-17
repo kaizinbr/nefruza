@@ -176,11 +176,12 @@ export default function Navbar() {
                     <div className="flex w-full max-w-7xl items-center justify-between mx-auto">
                         <Link href="/" className="flex items-center gap-4">
                             <Image
-                                src="/img/logo.webp"
+                                src="/logo2.webp"
                                 alt="Nefruza Logo"
                                 width={170}
-                                height={32}
+                                height={60}
                                 priority
+                                className="h-16 w-auto"
                             />
                         </Link>
 
@@ -287,7 +288,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between w-full px-2 md:px-6 max-w-7xl mx-auto">
                     <Link href="/" className="flex items-center gap-4">
                         <Image
-                            src="/img/logo.webp"
+                            src="/logo.webp"
                             alt="Nefruza Logo"
                             width={150}
                             height={28}
@@ -329,7 +330,7 @@ export default function Navbar() {
                                 onClick={() => setMenuOpen(false)}
                             >
                                 <Image
-                                    src="/img/logo.webp"
+                                    src="/logo.webp"
                                     alt="Nefruza Logo"
                                     width={150}
                                     height={28}

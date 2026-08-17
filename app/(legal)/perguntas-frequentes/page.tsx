@@ -1,19 +1,14 @@
-"use client";
-
-import FormContato from "@/components/contato/form";
+import type { Metadata } from "next";
 import Link from "next/link";
-import {
-    PiClockFill,
-    PiEnvelopeSimpleFill,
-    PiMapPinFill,
-    PiPhoneCallFill,
-    PiQuestionFill,
-    PiPlus,
-} from "react-icons/pi";
 import { IoDocumentText } from "react-icons/io5";
 
-import { Accordion } from "@mantine/core";
-import { faqItems } from "@/components/faq/perguntas";
+import FAQAccordion from "@/components/faq/perguntas";
+
+export const metadata: Metadata = {
+    title: "Perguntas Frequentes | Nefruza",
+    description:
+        "Respostas gerais sobre atendimento, convênios, saúde renal, formulários e canais da Nefruza.",
+};
 
 export default function FAQ() {
     return (
@@ -54,11 +49,6 @@ export default function FAQ() {
                         flex flex-col
                     `}
                 >
-                    {/* <p className="leading-7 text-zinc-600">
-                        Importante: o convênio Amil oferece apenas atendimento
-                        de consultório conosco.
-                    </p> */}
-
                     <div
                         className={`
                             relative m-auto mb-8 flex w-full
@@ -67,51 +57,7 @@ export default function FAQ() {
                             lg:mb-auto 
                         `}
                     >
-                        <Accordion
-                            unstyled
-                            className="w-full"
-                            chevron={<PiPlus aria-hidden="true" size={25} />}
-                            chevronPosition="right"
-                            aria-label="Perguntas frequentes sobre a Nefruza"
-                            classNames={{
-                                item: "",
-                                control: `
-                                    px-0 py-0 text-left text-nef-600 w-full flex-row-reverse
-                                    hover:bg-transparent w-full flex flex-row items-center justify-between
-                                    border-b border-nef-600 cursor-pointer
-                                `,
-                                label: `
-                                    py-5 pr-4 text-base font-medium leading-7
-                                    sm:py-4 sm:text-lg 
-                                `,
-                                chevron: `
-                                    text-nef-600
-                                    data-[rotate]:rotate-45 transition-transform duration-200
-                                `,
-                                panel: "text-left",
-                                content: `
-                                    pb-16 p-6
-                                    text-sm leading-7 text-zinc-800
-                                    sm:text-base
-                                `,
-                                itemTitle: "border-b border-nef-600",
-                            }}
-                        >
-                            {faqItems.map((item, index) => (
-                                <Accordion.Item
-                                    key={item.value}
-                                    value={item.value}
-                                >
-                                    <Accordion.Control>
-                                        {index + 1}. {item.question}
-                                    </Accordion.Control>
-
-                                    <Accordion.Panel>
-                                        {item.answer}
-                                    </Accordion.Panel>
-                                </Accordion.Item>
-                            ))}
-                        </Accordion>
+                        <FAQAccordion />
                     </div>
                 </section>
                 <section
@@ -128,19 +74,19 @@ export default function FAQ() {
                     </p>
 
                     <div className="flex flex-row flex-wrap gap-4">
-                        <Link href="/codigo-de-etica" className="flex flex-col gap-4 bg-zinc-200 p-4 rounded-xl w-fit">
+                        <Link href="/codigo-de-etica" className="flex min-h-36 w-full flex-col gap-4 rounded-xl bg-zinc-100 p-5 transition-colors hover:bg-nef-50 sm:w-64">
                             <IoDocumentText className="text-4xl text-nef-700" />
                             <span  className="font-bold">
                                 Código de ética para pacientes
                             </span>
                         </Link>
-                        <Link href="/codigo-de-etica" className="flex flex-col gap-4 bg-zinc-200 p-4 rounded-xl w-fit">
+                        <Link href="/politica-de-privacidade" className="flex min-h-36 w-full flex-col gap-4 rounded-xl bg-zinc-100 p-5 transition-colors hover:bg-nef-50 sm:w-64">
                             <IoDocumentText className="text-4xl text-nef-700" />
                             <span  className="font-bold">
                                 Política de privacidade
                             </span>
                         </Link>
-                        <Link href="/codigo-de-etica" className="flex flex-col gap-4 bg-zinc-200 p-4 rounded-xl w-fit">
+                        <Link href="/termos-de-uso" className="flex min-h-36 w-full flex-col gap-4 rounded-xl bg-zinc-100 p-5 transition-colors hover:bg-nef-50 sm:w-64">
                             <IoDocumentText className="text-4xl text-nef-700" />
                             <span  className="font-bold">
                                 Termos de uso

@@ -142,14 +142,37 @@ export default function Home() {
                                             E-mail
                                         </h3>
                                         <Link
-                                            href="mailto:contato@nefruza.com.br"
+                                            href="mailto:recep@nefruza.com.br"
                                             className="mt-2 inline-block break-all text-base font-semibold text-zinc-800 transition-colors hover:text-nef-700 sm:text-lg"
                                         >
-                                            contato@nefruza.com.br
+                                            recep@nefruza.com.br
                                         </Link>
                                         <p className="mt-2 text-sm leading-6 text-zinc-500">
                                             Retornaremos seu contato em até 5
                                             dias úteis.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="flex gap-4 py-7">
+                                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-nef-50 text-nef-700">
+                                        <PiEnvelopeSimpleFill
+                                            aria-hidden="true"
+                                            className="text-xl"
+                                        />
+                                    </div>
+                                    <div className="min-w-0">
+                                        <h3 className="font-semibold text-zinc-900">
+                                            E-mail (diálise particular e trânsito)
+                                        </h3>
+                                        <Link
+                                            href="mailto:enfermagem@nefruza.com.br"
+                                            className="mt-2 inline-block break-all text-base font-semibold text-zinc-800 transition-colors hover:text-nef-700 sm:text-lg"
+                                        >
+                                            enfermagem@nefruza.com.br
+                                        </Link>
+                                        <p className="mt-2 text-sm leading-6 text-zinc-500">
+                                            E-mail exclusivo para pacientes de diálise particular e em trânsito. Retornaremos seu contato em até 5 dias úteis.
                                         </p>
                                     </div>
                                 </div>

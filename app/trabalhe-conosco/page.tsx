@@ -37,11 +37,11 @@ const principles = [
 const careerAreas = [
     {
         title: "Assistencial e enfermagem",
-        roles: "Enfermeiro(a), técnico(a) de enfermagem e áreas de apoio assistencial.",
+        roles: "Enfermeiro(a) e técnico(a) de enfermagem.",
     },
     {
         title: "Equipe multiprofissional",
-        roles: "Nutricionista, psicólogo(a), assistente social e farmacêutico(a).",
+        roles: "Nutricionista, psicólogo(a) e assistente social.",
     },
     {
         title: "Corpo clínico",
@@ -49,15 +49,15 @@ const careerAreas = [
     },
     {
         title: "Atendimento e recepção",
-        roles: "Recepcionista, atendimento ao paciente e relacionamento.",
+        roles: "Recepcionista.",
     },
     {
-        title: "Administrativa",
-        roles: "Assistente administrativo, faturamento, financeiro e recursos humanos.",
+        title: "Cozinha e alimentação",
+        roles: "Cozinheiro(a) e copeiro(a).",
     },
     {
         title: "Serviços operacionais",
-        roles: "Higienização, manutenção, apoio e serviços gerais.",
+        roles: "Higienização, manutenção, maqueiro e serviços gerais.",
     },
 ];
 
@@ -104,7 +104,7 @@ export default function TrabalheConoscoPage() {
                         </h2>
                         <p className="mt-5 leading-7 text-zinc-600">
                             Temos interesse em conhecer profissionais de áreas
-                            assistenciais, administrativas, multiprofissionais e
+                            assistenciais, multiprofissionais e
                             operacionais que se identifiquem com o cuidado em
                             saúde e com o trabalho colaborativo.
                         </p>
@@ -137,13 +137,13 @@ export default function TrabalheConoscoPage() {
                 <section className="w-full bg-nef-300 px-4 py-16 sm:px-6 md:py-24 lg:px-8">
                     <div className="mx-auto w-full max-w-6xl">
                         <div className="max-w-2xl">
-                            <span className="text-sm font-bold uppercase tracking-[0.14em] text-nef-500">
+                            <span className="text-sm font-bold uppercase tracking-[0.14em] text-nef-800">
                                 Áreas de atuação
                             </span>
                             <h2 className="mt-3 font-title text-3xl font-semibold leading-tight text-zinc-900 md:text-4xl">
                                 Conheça os cargos e áreas de interesse
                             </h2>
-                            <p className="mt-5 leading-7 text-zinc-600">
+                            <p className="mt-5 leading-7 text-zinc-800">
                                 Conheça alguns dos perfis que podem fazer parte
                                 do nosso banco de talentos. Os exemplos abaixo
                                 não representam vagas abertas neste momento.
@@ -188,7 +188,7 @@ export default function TrabalheConoscoPage() {
                             </h2>
                             <p className="mt-5 leading-7 text-zinc-600">
                                 Preencha seus dados e anexe um currículo
-                                atualizado. Quando houver uma oportunidade
+                                atualizado em PDF. Quando houver uma oportunidade
                                 compatível com seu perfil, a equipe responsável
                                 poderá entrar em contato.
                             </p>

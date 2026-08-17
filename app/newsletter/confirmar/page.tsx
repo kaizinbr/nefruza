@@ -6,6 +6,11 @@ export const metadata: Metadata = {
     title: "Confirmar newsletter | Nefruza",
     description:
         "Confirme seu endereço de e-mail para receber notícias da Nefruza.",
+    robots: {
+        index: false,
+        follow: false,
+        noarchive: true,
+    },
 };
 
 export default async function NewsletterConfirmationPage({
