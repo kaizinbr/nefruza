@@ -7,11 +7,16 @@ import { NewsletterSection } from "@/components/newsletter/newsletter-section";
 import Card from "@/components/home/quem-somos";
 import QuemSomos from "@/components/home/quem-somos1";
 import Servicos from "@/components/home/servicos";
-import Image from "next/image";
 import Link from "next/link";
 import { PiQuestionFill } from "react-icons/pi";
+import { getPortalBanners, getPortalNews } from "@/lib/portal-content";
 
-export default function Home() {
+export default async function Home() {
+    const [banners, news] = await Promise.all([
+        getPortalBanners(),
+        getPortalNews(4),
+    ]);
+
     return (
         <div className="flex flex-col flex-1 items-center justify-center bg-white font-sans">
             <main
@@ -19,14 +24,14 @@ export default function Home() {
                     flex flex-1 w-full flex-col items-center justify-between pb-32 px-0 sm:items-start
                 `}
             >
-                <Banner />
+                <Banner slides={banners} />
                 <QuemSomos />
                 <Card />
                 <Diferenciais />
                 <Servicos />
                 <Estrutura />
                 <Convenios />
-                <Noticias />
+                <Noticias news={news} />
                 <NewsletterSection />
                 <Link
                     href="/perguntas-frequentes"

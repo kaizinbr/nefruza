@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+const portalImagePatterns = process.env.R2_PUBLIC_URL
+    ? [new URL(`${process.env.R2_PUBLIC_URL.replace(/\/$/, "")}/**`)]
+    : [];
+
 const nextConfig: NextConfig = {
     experimental: {
         serverActions: {
@@ -8,6 +12,7 @@ const nextConfig: NextConfig = {
     },
     images: {
         remotePatterns: [
+            ...portalImagePatterns,
             {
                 protocol: "https",
                 hostname: "nefruza.com.br",

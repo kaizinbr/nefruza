@@ -2,22 +2,12 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { CallChatRoundedIcon } from "@solar-icons/react/broken/call-chat-rounded";
 import { UserIdIcon } from "@solar-icons/react/broken/user-id";
 import { DocumentMedicineIcon } from "@solar-icons/react/broken/document-medicine";
 
-const slides = [
-    {
-        desktop: "/banner/desktop.webp",
-        mobile: "/banner/mobile.webp",
-        alt: "Nefruza - Serviços Nefrológicos",
-    },
-    {
-        desktop: "/banner/desktop.webp",
-        mobile: "/banner/mobile.webp",
-        alt: "Nefruza - Cuidado especializado",
-    },
-];
+import type { PortalBanner } from "@/lib/portal-types";
 
 const menuItems = [
     { icon: CallChatRoundedIcon, label: "Sobre nós", url: "" },
@@ -30,57 +20,74 @@ const menuItems = [
 
 const AUTOPLAY_INTERVAL = 6000;
 
-export default function Banner() {
+export default function Banner({ slides }: { slides: PortalBanner[] }) {
     const [current, setCurrent] = useState(0);
     const total = slides.length;
 
     const goTo = useCallback(
-        (index: number) => setCurrent(((index % total) + total) % total),
-        [total]
+        (index: number) => {
+            if (total > 0) setCurrent(((index % total) + total) % total);
+        },
+        [total],
     );
-    const next = useCallback(() => goTo(current + 1), [current, goTo]);
-    const prev = useCallback(() => goTo(current - 1), [current, goTo]);
+    const next = useCallback(
+        () => setCurrent((index) => (total > 0 ? (index + 1) % total : 0)),
+        [total],
+    );
+    const prev = useCallback(
+        () =>
+            setCurrent((index) =>
+                total > 0 ? (index - 1 + total) % total : 0,
+            ),
+        [total],
+    );
 
     useEffect(() => {
+        if (total <= 1) return;
         const id = setInterval(next, AUTOPLAY_INTERVAL);
         return () => clearInterval(id);
-    }, [next]);
+    }, [next, total]);
 
     return (
         <div className="relative flex w-full flex-col items-center min-h-[60vh] sm:min-h-[80vh] mb-64">
             <div className="relative w-full h-[80vh] sm:h-[80vh] lg:absolute lg:inset-0 lg:h-full overflow-hidden bg-nef-800">
                 {slides.map((slide, index) => (
                     <div
-                        key={index}
+                        key={slide.id}
                         className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
                             index === current ? "z-10 opacity-100" : "z-0 opacity-0"
                         }`}
                     >
-                        {/* Desktop image */}
-                        <Image
-                            src={slide.desktop}
-                            alt={slide.alt}
-                            fill
-                            priority={index === 0}
-                            sizes="100vw"
-                            className="hidden object-cover sm:block"
-                        />
-                        {/* Mobile image */}
-                        <Image
-                            src={slide.mobile}
-                            alt={slide.alt}
-                            fill
-                            priority={index === 0}
-                            sizes="100vw"
-                            className="object-cover lg:hidden"
-                        />
-                        {/* subtle overlay for legibility of any future overlaid text */}
-                        <div className="absolute inset-0 bg-black/10" />
+                        <Link
+                            aria-label={slide.description || slide.name}
+                            className="relative block size-full"
+                            href={slide.destinationUrl}
+                            rel={slide.openInNewTab ? "noopener noreferrer" : undefined}
+                            target={slide.openInNewTab ? "_blank" : undefined}
+                        >
+                            <Image
+                                src={slide.desktopImageUrl}
+                                alt={slide.altText}
+                                fill
+                                priority={index === 0}
+                                sizes="100vw"
+                                className="hidden object-cover sm:block"
+                            />
+                            <Image
+                                src={slide.mobileImageUrl}
+                                alt={slide.altText}
+                                fill
+                                priority={index === 0}
+                                sizes="100vw"
+                                className="object-cover sm:hidden"
+                            />
+                            <div className="absolute inset-0 bg-black/10" />
+                        </Link>
                     </div>
                 ))}
 
                 {/* Arrows */}
-                <button
+                {total > 1 && <button
                     type="button"
                     onClick={prev}
                     aria-label="Slide anterior"
@@ -95,8 +102,8 @@ export default function Banner() {
                             strokeLinejoin="round"
                         />
                     </svg>
-                </button>
-                <button
+                </button>}
+                {total > 1 && <button
                     type="button"
                     onClick={next}
                     aria-label="Próximo slide"
@@ -111,10 +118,10 @@ export default function Banner() {
                             strokeLinejoin="round"
                         />
                     </svg>
-                </button>
+                </button>}
 
                 {/* Dots — logo acima do card de menu absoluto */}
-                <div className="absolute inset-x-0 bottom-20 lg:bottom-36 z-20 flex items-center justify-center gap-2">
+                {total > 1 && <div className="absolute inset-x-0 bottom-20 lg:bottom-36 z-20 flex items-center justify-center gap-2">
                     {slides.map((_, index) => (
                         <button
                             key={index}
@@ -128,7 +135,7 @@ export default function Banner() {
                             }`}
                         />
                     ))}
-                </div>
+                </div>}
             </div>
 
             {/* Menu card */}
@@ -145,7 +152,7 @@ export default function Banner() {
                     md:grid-cols-3 lg:grid-cols-5
                 `}
             >
-                {menuItems.map(({ icon: Icon, label }) => (
+                {menuItems.map(({ label }) => (
                     <div
                         key={label}
                         className={`

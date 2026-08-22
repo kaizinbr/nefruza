@@ -5,14 +5,14 @@ import { createPageMetadata } from "@/lib/site-metadata";
 export async function generateMetadata({
     params,
 }: {
-    params: Promise<{ slug: string }>;
+    params: Promise<{ shorten: string }>;
 }) {
-    const { slug } = await params;
+    const { shorten } = await params;
 
     return createPageMetadata({
         title: "Notícia",
         description: "Conteúdo informativo publicado no site da Nefruza.",
-        path: `/blog/${encodeURIComponent(slug)}`,
+        path: `/blog/${encodeURIComponent(shorten)}`,
         noIndex: true,
     });
 }

@@ -1,11 +1,14 @@
+import "server-only";
+
 import axios from "axios";
+import { portalApiUrl } from "@/lib/portal-url";
 
 const api = axios.create({
-    // baseURL: "https://api.kaizin.work/api",
-    baseURL: "https://nefruza-adm.vercel.app/api/v1",
+    baseURL: portalApiUrl("/"),
     timeout: 10000,
     headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json",
     },
 });
 

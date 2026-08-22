@@ -114,15 +114,15 @@ export const faqItems: FAQItem[] = [
     },
     {
         value: "convenios",
-        question: "Quais convênios são apresentados no site?",
+        question: "Quais convênios são aceitos?",
         answer: (
             <p>
-                A lista disponível está na{" "}
+                A lista de convênios aceitos está disponível na{" "}
                 <Link href="/convenios" className={linkClassName}>
                     página de convênios
                 </Link>
                 . A cobertura varia por plano, contrato e procedimento e pode
-                mudar. No caso da Amil, o site informa atendimento somente de
+                mudar. No caso do convênio Amil Saúde, realizamos atendimentos somente de
                 consultório. Confirme elegibilidade e autorização antes de
                 comparecer.
             </p>
@@ -236,7 +236,11 @@ export const faqItems: FAQItem[] = [
                 Não espere resposta do site, formulário, ouvidoria, e-mail ou
                 redes sociais. Se houver risco imediato, procure um serviço de
                 urgência ou emergência ou ligue gratuitamente para o SAMU no
-                número 192. Siga as orientações do serviço acionado.
+                número <a 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClassName}
+                    href="tel:192">192</a>. Siga as orientações do serviço acionado.
             </p>
         ),
     },
