@@ -18,7 +18,7 @@ const menuItems = [
     { icon: UserIdIcon, label: "Localização", url: "https://maps.app.goo.gl/BSiF3bnGe8WeimKV8"  },
 ];
 
-const AUTOPLAY_INTERVAL = 6000;
+const AUTOPLAY_INTERVAL = 10000;
 
 export default function Banner({ slides }: { slides: PortalBanner[] }) {
     const [current, setCurrent] = useState(0);
