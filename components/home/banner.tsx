@@ -10,12 +10,12 @@ import { DocumentMedicineIcon } from "@solar-icons/react/broken/document-medicin
 import type { PortalBanner } from "@/lib/portal-types";
 
 const menuItems = [
-    { icon: CallChatRoundedIcon, label: "Sobre nós", url: "" },
-    { icon: CallChatRoundedIcon, label: "Contato", url: ""  },
-    { icon: DocumentMedicineIcon, label: "Serviços", url: ""  },
-    { icon: UserIdIcon, label: "Notícias", url: ""  },
-    { icon: UserIdIcon, label: "Convênios", url: ""  },
-    { icon: UserIdIcon, label: "Localização", url: "https://maps.app.goo.gl/BSiF3bnGe8WeimKV8"  },
+    { icon: CallChatRoundedIcon, label: "Sobre nós", url: "/institucional", img: "/sobrenos1.png" },
+    { icon: CallChatRoundedIcon, label: "Contato", url: "/contato", img: "/contato.png" },
+    { icon: DocumentMedicineIcon, label: "Serviços", url: "/servicos", img: "/servicos.png" },
+    { icon: UserIdIcon, label: "Notícias", url: "/blog", img: "/noticias.png" },
+    { icon: UserIdIcon, label: "Convênios", url: "/convenios", img: "/convenios.png" },
+    { icon: UserIdIcon, label: "Localização", url: "https://maps.app.goo.gl/BSiF3bnGe8WeimKV8", img: "/local.png" },
 ];
 
 const AUTOPLAY_INTERVAL = 10000;
@@ -145,42 +145,41 @@ export default function Banner({ slides }: { slides: PortalBanner[] }) {
                     lg:-translate-x-1/2 lg:-translate-y-1/3 
                     -mt-16 lg:mt-0
 
-                    grid-cols-2 gap-4 z-30 grid w-[92%] max-w-6xl
+                    grid-cols-2 gap-4 z-30 grid w-[92%] max-w-[1224px]
                     rounded-3xl bg-white p-6 shadow-xl
                     sm:flex sm:flex-row sm:flex-wrap sm:items-start sm:justify-center
                     sm:gap-6 sm:p-8
                     md:grid-cols-3 lg:grid-cols-5
                 `}
             >
-                {menuItems.map(({ label }) => (
-                    <div
+                {menuItems.map(({ label, img, url }) => (
+                    <Link
+                        href={url ? url : "/"}
+                        aria-label={label}
                         key={label}
                         className={`
-                            group flex aspect-3/4 w-full flex-col items-center
+                            group flex w-full flex-col items-center
                             justify-center gap-4 rounded-xl border border-zinc-100
                             bg-white px-4 py-8 text-center shadow-sm
                             transition-all duration-300
                             hover:-translate-y-1 hover:border-nef-500 hover:shadow-lg
-                            sm:h-56 sm:w-34 sm:px-8 sm:py-12
+                            sm:h-56 sm:w-42 sm:px-8 sm:py-12
                         `}
                     >
                         <div
                             className={`
-                                flex h-14 w-14 items-center justify-center rounded-full
+                                flex  aspect-1! h-14 w-14 items-center justify-center rounded-full
                                 bg-nef-50 text-nef-600 transition-colors duration-300
                                 group-hover:bg-nef-200 group-hover:text-white
-                                sm:h-16 sm:w-16
+                                sm:size-24
                             `}
                         >
-                            {/* <Icon size={28} className="sm:hidden" />
-                            <Icon size={32} className="hidden sm:block" />
-                             */}
-                             <Image alt="/img/canada.png" src="/img/canada.png" width={56} height={56} />
+                             <Image alt="/img/canada.png" src={img || "/img/canada.png"} width={96} height={56} />
                         </div>
                         <h3 className="text-sm font-semibold text-zinc-800 sm:text-base">
                             {label}
                         </h3>
-                    </div>
+                    </Link>
                 ))}
             </div>
         </div>

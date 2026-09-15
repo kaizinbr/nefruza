@@ -21,7 +21,7 @@ export default function QuemSomos() {
                     items-start justify-center 
                     w-full overflow-x-clip
                     px-4 relative 
-                    py-24
+                    py-24 lg:pt-44
                 `}
             >
                 <div
