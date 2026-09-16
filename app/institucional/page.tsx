@@ -7,7 +7,7 @@ import { PiPhoneCallFill } from "react-icons/pi";
 import { TbMailFilled, TbBrandWhatsappFilled } from "react-icons/tb";
 import LinhaDoTempo from "@/components/institucional/timeline"; // ajuste o caminho conforme seu projeto
 
-export default function Home() {
+export default function Institucional() {
     return (
         <div className="flex flex-1 flex-col bg-white font-sans pb-16">
             <main
@@ -49,7 +49,7 @@ export default function Home() {
                         flex flex-col gap-4
                     `}
                 >
-                    <div
+                    {/* <div
                         className={`
                             flex flex-col
                             items-start justify-center
@@ -101,7 +101,7 @@ export default function Home() {
                             Ut ullamcorper mollis nulla at sodales. Vivamus dolor
                             elit, sagittis eu dignissim id, imperdiet laoreet erat.
                         </p>
-                    </div>
+                    </div> */}
                     <div
                         className={`
                             flex flex-col

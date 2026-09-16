@@ -12,11 +12,6 @@ const routes = [
         changeFrequency: "monthly",
         priority: 0.7,
     },
-    {
-        path: "/institucional/proposito-e-valores",
-        changeFrequency: "yearly",
-        priority: 0.6,
-    },
     { path: "/equipe", changeFrequency: "monthly", priority: 0.7 },
     { path: "/servicos", changeFrequency: "monthly", priority: 0.8 },
     { path: "/convenios", changeFrequency: "monthly", priority: 0.7 },

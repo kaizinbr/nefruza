@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
         serverActions: {
             bodySizeLimit: "6mb",
         },
+        // globalNotFound: true,
     },
     images: {
         remotePatterns: [

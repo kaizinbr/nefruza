@@ -70,17 +70,13 @@ const navigationItems: NavItem[] = [
             // { href: "/institucional", label: "A Nefruza" },
             { href: "/institucional", label: "Nossa história" },
             { href: "/institucional/estrutura", label: "Nossa estrutura" },
-            {
-                href: "/institucional/proposito-e-valores",
-                label: "Propósito e valores",
-            },
             { href: "/trabalhe-conosco", label: "Trabalhe conosco" },
             // { href: "/institucional#pioneirismo", label: "Pioneirismo" },
         ],
     },
 ];
 
-const HEADER_HEIGHT = 96;
+const HEADER_HEIGHT = 84;
 // pequeno delay para não fechar o painel ao passar o mouse entre o
 // acionador e o painel (hover intent)
 const CLOSE_DELAY = 120;

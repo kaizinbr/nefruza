@@ -95,13 +95,6 @@ export default function Footer() {
                                 Nossa estrutura
                             </Link>
                             <Link
-                                href="/institucional/proposito-e-valores"
-                                rel="noopener noreferrer"
-                                className=" hover:text-nef-300 transition-colors"
-                            >
-                                Propósito e valores
-                            </Link>
-                            <Link
                                 href="/institucional#pioneirismo"
                                 rel="noopener noreferrer"
                                 className=" hover:text-nef-300 transition-colors"
@@ -180,7 +173,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className=" hover:text-nef-300 transition-colors"
                             >
-                                Blog
+                                Notícias
                             </Link>
                             <Link
                                 href="/#newsletter"
@@ -188,16 +181,6 @@ export default function Footer() {
                                 className=" hover:text-nef-300 transition-colors"
                             >
                                 Newsletter
-                            </Link>
-                            <Link
-                                href={{
-                                    pathname: "/blog",
-                                    query: { category: "noticias" },
-                                }}
-                                rel="noopener noreferrer"
-                                className=" hover:text-nef-300 transition-colors"
-                            >
-                                Notícias
                             </Link>
                             <Link
                                 href="/perguntas-frequentes"
@@ -267,14 +250,14 @@ export default function Footer() {
                             >
                                 <LuFacebook />
                             </Link>
-                            <Link
+                            {/* <Link
                                 href="https://www.linkedin.com/company/nefruza"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-nef-300 transition-colors"
                             >
                                 <LuLinkedin />
-                            </Link>
+                            </Link> */}
                             <Link
                                 href="https://maps.app.goo.gl/BSiF3bnGe8WeimKV8"
                                 target="_blank"

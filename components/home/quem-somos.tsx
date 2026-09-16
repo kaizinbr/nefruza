@@ -54,34 +54,13 @@ export default function Card() {
                         w-full lg:w-1/2 min-h-full relative
                         gap-4
                     `}
-                    >
-                        <div className="h-98 lg:h-124 w-78 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden">
-                            <Image
-                                src="/img/images1.webp"
+                    ><Image
+                                src="/estrutura/clinica.jpg"
                                 width={500}
                                 height={500}
                                 alt="paciente de hemodiálise"
-                                className="h-full object-cover"
+                                className="h-full object-cover rounded-lg"
                             />
-                        </div>
-                        <div className="h-98 lg:h-124 w-56 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden">
-                            <Image
-                                src="/img/images2.jpg"
-                                width={500}
-                                height={500}
-                                alt="paciente de hemodiálise"
-                                className="h-full object-cover"
-                            />
-                        </div>
-                        <div className="h-98 lg:h-124 w-44 rounded-2xl bg-nef-800 flex items-center justify-center overflow-hidden">
-                            <Image
-                                src="/img/images.jpg"
-                                width={500}
-                                height={500}
-                                alt="paciente de hemodiálise"
-                                className="h-full object-cover"
-                            />
-                        </div>
                     </div>
                 </div>
             </div>

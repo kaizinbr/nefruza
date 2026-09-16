@@ -13,42 +13,42 @@ const estrutura = [
         titulo: "Consultórios",
         descricao:
             "Consultórios privativos e equipados com os melhores equipamentos, proporcionando um ambiente confortável e seguro para os pacientes.",
-        image: "https://www.nefruza.com.br/images/gallery/consultorio2.jpg",
+        image: "/estrutura/consultorios.jpg",
     },
     {
         id: "salas-de-hemodialise",
         titulo: "Salas de Hemodiálise",
         descricao:
             "Climatizadas com tv HD, internet wi-fi, equipadas com máquinas de última geração; proporcionando um maior conforto ao paciente.",
-        image: "https://www.nefruza.com.br/images/gallery/salahemodialise2.jpg",
+        image: "/estrutura/hemodialise1.jpg",
     },
     {
         id: "tratamento-de-agua",
         titulo: "Tratamento de Água",
         descricao:
             "Sistema moderno e seguro de deionização e osmose reversa para a purificação da água a ser utilizada na sessão de hemodiálise.",
-        image: "https://www.nefruza.com.br/images/gallery/tratamentoagua.jpg",
+        image: "/estrutura/tratamentoagua.jpg",
     },
     {
         id: "elevador",
         titulo: "Elevador",
         descricao:
             "Elevador moderno e seguro, com capacidade para atender todos os pacientes com conforto e praticidade.",
-        image: "https://www.nefruza.com.br/images/gallery/ELEVADOR_grande.png",
+        image: "/estrutura/elevador.jpg",
     },
     {
         id: "enfermagem",
         titulo: "Enfermagem",
         descricao:
             "Equipe de enfermagem altamente qualificada, pronta para atender todos os pacientes com dedicação e profissionalismo.",
-        image: "https://www.nefruza.com.br/images/gallery/enfermaria.jpg",
+        image: "/estrutura/enfermaria1.jpg",
     },
     {
         id: "salas-de-espera",
         titulo: "Salas de espera",
         descricao:
             "Com ambiente climatizado, TV e wi-fi, proporcionando um ambiente acolhedor e agradável para o paciente enquanto espera.",
-        image: "https://www.nefruza.com.br/images/gallery/salaespera2.jpg",
+        image: "/estrutura/espera1.jpg",
     },
 ];
 

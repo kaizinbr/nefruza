@@ -47,21 +47,21 @@ const trajetoria: Marco[] = [
         ],
         image: "/img/placeholder.webp",
     },
-    {
-        ano: 2001,
-        titulo: "Algum ponto importante",
-        descricao: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus tempus scelerisque. Vivamus in aliquet libero, egestas gravida purus. Fusce quis luctus nisi. Vivamus fermentum massa nec interdum hendrerit.",
-        ],
-        image: "/img/placeholder.webp",
-    },
+    // {
+    //     ano: 2001,
+    //     titulo: "Algum ponto importante",
+    //     descricao: [
+    //         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus tempus scelerisque. Vivamus in aliquet libero, egestas gravida purus. Fusce quis luctus nisi. Vivamus fermentum massa nec interdum hendrerit.",
+    //     ],
+    //     image: "/img/placeholder.webp",
+    // },
     {
         ano: 2013,
         titulo: "Um novo começo",
         descricao: [
             "Foi inaugurada a nova e atual sede na Rua Sinésio Guimarães, no Bairro Torre. A clínica Nefruza se destaca atualmente pelo seu equipamento de última geração, sistema de informatização e qualidade do serviço. ",
         ],
-        image: "/img/placeholder.webp",
+        image: "/estrutura/clinica.jpg",
     },
     {
         ano: 2026,
