@@ -55,9 +55,9 @@ export default function Card() {
                         gap-4
                     `}
                     ><Image
-                                src="/estrutura/clinica.jpg"
-                                width={500}
-                                height={500}
+                                src="/Brilho_Contraste 2.png"
+                                width={836}
+                                height={546}
                                 alt="paciente de hemodiálise"
                                 className="h-full object-cover rounded-lg"
                             />
