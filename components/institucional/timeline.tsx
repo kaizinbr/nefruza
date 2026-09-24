@@ -22,7 +22,7 @@ const trajetoria: Marco[] = [
             "A Nefruza foi fundada em março de ­­­­­­­­­­­­1979 pelo nefrologista Mário de Oliveira Fiúza Chaves, médico graduado pela Universidade Federal de Pernambuco.",
             "Iniciou suas atividades como anexo do Hospital Samaritano operando com apenas duas máquinas de hemodiálise. O início foi difícil, os médicos da cidade não acreditavam nos benefícios da hemodiálise e, portanto não indicavam o procedimento.",
         ],
-        image: "/img/placeholder.webp",
+        // image: "/img/placeholder.webp",
     },
     {
         ano: 1980,
@@ -30,7 +30,7 @@ const trajetoria: Marco[] = [
         descricao: [
             "Após cerca de 1 ano sem atender sequer um paciente, alguns médicos, mesmo descrentes, mandaram enfermos graves para o procedimento. Logo, um dos pacientes demonstrou melhora, o que revelou a eficiência do tratamento. Esse foi o pontapé inicial para um aumento gradativo de pacientes com o passar dos anos.",
         ],
-        image: "/img/placeholder.webp",
+        // image: "/img/placeholder.webp",
     },
     {
         ano: 1986,
@@ -45,7 +45,7 @@ const trajetoria: Marco[] = [
         descricao: [
             "O Hospital Samaritano fechou suas portas para o SUS, então a Nefruza mudou suas instalações para uma sede própria na Av. Epitácio Pessoa (principal Avenida da cidade). Passou a atender então não só o SUS como também todos os planos de saúde. Foi reconhecida na época como a clínica de diálise mais moderna do Estado da Paraíba.",
         ],
-        image: "/img/placeholder.webp",
+        // image: "/img/placeholder.webp",
     },
     // {
     //     ano: 2001,
@@ -61,15 +61,15 @@ const trajetoria: Marco[] = [
         descricao: [
             "Foi inaugurada a nova e atual sede na Rua Sinésio Guimarães, no Bairro Torre. A clínica Nefruza se destaca atualmente pelo seu equipamento de última geração, sistema de informatização e qualidade do serviço. ",
         ],
-        image: "/estrutura/clinica.jpg",
+        // image: "/estrutura/clinica.jpg",
     },
     {
         ano: 2026,
         titulo: "47 anos de história e cuidado",
         descricao: [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus tempus scelerisque. Vivamus in aliquet libero, egestas gravida purus. Fusce quis luctus nisi. Vivamus fermentum massa nec interdum hendrerit.",
+            "2026 marca os 47 anos de história da Nefruza. Ao longo dos anos, construímos histórias de superação em conjunto com as pessoas que são nossa força motora. Ficamos felizes em chegar até aqui, e estamos prontos para seguir inovando!",
         ],
-        image: "/img/placeholder.webp",
+        // image: "/img/placeholder.webp",
     },
 ];
 

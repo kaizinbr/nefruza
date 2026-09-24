@@ -54,7 +54,7 @@ function validate(values: ContactFormValues): ContactFormErrors {
         errors.name = "Informe seu nome";
     }
     if (!values.mensagem.trim() || values.mensagem.trim().length < 10) {
-        errors.mensagem = "Descreva sua mensagem com um pouco mais de detalhe";
+        errors.mensagem = "Descreva sua mensagem com um pouco mais de detalhes";
     }
 
     return errors;

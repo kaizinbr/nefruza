@@ -33,13 +33,13 @@ export default function Card() {
                             Por que famílias confiam na Nefruza?
                         </h1>
                         <p className="text-start text-muted-foreground pb-2">
-                            Há pacientes que chegam para um tratamento. <br />E há
-                            histórias que passamos a acompanhar por anos. 
+                            Há pacientes que chegam para um tratamento. <br />E
+                            há histórias que passamos a acompanhar por anos.
                         </p>
                         <p className="text-start text-muted-foreground pb-6">
-                            Na Nefruza, experiência e tecnologia caminham ao lado
-                            da escuta, da proximidade e do respeito pela vida de
-                            cada pessoa.
+                            Na Nefruza, experiência e tecnologia caminham ao
+                            lado da escuta, da proximidade e do respeito pela
+                            vida de cada pessoa.
                         </p>
                         <Link
                             href="/institucional"
@@ -54,13 +54,14 @@ export default function Card() {
                         w-full lg:w-1/2 min-h-full relative
                         gap-4
                     `}
-                    ><Image
-                                src="/Brilho_Contraste 2.png"
-                                width={836}
-                                height={546}
-                                alt="paciente de hemodiálise"
-                                className="h-full object-cover rounded-lg"
-                            />
+                    >
+                        <Image
+                            src="/Brilho_Contraste 2.png"
+                            width={836}
+                            height={546}
+                            alt="paciente de hemodiálise"
+                            className="h-full object-cover rounded-lg"
+                        />
                     </div>
                 </div>
             </div>
