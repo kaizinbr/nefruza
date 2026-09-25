@@ -1,6 +1,7 @@
 import "server-only";
 
-const productionPortalUrl = "https://nefruza-adm.vercel.app";
+// const productionPortalUrl = "http://192.168.18.152:3001";
+const productionPortalUrl = "https://www.adm.nefruza.com.br";
 
 export function portalApiUrl(pathname: string) {
     const configuredUrl =

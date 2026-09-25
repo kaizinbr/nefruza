@@ -7,6 +7,7 @@ import {
     Preview,
     Section,
     Text,
+    Link,
 } from "react-email";
 
 interface JobApplicationMailProps {
@@ -37,9 +38,7 @@ export default function JobApplicationMail({
     return (
         <Html lang="pt-BR">
             <Head />
-            <Preview>
-                Nova candidatura para o banco de talentos: {name}
-            </Preview>
+            <Preview>Nova candidatura para o banco de talentos: {name}</Preview>
             <Body
                 style={{
                     backgroundColor: "#f4f4f5",
@@ -137,11 +136,34 @@ export default function JobApplicationMail({
                         }}
                     >
                         O currículo em PDF está anexado a este e-mail e também
-                        foi armazenado com acesso privado para consulta no portal
-                        administrativo
-                        {portalUrl
-                            ? `: ${portalUrl}/candidaturas/${applicationId}`
-                            : "."}{" "}
+                        foi armazenado com acesso privado para consulta no
+                        portal administrativo:{" "}
+                        <Link
+                            href={
+                                portalUrl
+                                    ? `${portalUrl}/candidaturas/${applicationId}`
+                                    : undefined
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                color: "#db233c",
+                                textDecoration: "underline",
+                            }}
+                        >
+                            {portalUrl
+                                ? `${portalUrl}/candidaturas/${applicationId}`
+                                : "."}
+                        </Link>
+                    </Text>
+                    <Text
+                        style={{
+                            color: "#71717a",
+                            fontSize: "13px",
+                            lineHeight: "1.6",
+                            margin: "8px 0 0",
+                        }}
+                    >
                         Para responder à pessoa candidata, utilize o endereço
                         informado acima.
                     </Text>

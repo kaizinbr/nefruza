@@ -154,7 +154,7 @@ export default async function submitJobApplication(
         const result = await resend.emails.send({
             from:
                 process.env.RESEND_FROM_ADDRESS ??
-                "Site Nefruza <site@kaizin.work>",
+                "Site Nefruza <site@site.nefruza.com.br>",
             to:
                 process.env.NEFRUZA_CAREERS_EMAIL ??
                 "recep@nefruza.com.br",

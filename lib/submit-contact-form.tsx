@@ -20,10 +20,10 @@ import type { ContactFormValues } from "@/lib/types";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// TODO: trocar por "recep@nefruza.com.br" quando sair de testes.
-const ADMIN_EMAIL = "kaiolucas1812@gmail.com";
+// TODO: trocar por "rh@nefruza.com.br" quando sair de testes.
+const ADMIN_EMAIL = process.env.NEFRUZA_TICKETS_EMAIL || "kaizin@kaizin.work";
 
-const FROM_ADDRESS = "Nefruza <contato@kaizin.work>";
+const FROM_ADDRESS = "Nefruza <contato@site.nefruza.com.br>";
 
 const CONTACT_METHOD_LABELS: Record<NonNullable<ContactFormValues["type"]>, string> = {
     mail: "E-mail",
@@ -64,7 +64,7 @@ export default async function submitContactForm(
     // 2. Notifica o administrativo primeiro — se isso falhar, abortamos:
     // não faz sentido confirmar um ticket que ninguém na clínica vai ver.
     const adminEmail = await resend.emails.send({
-        from: "Site Nefruza <site@kaizin.work>",
+        from: "Site Nefruza <site@site.nefruza.com.br>",
         to: ADMIN_EMAIL,
         subject: `Novo ticket de contato: ${ticketNumber}`,
         react: AdmMail({
@@ -92,6 +92,7 @@ export default async function submitContactForm(
     const userEmail = await resend.emails.send({
         from: FROM_ADDRESS,
         to: values.email,
+        replyTo: ADMIN_EMAIL,
         subject: `Recebemos seu ticket: ${ticketNumber}`,
         react: UserMail({
             ticket: ticketNumber,
