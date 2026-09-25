@@ -81,7 +81,7 @@ export default function Footer() {
                                 A Nefruza
                             </Link>
                             <Link
-                                href="/institucional/historia"
+                                href="/institucional"
                                 rel="noopener noreferrer"
                                 className=" hover:text-nef-300 transition-colors"
                             >

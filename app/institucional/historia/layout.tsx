@@ -5,7 +5,7 @@ import { createPageMetadata } from "@/lib/site-metadata";
 export const metadata = createPageMetadata({
     title: "História",
     description: "Página institucional reservada à história da Nefruza.",
-    path: "/institucional/historia",
+    path: "/institucional",
     noIndex: true,
 });
 

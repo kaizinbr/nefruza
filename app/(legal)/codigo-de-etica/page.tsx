@@ -116,8 +116,7 @@ export default function Convenios() {
                     `}
                 >
                     <p className=" leading-7 text-zinc-600">
-                        Importante: o convênio Amil oferece apenas atendimento
-                        de consultório conosco.
+                        Em breve.
                     </p>
                 </section>
             </div>
