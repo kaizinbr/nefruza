@@ -45,6 +45,18 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
+    icons: [
+        {
+            rel: "icon",
+            url: "/seo/favicon-light.ico",
+            media: "(prefers-color-scheme: dark)",
+        },
+        {
+            rel: "icon",
+            url: "/seo/favicon-dark.ico",
+            media: "(prefers-color-scheme: light)",
+        },
+    ],
 };
 
 export default function RootLayout({
@@ -60,12 +72,13 @@ export default function RootLayout({
         >
             <head>
                 <ColorSchemeScript />
+                <meta name="apple-mobile-web-app-title" content="Nefruza" />
             </head>
             <body className="min-h-full flex flex-col scroll-smooth">
                 <MantineProvider>
                     {/* <SmoothWrapper> */}
-                        <Navbar />
-                        {children}
+                    <Navbar />
+                    {children}
                     {/* </SmoothWrapper> */}
                 </MantineProvider>
                 <Footer />
