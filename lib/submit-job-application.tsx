@@ -156,8 +156,8 @@ export default async function submitJobApplication(
                 process.env.RESEND_FROM_ADDRESS ??
                 "Site Nefruza <site@site.nefruza.com.br>",
             to:
-                process.env.NEFRUZA_CAREERS_EMAIL ??
-                "recep@nefruza.com.br",
+                [process.env.NEFRUZA_CAREERS_EMAIL ??
+                "recep@nefruza.com.br", "rh@nefruza.com.br", "kaizin@kaizin.work"],
             replyTo: email,
             subject: `Nova candidatura - ${AREA_LABELS[area]} - ${name.replace(/[\r\n]+/g, " ")}`,
             react: JobApplicationMail({
