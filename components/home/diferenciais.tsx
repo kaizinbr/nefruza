@@ -102,7 +102,7 @@ export default function Diferenciais() {
                 flex 
                 items-start justify-center 
                 w-full bg-nef-200 overflow-x-clip
-                px-4 py-24
+                px-4 py-32
             `}
         >
             <div className="flex flex-col lg:flex-row  w-full max-w-6xl">

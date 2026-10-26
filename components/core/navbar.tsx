@@ -31,7 +31,7 @@ interface NavItem {
 // Alterar aqui reflete tanto no menu desktop (mega menu) quanto no menu
 // fullscreen/mobile (collapse), já que ambos consomem este mesmo array.
 const navigationItems: NavItem[] = [
-    { href: "/", label: "Home" },
+    { href: "/", label: "Início" },
     {
         href: "/contato",
         label: "Contato",

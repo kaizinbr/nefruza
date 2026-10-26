@@ -24,7 +24,7 @@ export default function Servicos() {
                     items-center justify-between 
                     w-full overflow-x-clip
                     px-4 xl:px-0 relative 
-                    py-24
+                    py-32
                 `}
             >
                 <div
@@ -82,7 +82,7 @@ export default function Servicos() {
                         -top-14 lg:top-0
                     `}
                     >
-                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-2 rounded-xl bg-nef-200">
                                 <BiSolidDonateBlood
                                     size={32}
@@ -97,7 +97,7 @@ export default function Servicos() {
                                 Diálise Peritoneal Ambulatorial Contínua
                             </p>
                         </div> */}
-                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-2 rounded-xl bg-nef-100">
                                 <FaHouseChimneyMedical
                                     size={32}
@@ -108,13 +108,13 @@ export default function Servicos() {
                                 Diálises externas
                             </p>
                         </div>
-                        {/* <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        {/* <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-8 rounded-xl bg-nef-400"></div>
                             <p className="text-xl font-semibold">
                                 Implantes vasculáres
                             </p>
                         </div> */}
-                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-2 rounded-xl bg-nef-200">
                                 <FaKitMedical
                                     size={32}
@@ -125,7 +125,7 @@ export default function Servicos() {
                                 Atendimento Ambulatorial
                             </p>
                         </div>
-                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-2 rounded-xl bg-nef-100">
                                 <GiFruitBowl
                                     size={32}
@@ -136,7 +136,7 @@ export default function Servicos() {
                                 Nutricionista
                             </p>
                         </div>
-                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-2 rounded-xl bg-nef-200">
                                 <RiMentalHealthFill
                                     size={32}
@@ -145,7 +145,7 @@ export default function Servicos() {
                             </div>
                             <p className="text-xl font-semibold">Psicologia</p>
                         </div>
-                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4">
+                        <div className="flex items-center p-6 bg-white border border-zinc-200 text-zinc-950 w-full lg:flex-1 lg:min-w-[calc(50%-16px)] lg:max-w-94 rounded-2xl shadow-lg gap-4 hover:shadow-nef-600/20 hover:border-nef-400 hover:-translate-y-2 transition-all">
                             <div className="p-2 rounded-xl bg-nef-100">
                                 <FaNotesMedical
                                     size={32}

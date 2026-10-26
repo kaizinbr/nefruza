@@ -15,7 +15,7 @@ const menuItems = [
     { icon: DocumentMedicineIcon, label: "Serviços", url: "/servicos", img: "/servicos.png" },
     { icon: UserIdIcon, label: "Notícias", url: "/blog", img: "/noticias.png" },
     { icon: UserIdIcon, label: "Convênios", url: "/convenios", img: "/convenios.png" },
-    { icon: UserIdIcon, label: "Localização", url: "https://maps.app.goo.gl/BSiF3bnGe8WeimKV8", img: "/local.png" },
+    { icon: UserIdIcon, label: "Localização", url: "https://maps.app.goo.gl/BSiF3bnGe8WeimKV8", img: "/local.png", openInNewTab: true },
 ];
 
 const AUTOPLAY_INTERVAL = 10000;
@@ -152,9 +152,10 @@ export default function Banner({ slides }: { slides: PortalBanner[] }) {
                     md:grid-cols-3 lg:grid-cols-5
                 `}
             >
-                {menuItems.map(({ label, img, url }) => (
+                {menuItems.map(({ label, img, url, openInNewTab }) => (
                     <Link
                         href={url ? url : "/"}
+                        target={openInNewTab ? "_blank" : undefined}
                         aria-label={label}
                         key={label}
                         className={`
@@ -162,7 +163,7 @@ export default function Banner({ slides }: { slides: PortalBanner[] }) {
                             justify-center gap-4 rounded-xl border border-zinc-100
                             bg-white px-4 py-8 text-center shadow-sm
                             transition-all duration-300
-                            hover:-translate-y-1 hover:border-nef-500 hover:shadow-lg
+                            hover:-translate-y-1 hover:border-nef-500 hover:shadow-lg hover:shadow-nef-300
                             sm:h-56 sm:w-42 sm:px-8 sm:py-12
                         `}
                     >
