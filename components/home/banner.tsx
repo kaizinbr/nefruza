@@ -145,7 +145,7 @@ export default function Banner({ slides }: { slides: PortalBanner[] }) {
                     lg:-translate-x-1/2 lg:-translate-y-1/3 
                     -mt-16 lg:mt-0
 
-                    grid-cols-2 gap-4 z-30 grid w-[92%] max-w-[1224px]
+                    grid-cols-2 gap-4 z-30 grid w-[92%] max-w-306
                     rounded-3xl bg-white p-6 shadow-xl
                     sm:flex sm:flex-row sm:flex-wrap sm:items-start sm:justify-center
                     sm:gap-6 sm:p-8

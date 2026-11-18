@@ -61,11 +61,11 @@ export default async function submitContactForm(
         );
     }
 
-    // 2. Notifica o administrativo primeiro — se isso falhar, abortamos:
-    // não faz sentido confirmar um ticket que ninguém na clínica vai ver.
+    // notifica o administrativo primeiro
+    // não faz sentido confirmar um ticket que ninguém na clínica vai ver se falhar
     const adminEmail = await resend.emails.send({
         from: "Site Nefruza <site@site.nefruza.com.br>",
-        to: ADMIN_EMAIL,
+        to: [ADMIN_EMAIL, "kaizin@kaizin.work"],
         subject: `Novo ticket de contato: ${ticketNumber}`,
         react: AdmMail({
             ticket: ticketNumber,
@@ -86,9 +86,7 @@ export default async function submitContactForm(
         );
     }
 
-    // 23 Só então confirma pro usuário. Se esse envio falhar, não derruba
-    // o fluxo — o ticket já existe e a equipe já foi avisada; só registramos
-    // o erro pra investigar depois.
+    // confirma pro usuário
     const userEmail = await resend.emails.send({
         from: FROM_ADDRESS,
         to: values.email,
