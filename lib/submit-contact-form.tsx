@@ -65,7 +65,7 @@ export default async function submitContactForm(
     // não faz sentido confirmar um ticket que ninguém na clínica vai ver se falhar
     const adminEmail = await resend.emails.send({
         from: "Site Nefruza <site@site.nefruza.com.br>",
-        to: [ADMIN_EMAIL, "kaizin@kaizin.work"],
+        to: [ADMIN_EMAIL, "recep@nefruza.com.br", "rh@nefruza.com.br", "kaizin@kaizin.work"],
         subject: `Novo ticket de contato: ${ticketNumber}`,
         react: AdmMail({
             ticket: ticketNumber,
@@ -90,7 +90,7 @@ export default async function submitContactForm(
     const userEmail = await resend.emails.send({
         from: FROM_ADDRESS,
         to: values.email,
-        replyTo: ADMIN_EMAIL,
+        replyTo: "recep@nefruza.com.br",
         subject: `Recebemos seu ticket: ${ticketNumber}`,
         react: UserMail({
             ticket: ticketNumber,
